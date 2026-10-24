@@ -1,0 +1,8 @@
+runs/
+data/
+paper/build/
+catboost_info/
+__pycache__/
+*.egg-info/
+.venv/
+.pytest_cache/

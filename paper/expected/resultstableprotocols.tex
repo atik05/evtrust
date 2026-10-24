@@ -1,0 +1,17 @@
+\begin{table}[!tbp]
+\centering\footnotesize
+\caption{Mean absolute error of CatBoost and the FT-Transformer under each evaluation protocol. Values are the mean $\pm$ one standard deviation over five seeds; unseen-site values average the three target sites with equal weight. All protocols use the frozen split definitions with label-maturation purging (\cref{sec:protocols}). Duration in hours, energy in kWh.}
+\label{tab:accuracy}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{llcccc}
+\toprule
+Target & Learner & Random & Chronological & \makecell{Unseen\\site} & \makecell{Unseen\\driver} \\
+\midrule
+Duration & CatBoost & 1.80 $\pm$ 0.03 & 2.17 $\pm$ 0.01 & 2.40 $\pm$ 0.05 & 2.04 $\pm$ 0.06 \\
+Duration & FT-Transformer & 1.80 $\pm$ 0.03 & 2.21 $\pm$ 0.09 & 2.32 $\pm$ 0.11 & 1.92 $\pm$ 0.09 \\
+Energy & CatBoost & 4.09 $\pm$ 0.03 & 4.80 $\pm$ 0.01 & 6.87 $\pm$ 0.17 & 7.60 $\pm$ 0.82 \\
+Energy & FT-Transformer & 4.02 $\pm$ 0.03 & 4.87 $\pm$ 0.12 & 6.63 $\pm$ 0.24 & 7.76 $\pm$ 0.62 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

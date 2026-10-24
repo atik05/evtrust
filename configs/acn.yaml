@@ -1,0 +1,150 @@
+# Confirmatory run on Ubuntu with one NVIDIA GPU.
+# CatBoost trains on the GPU and PyTorch uses CUDA; batch size is overridden at
+# runtime from measured VRAM (EVTRUST_BATCH_SIZE). Set EVTRUST_CATBOOST_TASK_TYPE=CPU
+# for a bitwise reproducible run, because CatBoost GPU training is non-deterministic.
+project:
+  seed: 20261015
+  sites:
+  - caltech
+  - jpl
+  - office001
+  horizons_hours:
+  - 1
+  - 2
+  - 4
+  prediction_frequency_minutes: 15
+  five_seeds:
+  - 11
+  - 23
+  - 37
+  - 51
+  - 79
+  resume: true
+data:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  start: '2018-01-01'
+  end: '2021-12-31'
+  timezone: America/Los_Angeles
+  drop_negative_duration: true
+  min_duration_minutes: 5
+  max_duration_hours: 168
+  max_energy_kwh: 200
+splits:
+  train_fraction: 0.7
+  calibration_fraction: 0.1
+  validation_fraction: 0.1
+  test_fraction: 0.2
+  embargo_hours: 4
+  pandemic_break: '2020-03-01'
+features:
+  numeric:
+  - arrival_hour_sin
+  - arrival_hour_cos
+  - weekday_sin
+  - weekday_cos
+  - month_sin
+  - month_cos
+  - user_prior_count
+  - user_prior_mean_duration
+  - user_prior_median_duration
+  - user_prior_mean_energy
+  - station_prior_count
+  - station_prior_mean_duration
+  - station_prior_mean_energy
+  - requested_energy_kwh
+  - requested_duration_hours
+  categorical:
+  - site
+  - station_id
+  - is_weekend
+  driver_features:
+  - requested_energy_kwh
+  - requested_duration_hours
+models:
+  ridge:
+    alpha: 10.0
+  catboost:
+    iterations: 2500
+    depth: 8
+    learning_rate: 0.03
+    loss_function: MAE
+    l2_leaf_reg: 5.0
+    random_strength: 1.0
+    task_type: GPU
+    verbose: 200
+    devices: '0'
+  torch_ft:
+    d_token: 96
+    n_heads: 8
+    n_layers: 4
+    dropout: 0.1
+    batch_size: 1024
+    epochs: 120
+    patience: 15
+    lr: 0.0008
+    weight_decay: 0.0001
+    amp: true
+tuning:
+  enabled: true
+  canonical_seed: 11
+  trials_per_model: 8
+  torch_tuning_epochs: 45
+conformal:
+  alpha: 0.1
+  calibration_budgets:
+  - 0
+  - 25
+  - 50
+  - 100
+  - 250
+  - 500
+  - 1000
+  cqr: true
+bootstrap:
+  n_boot: 3000
+  confidence: 0.95
+  block: day
+occupancy:
+  model:
+    iterations: 1800
+    depth: 8
+    learning_rate: 0.04
+    l2_leaf_reg: 3.0
+    early_stopping_rounds: 120
+  congested_current_free_fraction_threshold: 0.5
+  confidence_threshold: 0.8
+visualization:
+  dpi: 600
+  formats:
+  - png
+  - pdf
+  - svg
+  vector_text: true
+experiment:
+  learned_models:
+  - ridge
+  - catboost
+  - torch_ft
+
+paper:
+  learners: [catboost, ft]          # cold-start decomposition learners (hgb also available, CPU only)
+  decomposition_end: "2020-03-01"   # pre-pandemic window for the decomposition
+  availability_learner: catboost
+  charging_power_kw: 6.6            # Level-2 charger rate for the smart-charging simulation
+  n_boot: 2000                      # driver-cluster bootstrap draws
+  ft_epochs: 40                     # FT-Transformer budget for the decomposition
+  ft_patience: 6
+
+benchmark:
+  models: [mean, user_history, ridge, random_forest, extra_trees, hgb, lightgbm, xgboost, catboost, mlp, ft, tabpfn]
+  protocols: [random, driver_grouped, chronological, chronological_prepandemic, site_transfer, site_transfer_strict]
+  protocol_models:                # sensitivity protocols use a representative subset to bound runtime
+    chronological_prepandemic: [mean, user_history, ridge, lightgbm, catboost, ft]
+    site_transfer_strict: [mean, user_history, ridge, lightgbm, catboost, ft]
+  folds: 5
+  repeats: 5
+  gpu: true                       # XGBoost and TabPFN on CUDA; CatBoost follows models.catboost.task_type
+  deep: {epochs: 60, patience: 8, batch: 1024, lr: 0.001}
+  model_params:
+    tabpfn: {max_train_rows: 10000}

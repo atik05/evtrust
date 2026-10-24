@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Trustworthy electric vehicle charging session prediction: leakage-aware evaluation, the cold-start gap and its cost to smart charging (code and reproduction package)"
+version: 1.0.0
+date-released: 2026-10-23
+license: MIT
+authors:
+  - family-names: Rahman
+    given-names: Md. Atiqur
+    affiliation: "Department of Computer Science and Engineering, Islamic University, Kushtia, Bangladesh"
+    email: atique@cse.iu.ac.bd
+repository-code: "https://github.com/atik05/evtrust"
+keywords:
+  - electric vehicle charging
+  - session prediction
+  - leakage-aware evaluation
+  - cold start
+  - conformal prediction
+  - smart charging

@@ -1,0 +1,25 @@
+\begin{table}[!tbp]
+\centering\footnotesize
+\caption{Twelve-learner benchmark under six protocols. For each target and protocol: the learner with the lowest mean MAE; the number of other learners not significantly worse than it (Nadeau--Bengio corrected resampled $t$-test, Holm-adjusted, $\alpha=0.05$); and the mean Friedman rank over folds (1 = best) of LightGBM, the best learner under random splitting, and of ridge regression. Random, driver-grouped and chronological protocols use 25 folds; unseen-site protocols use 15. The two sensitivity protocols (pre-2020 and strict site transfer) compare six learners.}
+\label{tab:benchmark}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{llcccc}
+\toprule
+Target & Protocol & Best learner & \makecell{Tied with\\best} & \makecell{Rank\\LightGBM} & \makecell{Rank\\ridge} \\
+\midrule
+Duration & Random & LightGBM & 0 of 11 & 1.04 & 10.00 \\
+Duration & Driver-grouped & CatBoost & 0 of 11 & 2.40 & 9.96 \\
+Duration & Chronological & LightGBM & 5 of 11 & 1.64 & 8.92 \\
+Duration & Chronological, pre-2020 & LightGBM & 3 of 5 & 1.32 & 4.20 \\
+Duration & Unseen site & CatBoost & 7 of 11 & 5.00 & 2.13 \\
+Duration & Unseen site, strict & Ridge & 5 of 5 & 3.67 & 1.67 \\
+Energy & Random & LightGBM & 0 of 11 & 1.08 & 10.00 \\
+Energy & Driver-grouped & FT-Transformer & 7 of 11 & 4.04 & 8.84 \\
+Energy & Chronological & LightGBM & 9 of 11 & 3.04 & 9.92 \\
+Energy & Chronological, pre-2020 & LightGBM & 2 of 5 & 1.44 & 4.04 \\
+Energy & Unseen site & Ridge & 11 of 11 & 7.33 & 4.07 \\
+Energy & Unseen site, strict & CatBoost & 5 of 5 & 4.20 & 2.00 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

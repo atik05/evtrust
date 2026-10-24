@@ -1,0 +1,17 @@
+\begin{table}[!tbp]
+\centering\footnotesize
+\caption{Energy MAE (kWh) under nested information sets, CatBoost, five-fold cross-fitting over five seeds; change relative to plug-in information with 95\% bootstrap intervals.}
+\label{tab:availability}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{lccc}
+\toprule
+Sites & Plug-in & + charging duration & + session duration \\
+\midrule
+All & 4.17 & 2.85 (-32\%) & 2.82 (-32\%) \\
+Caltech & 3.92 & 2.51 (-36\%) & 2.44 (-38\%) \\
+JPL & 4.01 & 2.82 (-30\%) & 2.80 (-30\%) \\
+Office001 & 7.44 & 3.06 (-59\%) & 3.03 (-59\%) \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

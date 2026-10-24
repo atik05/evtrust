@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "evtrust"
+version = "1.0.0"
+description = "Leakage-aware evaluation, cold-start decomposition and smart-charging impact for EV charging session prediction"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.2",
+  "pyarrow>=16",
+  "scikit-learn>=1.5",
+  "scipy>=1.13",
+  "statsmodels>=0.14",
+  "matplotlib>=3.9",
+  "catboost>=1.2.7",
+  "optuna>=4.0",
+  "pyyaml>=6.0",
+  "joblib>=1.4",
+  "tqdm>=4.66",
+  "requests>=2.32",
+  "typer>=0.12",
+  "rich>=13.7",
+  "tabulate>=0.9",
+  "openpyxl>=3.1",
+  "lightgbm>=4.5",
+  "xgboost>=2.1"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.2", "ruff>=0.6"]
+torch = ["torch>=2.2"]
+tabpfn = ["tabpfn>=2.0"]
+paper = ["cairosvg>=2.7"]
+
+[project.scripts]
+evtrust = "evtrust.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
