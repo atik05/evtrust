@@ -20,7 +20,7 @@ reproduce.sh       single entry point
 
 ## Requirements
 
-Linux with an NVIDIA GPU; the published results were produced on one RTX 4090 (48 GB) with CUDA 12.4 and Python 3.12.
+Linux with an NVIDIA GPU; the published results were produced on one NVIDIA GeForce RTX 4090 (a 48 GB memory variant) with CUDA 12.4 and Python 3.12.
 
 ```bash
 conda env create -f environment.yml      # all dependencies, including pytest
@@ -74,6 +74,7 @@ Each stage records a marker in `runs/<network>/.done/`, so an interrupted run re
 | Figures 2 to 5 | `figs/fig2_protocols` to `figs/fig5_operation` (`.pdf`, `.svg`, `.png`) | `make_figures.py` |
 | Supplementary Tables S1 to S25, Figures S1 to S4 | `si_body.tex`, `figs/si_*.pdf` | `make_si.py` |
 | Supplementary Tables S26 to S30 | `si_external.tex` | `make_external_tex.py` |
+| Smart charging with calibration over time: the sentence in Section 3.4 and Supplementary Table S31 | `calibrationnumbers.tex`, `si_calibration.tex` | `make_calibration_tex.py`, from the output of `scripts/calibration_robustness.py` |
 
 Tables 1 and 2 (literature and protocol definitions) contain no computed values.
 
