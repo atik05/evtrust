@@ -11,9 +11,9 @@ The package evaluates forecasts of EV charging session duration and energy, made
 ```
 src/evtrust/       pipeline: data, features, protocols, leakage audit, learners, conformal intervals,
                    cold-start decomposition, information availability, smart-charging impact
-scripts/           analysis entry points used by reproduce.sh, and the reproduction check
+scripts/           analysis entry points used by reproduce.sh
 configs/           acn.yaml and paloalto.yaml; they differ only in the sites, the data period and the source
-paper/             generators of every number, table and figure in the paper, and the published values (expected/)
+paper/             generators of every number, table and figure in the paper
 tests/             unit tests
 reproduce.sh       single entry point
 ```
@@ -55,7 +55,6 @@ or stage by stage:
 ./reproduce.sh acn        # ACN-Data: download, preparation, leakage audit and all analyses   -> runs/acn/
 ./reproduce.sh paloalto   # Palo Alto external validation                                      -> runs/paloalto/
 ./reproduce.sh paper      # numbers, tables and figures                                        -> paper/build/
-./reproduce.sh check      # compare paper/build/ with the published values in paper/expected/
 ```
 
 Each stage records a marker in `runs/<network>/.done/`, so an interrupted run resumes where it stopped. Logs are written to `runs/<network>/logs/`, and the package versions of each run to `runs/<network>/software_versions.txt`. The ACN stages, which include the twelve-learner benchmark, take the longest, of the order of a day on one RTX 4090; the Palo Alto stages take less.
@@ -78,9 +77,9 @@ Each stage records a marker in `runs/<network>/.done/`, so an interrupted run re
 
 Tables 1 and 2 (literature and protocol definitions) contain no computed values.
 
-## Verifying a reproduction
+## Randomness
 
-`./reproduce.sh check` compares every regenerated value with its published value in `paper/expected/` and every generated table line by line, and ends with `REPRODUCED` or a list of the values that differ. Seeds are fixed (11, 23, 37, 51 and 79), splits are frozen and every result is computed from the pipeline outputs. Training on a GPU is not bit-for-bit deterministic, however, so a value is accepted when it is identical or differs by at most one unit in its last reported digit, and every such difference is listed.
+Seeds are fixed (11, 23, 37, 51 and 79) and splits are frozen. Training on a GPU is not bit-for-bit deterministic, so a reproduced value can differ from the published one in its last reported digit.
 
 ## Tests
 

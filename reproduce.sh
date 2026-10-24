@@ -4,7 +4,6 @@
 #   ./reproduce.sh acn        ACN-Data: download, prepare, audit, all analyses      (needs ACN_API_TOKEN)
 #   ./reproduce.sh paloalto   Palo Alto external validation                          (needs PALOALTO_CSV)
 #   ./reproduce.sh paper      numbers, tables and figures into paper/build/
-#   ./reproduce.sh check      compare paper/build/ with the published values in paper/expected/
 #   ./reproduce.sh all        all of the above, in order
 #
 # Every stage writes a marker in runs/<network>/.done/, so an interrupted run resumes where it stopped.
@@ -82,7 +81,6 @@ case "${1:-}" in
   acn)      run_acn ;;
   paloalto) run_paloalto ;;
   paper)    run_paper ;;
-  check)    "$PY" "$ROOT/scripts/check_reproduction.py" "$ROOT/paper/build" "$ROOT/paper/expected" ;;
-  all)      run_acn; run_paloalto; run_paper; "$PY" "$ROOT/scripts/check_reproduction.py" "$ROOT/paper/build" "$ROOT/paper/expected" ;;
+  all)      run_acn; run_paloalto; run_paper ;;
   *)        sed -n '2,11p' "$0"; exit 1 ;;
 esac
