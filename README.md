@@ -20,7 +20,7 @@ reproduce.sh       single entry point
 
 ## Requirements
 
-Linux with an NVIDIA GPU; the published results were produced on one NVIDIA GeForce RTX 4090 (a 48 GB memory variant) with CUDA 12.4 and Python 3.12.
+Linux with an NVIDIA GPU. The published results were produced on one workstation: Intel Core Ultra 9 285K (24 cores), 64 GB of DDR5 memory, NVIDIA GeForce RTX 4090 (a 48 GB memory variant), Ubuntu 26.04, CUDA 12.4 and Python 3.12.
 
 ```bash
 conda env create -f environment.yml      # all dependencies, including pytest
@@ -57,7 +57,7 @@ or stage by stage:
 ./reproduce.sh paper      # numbers, tables and figures                                        -> paper/build/
 ```
 
-Each stage records a marker in `runs/<network>/.done/`, so an interrupted run resumes where it stopped. Logs are written to `runs/<network>/logs/`, and the package versions of each run to `runs/<network>/software_versions.txt`. The ACN stages, which include the twelve-learner benchmark, take the longest, of the order of a day on one RTX 4090; the Palo Alto stages take less.
+Each stage records a marker in `runs/<network>/.done/`, so an interrupted run resumes where it stopped. Logs are written to `runs/<network>/logs/`, and the package versions of each run to `runs/<network>/software_versions.txt`. On that workstation the ACN pipeline, including the twelve-learner benchmark, took about 14 hours, and the feature ablation and squared-error refits a few hours more; the Palo Alto pipeline took about 10 hours.
 
 ## List of tables, figures and programs
 
@@ -79,7 +79,7 @@ Tables 1 and 2 (literature and protocol definitions) contain no computed values.
 
 ## Randomness
 
-Seeds are fixed (11, 23, 37, 51 and 79) and splits are frozen. Training on a GPU is not bit-for-bit deterministic, so a reproduced value can differ from the published one in its last reported digit.
+Seeds are fixed (11, 23, 37, 51 and 79) and splits are frozen. Training on a GPU is not bit-for-bit deterministic, so a reproduced value can differ slightly from the published one.
 
 ## Tests
 

@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+message: "If you use this software, please cite the paper given under preferred-citation."
 title: "Trustworthy electric vehicle charging session prediction: leakage-aware evaluation, the cold-start gap and its cost to smart charging (code and reproduction package)"
 version: 1.0.0
 date-released: 2026-10-23
@@ -17,3 +17,24 @@ keywords:
   - cold start
   - conformal prediction
   - smart charging
+preferred-citation:
+  type: article
+  title: "Trustworthy electric vehicle charging session prediction: leakage-aware evaluation, the cold-start gap and its cost to smart charging"
+  journal: eTransportation
+  status: submitted
+  authors:
+    - family-names: "Rahman"
+      given-names: "Md. Atiqur"
+      affiliation: "Department of Computer Science and Engineering, Islamic University, Kushtia, Bangladesh"
+      email: atique@cse.iu.ac.bd
+    - family-names: "Hossain"
+      given-names: "Mohammad Alamgir"
+      affiliation: "Department of Computer Science and Engineering, Islamic University, Kushtia, Bangladesh"
+    - family-names: "Abdullah"
+      given-names: "Md. Ibrahim"
+      affiliation: "Department of Computer Science and Engineering, Islamic University, Kushtia, Bangladesh"
+    - family-names: "Ahsan-Ul-Ambia"
+      affiliation: "Department of Computer Science and Engineering, Islamic University, Kushtia, Bangladesh"
+    - family-names: "Islam"
+      given-names: "Md. Shahidul"
+      affiliation: "Department of Electrical and Electronic Engineering, Rajshahi University of Engineering & Technology, Rajshahi, Bangladesh"
