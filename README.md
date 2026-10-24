@@ -60,7 +60,7 @@ or stage by stage:
 
 Each stage records a marker in `runs/<network>/.done/`, so an interrupted run resumes where it stopped. Logs are written to `runs/<network>/logs/`, and the package versions of each run to `runs/<network>/software_versions.txt`. The ACN stages, which include the twelve-learner benchmark, take the longest, of the order of a day on one RTX 4090; the Palo Alto stages take less.
 
-## Where each result comes from
+## List of tables, figures and programs
 
 | In the paper | File in `paper/build/` | Generator |
 |---|---|---|
