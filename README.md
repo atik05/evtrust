@@ -2,7 +2,7 @@
 
 Code and reproduction package for the paper
 
-> **Trustworthy electric vehicle charging session prediction: leakage-aware evaluation, the cold-start gap and its cost to smart charging.** Md. Atiqur Rahman. Manuscript under review.
+> **Trustworthy electric vehicle charging session prediction: leakage-aware evaluation, the cold-start gap and its cost to smart charging.** Md. Atiqur Rahman, Mohammad Alamgir Hossain, Md. Ibrahim Abdullah, Ahsan-Ul-Ambia and Md. Shahidul Islam. Manuscript under review.
 
 The package evaluates forecasts of EV charging session duration and energy, made at plug-in, under six evaluation protocols (random, chronological, driver-disjoint and site-disjoint among them), decomposes the error gap for unseen drivers on identical sessions, measures how much accuracy depends on information available only after plug-in, and translates forecast error into smart-charging flexibility and site capacity. The analyses run on the three ACN-Data workplace sites and, as an external validation, on the public charging network of the City of Palo Alto.
 
