@@ -3,7 +3,7 @@
 #
 #   ./reproduce.sh acn        ACN-Data: download, prepare, audit, all analyses      (needs ACN_API_TOKEN)
 #   ./reproduce.sh paloalto   Palo Alto external validation                          (needs PALOALTO_CSV)
-#   ./reproduce.sh paper      numbers, tables and figures into paper/build/
+#   ./reproduce.sh figures    Figures 1 to 5 and Supplementary Figures S1 to S4 into figures/build/
 #   ./reproduce.sh all        all of the above, in order
 #
 # Every stage writes a marker in runs/<network>/.done/, so an interrupted run resumes where it stopped.
@@ -63,24 +63,20 @@ run_paloalto() {
   stage paloalto report     "$PY" "$ROOT/scripts/full_report.py"
 }
 
-run_paper() {
-  local A="$ROOT/runs/acn/results" P="$ROOT/runs/paloalto/results/FULL_REPORT.xlsx" B="$ROOT/paper/build"
+run_figures() {
+  local A="$ROOT/runs/acn/results" P="$ROOT/runs/paloalto/results/FULL_REPORT.xlsx" B="$ROOT/figures/build"
   for f in "$A/FULL_REPORT.xlsx" "$P"; do [[ -f "$f" ]] || { echo "missing $f: run the network stages first"; exit 1; }; done
-  mkdir -p "$B/figs" && cd "$B"
-  "$PY" ../make_results_tex.py "$A/FULL_REPORT.xlsx" "$A/operational"
-  "$PY" ../make_external_tex.py "$P"
-  "$PY" ../make_figures.py "$A" "$P" figs
-  "$PY" ../make_si.py "$A" "$P"
-  "$PY" ../make_calibration_tex.py "$A/paper/calibration_robustness.csv" "$ROOT/runs/paloalto/results/paper/calibration_robustness.csv"
-  "$PY" ../make_fig1.py
-  "$PY" ../make_overview.py .
-  echo "paper outputs written to $B"
+  mkdir -p "$B" && cd "$B"
+  "$PY" "$ROOT/figures/make_fig1.py"
+  "$PY" "$ROOT/figures/make_figures.py" "$A" "$P" .
+  "$PY" "$ROOT/figures/make_si_figures.py" "$A" "$P" .
+  echo "figures written to $B; every number and table is in runs/<network>/results/FULL_REPORT.xlsx"
 }
 
 case "${1:-}" in
   acn)      run_acn ;;
   paloalto) run_paloalto ;;
-  paper)    run_paper ;;
-  all)      run_acn; run_paloalto; run_paper ;;
+  figures)  run_figures ;;
+  all)      run_acn; run_paloalto; run_figures ;;
   *)        sed -n '2,11p' "$0"; exit 1 ;;
 esac

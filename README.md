@@ -13,7 +13,7 @@ src/evtrust/       pipeline: data, features, protocols, leakage audit, learners,
                    cold-start decomposition, information availability, smart-charging impact
 scripts/           analysis entry points used by reproduce.sh
 configs/           acn.yaml and paloalto.yaml; they differ only in the sites, the data period and the source
-paper/             generators of every number, table and figure in the paper
+figures/           programs that draw the figures of the paper
 tests/             unit tests
 reproduce.sh       single entry point
 ```
@@ -54,26 +54,21 @@ or stage by stage:
 ```bash
 ./reproduce.sh acn        # ACN-Data: download, preparation, leakage audit and all analyses   -> runs/acn/
 ./reproduce.sh paloalto   # Palo Alto external validation                                      -> runs/paloalto/
-./reproduce.sh paper      # numbers, tables and figures                                        -> paper/build/
+./reproduce.sh figures    # Figures 1 to 5 and Supplementary Figures S1 to S4                  -> figures/build/
 ```
 
 Each stage records a marker in `runs/<network>/.done/`, so an interrupted run resumes where it stopped. Logs are written to `runs/<network>/logs/`, and the package versions of each run to `runs/<network>/software_versions.txt`. On that workstation the ACN pipeline, including the twelve-learner benchmark, took about 14 hours, and the feature ablation and squared-error refits a few hours more; the Palo Alto pipeline took about 10 hours.
 
-## List of tables, figures and programs
+## Where each result comes from
 
-| In the paper | File in `paper/build/` | Generator |
+| In the paper | Output | Program |
 |---|---|---|
-| Every number in the text | `resultsnumbers.tex` (ACN), `externalnumbers.tex` (Palo Alto) | `make_results_tex.py`, `make_external_tex.py` |
-| Table 3, accuracy by protocol | `resultstableprotocols.tex` | `make_results_tex.py` |
-| Table 4, learner benchmark | `resultstablebenchmark.tex` | `make_results_tex.py` |
-| Table 5, cold-start decomposition | `resultstabledecomp.tex` | `make_results_tex.py` |
-| Table 6, ACN against Palo Alto | `externaltable.tex` | `make_external_tex.py` |
-| Graphical abstract | `overview.pdf`, `.svg`, `.png` | `make_overview.py` |
-| Figure 1 | `fig1_framework.svg`, `.pdf`, `.png` | `make_fig1.py` |
-| Figures 2 to 5 | `figs/fig2_protocols` to `figs/fig5_operation` (`.pdf`, `.svg`, `.png`) | `make_figures.py` |
-| Supplementary Tables S1 to S25, Figures S1 to S4 | `si_body.tex`, `figs/si_*.pdf` | `make_si.py` |
-| Supplementary Tables S26 to S30 | `si_external.tex` | `make_external_tex.py` |
-| Smart charging with calibration over time: the sentence in Section 3.4 and Supplementary Table S31 | `calibrationnumbers.tex`, `si_calibration.tex` | `make_calibration_tex.py`, from the output of `scripts/calibration_robustness.py` |
+| Every number in the text, Tables 3 to 5, Supplementary Tables S1 to S25 | `runs/acn/results/`: `FULL_REPORT.xlsx` and the CSV files under `metrics/`, `benchmark/`, `paper/` and `operational/` | `reproduce.sh acn` (summary by `scripts/full_report.py`) |
+| Table 6, Supplementary Tables S26 to S30 | `runs/paloalto/results/` (same layout) | `reproduce.sh paloalto` |
+| Calibration over time, Supplementary Table S31 | `runs/<network>/results/paper/calibration_robustness.csv` | `scripts/calibration_robustness.py` |
+| Figure 1, evaluation framework | `figures/build/fig1_framework.svg` (and `.pdf`, `.png` with cairosvg) | `figures/make_fig1.py` |
+| Figures 2 to 5 | `figures/build/fig2_protocols` to `fig5_operation` (`.pdf`, `.svg`, `.png`) | `figures/make_figures.py` |
+| Supplementary Figures S1 to S4 | `figures/build/si_cd_energy.pdf`, `si_cd_duration.pdf`, `si_ft.pdf`, `si_site.pdf` | `figures/make_si_figures.py` |
 
 Tables 1 and 2 (literature and protocol definitions) contain no computed values.
 

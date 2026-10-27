@@ -27,7 +27,7 @@ png_dir=ROOT/'figures'/'png'; pdf_dir=ROOT/'figures'/'pdf'; svg_dir=ROOT/'figure
 base_png={p.stem for p in png_dir.glob('*.png')}
 base_pdf={p.stem for p in pdf_dir.glob('*.pdf')}
 base_svg={p.stem for p in svg_dir.glob('*.svg')}
-if png_dir.exists() and not base_png:   # diagnostic figures are optional; the paper's figures are made by paper/
+if png_dir.exists() and not base_png:   # diagnostic figures are optional; the paper's figures are made by figures/
     errors.append('no PNG figures generated')
 for stem in sorted(base_png | base_pdf | base_svg):
     for ext,d in [('png',png_dir),('pdf',pdf_dir),('svg',svg_dir)]:
