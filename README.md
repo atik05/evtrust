@@ -2,7 +2,7 @@
 
 Code and reproduction package for the paper
 
-> **Trustworthy electric vehicle charging session prediction: leakage-aware evaluation, the cold-start gap and its cost to smart charging.** Md. Atiqur Rahman, Mohammad Alamgir Hossain, Md. Ibrahim Abdullah, Ahsan-Ul-Ambia and Md. Shahidul Islam. Manuscript under review.
+> **The cold start of smart charging: how much electric vehicle forecast accuracy survives deployment.** Md. Atiqur Rahman, Mohammad Alamgir Hossain, Md. Ibrahim Abdullah, Ahsan-Ul-Ambia and Md. Shahidul Islam. Manuscript submitted.
 
 The package evaluates forecasts of EV charging session duration and energy, made at plug-in, under six evaluation protocols (random, chronological, driver-disjoint and site-disjoint among them), decomposes the error gap for unseen drivers on identical sessions, measures how much accuracy depends on information available only after plug-in, and translates forecast error into smart-charging flexibility and site capacity. The analyses run on the three ACN-Data workplace sites and, as an external validation, on the public charging network of the City of Palo Alto.
 
@@ -54,7 +54,7 @@ or stage by stage:
 ```bash
 ./reproduce.sh acn        # ACN-Data: download, preparation, leakage audit and all analyses   -> runs/acn/
 ./reproduce.sh paloalto   # Palo Alto external validation                                      -> runs/paloalto/
-./reproduce.sh figures    # Figures 1 to 5 and Supplementary Figures S1 to S4                  -> figures/build/
+./reproduce.sh figures    # Figures 1 to 4 and Supplementary Figures S1 to S5                  -> figures/build/
 ```
 
 Each stage records a marker in `runs/<network>/.done/`, so an interrupted run resumes where it stopped. Logs are written to `runs/<network>/logs/`, and the package versions of each run to `runs/<network>/software_versions.txt`. On that workstation the ACN pipeline, including the twelve-learner benchmark, took about 14 hours, and the feature ablation and squared-error refits a few hours more; the Palo Alto pipeline took about 10 hours.
@@ -63,14 +63,18 @@ Each stage records a marker in `runs/<network>/.done/`, so an interrupted run re
 
 | In the paper | Output | Program |
 |---|---|---|
-| Every number in the text, Tables 3 to 5, Supplementary Tables S1 to S25 | `runs/acn/results/`: `FULL_REPORT.xlsx` and the CSV files under `metrics/`, `benchmark/`, `paper/` and `operational/` | `reproduce.sh acn` (summary by `scripts/full_report.py`) |
-| Table 6, Supplementary Tables S26 to S30 | `runs/paloalto/results/` (same layout) | `reproduce.sh paloalto` |
+| Every number in the text; Supplementary Tables S1 to S25 and S32 to S34 | `runs/acn/results/`: `FULL_REPORT.xlsx` and the CSV files under `metrics/`, `benchmark/`, `paper/` and `operational/` | `reproduce.sh acn` (summary by `scripts/full_report.py`) |
+| Table I (ACN and Palo Alto side by side) | `runs/acn/results/` and `runs/paloalto/results/` | `reproduce.sh acn` and `reproduce.sh paloalto` |
+| Supplementary Tables S26 to S30 | `runs/paloalto/results/` (same layout) | `reproduce.sh paloalto` |
 | Calibration over time, Supplementary Table S31 | `runs/<network>/results/paper/calibration_robustness.csv` | `scripts/calibration_robustness.py` |
 | Figure 1, evaluation framework | `figures/build/fig1_framework.svg` (and `.pdf`, `.png` with cairosvg) | `figures/make_fig1.py` |
-| Figures 2 to 5 | `figures/build/fig2_protocols` to `fig5_operation` (`.pdf`, `.svg`, `.png`) | `figures/make_figures.py` |
+| Figure 2, evaluation protocols | `figures/build/fig2_protocols` (`.pdf`, `.svg`, `.png`) | `figures/make_figures.py` |
+| Figure 3, cold-start decomposition and warm-up | `figures/build/fig3_coldstart` | `figures/make_figures.py` |
+| Figure 4, smart charging | `figures/build/fig5_operation` | `figures/make_figures.py` |
+| Supplementary Figure S5, information availability | `figures/build/fig4_availability` | `figures/make_figures.py` |
 | Supplementary Figures S1 to S4 | `figures/build/si_cd_energy.pdf`, `si_cd_duration.pdf`, `si_ft.pdf`, `si_site.pdf` | `figures/make_si_figures.py` |
 
-Tables 1 and 2 (literature and protocol definitions) contain no computed values.
+The figure files keep the names of the first version of the paper, so that this release reproduces the archived outputs unchanged: `fig5_operation` is Figure 4 of the paper and `fig4_availability` is Supplementary Figure S5. Supplementary Tables S35 and S36 (protocol definitions and literature) contain no computed values.
 
 ## Randomness
 

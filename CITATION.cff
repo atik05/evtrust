@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the paper given under preferred-citation."
-title: "Trustworthy electric vehicle charging session prediction: leakage-aware evaluation, the cold-start gap and its cost to smart charging (code and reproduction package)"
-version: 1.0.2
-date-released: 2026-10-26
+title: "The cold start of smart charging: how much electric vehicle forecast accuracy survives deployment (code and reproduction package)"
+version: 1.0.3
+date-released: 2026-11-13
 doi: 10.5281/zenodo.23659991
 license: MIT
 authors:
@@ -20,8 +20,7 @@ keywords:
   - smart charging
 preferred-citation:
   type: article
-  title: "Trustworthy electric vehicle charging session prediction: leakage-aware evaluation, the cold-start gap and its cost to smart charging"
-  journal: eTransportation
+  title: "The cold start of smart charging: how much electric vehicle forecast accuracy survives deployment"
   status: submitted
   authors:
     - family-names: "Rahman"
