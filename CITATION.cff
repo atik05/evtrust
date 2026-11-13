@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the paper given under preferred-citation."
-title: "The cold start of smart charging: how much electric vehicle forecast accuracy survives deployment (code and reproduction package)"
-version: 1.0.3
+title: "The cold start of smart charging: forecast generalization, driver history, and reliable EV charging flexibility (code and reproduction package)"
+version: 1.0.4
 date-released: 2026-11-13
 doi: 10.5281/zenodo.23659991
 license: MIT
@@ -20,7 +20,7 @@ keywords:
   - smart charging
 preferred-citation:
   type: article
-  title: "The cold start of smart charging: how much electric vehicle forecast accuracy survives deployment"
+  title: "The cold start of smart charging: forecast generalization, driver history, and reliable EV charging flexibility"
   status: submitted
   authors:
     - family-names: "Rahman"

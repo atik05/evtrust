@@ -2,7 +2,7 @@
 
 Code and reproduction package for the paper
 
-> **Trustworthy electric vehicle charging session prediction: leakage-aware evaluation, the cold-start gap and its cost to smart charging.** Md. Atiqur Rahman. Manuscript under review.
+> **The cold start of smart charging: forecast generalization, driver history, and reliable EV charging flexibility.** Md. Atiqur Rahman, Mohammad Alamgir Hossain, Md. Ibrahim Abdullah, Ahsan-Ul-Ambia and Md. Shahidul Islam. Manuscript submitted.
 
 The package evaluates forecasts of EV charging session duration and energy, made at plug-in, under six evaluation protocols (random, chronological, driver-disjoint and site-disjoint among them), decomposes the error gap for unseen drivers on identical sessions, measures how much accuracy depends on information available only after plug-in, and translates forecast error into smart-charging flexibility and site capacity. The analyses run on the three ACN-Data workplace sites and, as an external validation, on the public charging network of the City of Palo Alto.
 
@@ -11,16 +11,16 @@ The package evaluates forecasts of EV charging session duration and energy, made
 ```
 src/evtrust/       pipeline: data, features, protocols, leakage audit, learners, conformal intervals,
                    cold-start decomposition, information availability, smart-charging impact
-scripts/           analysis entry points used by reproduce.sh, and the reproduction check
+scripts/           analysis entry points used by reproduce.sh
 configs/           acn.yaml and paloalto.yaml; they differ only in the sites, the data period and the source
-paper/             generators of every number, table and figure in the paper, and the published values (expected/)
+figures/           programs that draw the figures of the paper
 tests/             unit tests
 reproduce.sh       single entry point
 ```
 
 ## Requirements
 
-Linux with an NVIDIA GPU; the published results were produced on one NVIDIA GeForce RTX 4090 (a 48 GB memory variant) with CUDA 12.4 and Python 3.12.
+Linux with an NVIDIA GPU. The published results were produced on one workstation: Intel Core Ultra 9 285K (24 cores), 64 GB of DDR5 memory, NVIDIA GeForce RTX 4090 (a 48 GB memory variant), Ubuntu 26.04, CUDA 12.4 and Python 3.12.
 
 ```bash
 conda env create -f environment.yml      # all dependencies, including pytest
@@ -54,33 +54,31 @@ or stage by stage:
 ```bash
 ./reproduce.sh acn        # ACN-Data: download, preparation, leakage audit and all analyses   -> runs/acn/
 ./reproduce.sh paloalto   # Palo Alto external validation                                      -> runs/paloalto/
-./reproduce.sh paper      # numbers, tables and figures                                        -> paper/build/
-./reproduce.sh check      # compare paper/build/ with the published values in paper/expected/
+./reproduce.sh figures    # Figures 1 to 4 and Supplementary Figures S1 to S5                  -> figures/build/
 ```
 
-Each stage records a marker in `runs/<network>/.done/`, so an interrupted run resumes where it stopped. Logs are written to `runs/<network>/logs/`, and the package versions of each run to `runs/<network>/software_versions.txt`. The ACN stages, which include the twelve-learner benchmark, take the longest, of the order of a day on one RTX 4090; the Palo Alto stages take less.
+Each stage records a marker in `runs/<network>/.done/`, so an interrupted run resumes where it stopped. Logs are written to `runs/<network>/logs/`, and the package versions of each run to `runs/<network>/software_versions.txt`. On that workstation the ACN pipeline, including the twelve-learner benchmark, took about 14 hours, and the feature ablation and squared-error refits a few hours more; the Palo Alto pipeline took about 10 hours.
 
 ## Where each result comes from
 
-| In the paper | File in `paper/build/` | Generator |
+| In the paper | Output | Program |
 |---|---|---|
-| Every number in the text | `resultsnumbers.tex` (ACN), `externalnumbers.tex` (Palo Alto) | `make_results_tex.py`, `make_external_tex.py` |
-| Table 3, accuracy by protocol | `resultstableprotocols.tex` | `make_results_tex.py` |
-| Table 4, learner benchmark | `resultstablebenchmark.tex` | `make_results_tex.py` |
-| Table 5, cold-start decomposition | `resultstabledecomp.tex` | `make_results_tex.py` |
-| Table 6, ACN against Palo Alto | `externaltable.tex` | `make_external_tex.py` |
-| Graphical abstract | `overview.pdf`, `.svg`, `.png` | `make_overview.py` |
-| Figure 1 | `fig1_framework.svg`, `.pdf`, `.png` | `make_fig1.py` |
-| Figures 2 to 5 | `figs/fig2_protocols` to `figs/fig5_operation` (`.pdf`, `.svg`, `.png`) | `make_figures.py` |
-| Supplementary Tables S1 to S25, Figures S1 to S4 | `si_body.tex`, `figs/si_*.pdf` | `make_si.py` |
-| Supplementary Tables S26 to S30 | `si_external.tex` | `make_external_tex.py` |
-| Smart charging with calibration over time: the sentence in Section 3.4 and Supplementary Table S31 | `calibrationnumbers.tex`, `si_calibration.tex` | `make_calibration_tex.py`, from the output of `scripts/calibration_robustness.py` |
+| Every number in the text; Supplementary Tables S1 to S25 and S32 to S34 | `runs/acn/results/`: `FULL_REPORT.xlsx` and the CSV files under `metrics/`, `benchmark/`, `paper/` and `operational/` | `reproduce.sh acn` (summary by `scripts/full_report.py`) |
+| Table I (ACN and Palo Alto side by side) | `runs/acn/results/` and `runs/paloalto/results/` | `reproduce.sh acn` and `reproduce.sh paloalto` |
+| Supplementary Tables S26 to S30 | `runs/paloalto/results/` (same layout) | `reproduce.sh paloalto` |
+| Calibration over time, Supplementary Table S31 | `runs/<network>/results/paper/calibration_robustness.csv` | `scripts/calibration_robustness.py` |
+| Figure 1, evaluation framework | `figures/build/fig1_framework.svg` (and `.pdf`, `.png` with cairosvg) | `figures/make_fig1.py` |
+| Figure 2, evaluation protocols | `figures/build/fig2_protocols` (`.pdf`, `.svg`, `.png`) | `figures/make_figures.py` |
+| Figure 3, cold-start decomposition and warm-up | `figures/build/fig3_coldstart` | `figures/make_figures.py` |
+| Figure 4, smart charging | `figures/build/fig5_operation` | `figures/make_figures.py` |
+| Supplementary Figure S5, information availability | `figures/build/fig4_availability` | `figures/make_figures.py` |
+| Supplementary Figures S1 to S4 | `figures/build/si_cd_energy.pdf`, `si_cd_duration.pdf`, `si_ft.pdf`, `si_site.pdf` | `figures/make_si_figures.py` |
 
-Tables 1 and 2 (literature and protocol definitions) contain no computed values.
+The figure files keep the names of the first version of the paper, so that this release reproduces the archived outputs unchanged: `fig5_operation` is Figure 4 of the paper and `fig4_availability` is Supplementary Figure S5. Supplementary Tables S35 and S36 (protocol definitions and literature) contain no computed values.
 
-## Verifying a reproduction
+## Randomness
 
-`./reproduce.sh check` compares every regenerated value with its published value in `paper/expected/` and every generated table line by line, and ends with `REPRODUCED` or a list of the values that differ. Seeds are fixed (11, 23, 37, 51 and 79), splits are frozen and every result is computed from the pipeline outputs. Training on a GPU is not bit-for-bit deterministic, however, so a value is accepted when it is identical or differs by at most one unit in its last reported digit, and every such difference is listed.
+Seeds are fixed (11, 23, 37, 51 and 79) and splits are frozen. Training on a GPU is not bit-for-bit deterministic, so a reproduced value can differ slightly from the published one.
 
 ## Tests
 
