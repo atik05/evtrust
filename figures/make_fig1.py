@@ -181,7 +181,7 @@ rows = [
     ("Random", "uniform permutation", "TTQTCTTQTTCTTQTT", {}),
     ("Chronological", "maturation purge, 4 h embargo", "TTTTTTTTTGCCGQQQ", {}),
     ("Chronological, pre-2020", "rolling origin, before 1 Mar 2020", "TTTTTTTTGQQQXXXX", {"divider": 12, "sens": True}),
-    ("User-disjoint", "no shared drivers; anonymous excluded", "TTTTTTTTCCQQQQXX",
+    ("Driver-disjoint", "no shared drivers; anonymous excluded", "TTTTTTTTCCQQQQXX",
      {"groups": [4, 8, 10, 14], "labels": [((0, 8), "drivers in training"), ((14, 16), "anon.")]}),
     ("Site-disjoint, online", "own history accrues at the target", "TTTTTTTTTTTCGQQQ",
      {"groups": [6, 11], "labels": [((0, 6), "source"), ((6, 11), "source"), ((11, 16), "target")]}),
@@ -324,7 +324,7 @@ XV = EY + 194 + 16
 rect(20, XV, W - 40, 62, 14, "#E8F6F1", GREEN, 2)
 text(44, XV + 39, "External validation", 23, "bold", INK)
 text(300, XV + 39, "City of Palo Alto public network, 2011 to 2020: 256,391 sessions after cleaning, four locations", 20.5, "normal", INK)
-text(W - 44, XV + 39, "same protocols, learners, features, seeds and audit", 19, "normal", SUB, "end")
+text(W - 44, XV + 39, "same protocols, learners, features, seeds and leakage audit", 19, "normal", SUB, "end")
 add('</svg>')
 Path('fig1_framework.svg').write_text('\n'.join(out), encoding='utf-8')
 try:
