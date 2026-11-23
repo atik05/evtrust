@@ -2,7 +2,7 @@
 
 Code and reproduction package for the paper
 
-> **The cold start of smart charging: forecast generalization, driver history, and reliable EV charging flexibility.** Md. Atiqur Rahman, Mohammad Alamgir Hossain, Md. Ibrahim Abdullah, Ahsan-Ul-Ambia and Md. Shahidul Islam. Manuscript submitted.
+> **The cold start of smart charging: forecast generalization, driver history, and reliable EV charging flexibility.** Md. Atiqur Rahman, Mohammad Alamgir Hossain, Md Al Amin, Md. Ibrahim Abdullah, Ahsan-Ul-Ambia and Md. Shahidul Islam. Manuscript submitted.
 
 The package evaluates forecasts of EV charging session duration and energy, made at plug-in, under six evaluation protocols (random, chronological, driver-disjoint and site-disjoint among them), decomposes the error gap for unseen drivers on identical sessions, measures how much accuracy depends on information available only after plug-in, and translates forecast error into smart-charging flexibility and site capacity. The analyses run on the three ACN-Data workplace sites and, as an external validation, on the public charging network of the City of Palo Alto.
 
@@ -11,9 +11,13 @@ The package evaluates forecasts of EV charging session duration and energy, made
 ```
 src/evtrust/       pipeline: data, features, protocols, leakage audit, learners, conformal intervals,
                    cold-start decomposition, information availability, smart-charging impact
+robustness/        robustness analyses and the ACN-Sim site-level study (see below)
 scripts/           analysis entry points used by reproduce.sh
 configs/           acn.yaml and paloalto.yaml; they differ only in the sites, the data period and the source
 figures/           programs that draw the figures of the paper
+data/manuscript_shards/  the cold-start predictions of the paper (ACN), input to the robustness analyses
+results/robustness/      result tables of the robustness analyses and the ACN-Sim study, as reported
+third_party/wheels/      acnportal 0.3.3 and adacharge 0.1.0 (BSD licence, Caltech), used by ACN-Sim
 tests/             unit tests
 reproduce.sh       single entry point
 ```
@@ -29,6 +33,17 @@ pip install -r requirements-lock.txt     # optional: the exact versions of the p
 ```
 
 Without conda, `pip install -e ".[dev,torch,paper]"` installs the package with the test, deep-learning and figure dependencies; the figure export also needs the Cairo library of the system (for example `apt install libcairo2`). `requirements-lock.txt` lists the exact versions of the published run; every run records its own in `runs/<network>/requirements-lock.txt`, written by `scripts/make_lock.py` from `pip freeze`.
+
+## Robustness analyses and the site-level simulation
+
+`robustness/` holds the analyses of Sections III-B to III-D of the paper that build on the cold-start predictions: the order of the decomposition (two-order shares), a driver-identity encoding and training size, the optimism ladder up to a literature-style random split, learned cold-start priors, genuine first visits and anonymous sessions, censored energy need, charging rate and laxity forecasting, the reliability of the conformal shifts (Proposition 1), protocol errors by period and rolling-origin evaluation, and the ACN-Sim study (acnportal 0.3.3) on the Caltech and JPL network models: real capacity (E1), the transformer capacity sweep (E2), the adaptive scheduling algorithm under a time-of-use tariff (E3) and weekday events (E4, E5).
+
+```bash
+pip install -e ".[sim]"                 # cvxpy; acnportal and adacharge are installed from third_party/wheels
+./reproduce.sh robustness               # or: bash scripts/run_robustness.sh
+```
+
+The runner checks the included predictions of the paper (`data/manuscript_shards`, SHA-256 sums), runs a smoke test on a small subset of both networks, then the full analyses; a rerun resumes. Settings are in `configs/robustness.yaml`. Every table is written to `runs/robustness/full/<network>/` with a summary in `RESULTS.md`; the tables of the published run are in `results/robustness/`, and `figures/make_figures.py` draws the site-level panels of Fig. 4 from them.
 
 ## Data
 
@@ -54,7 +69,8 @@ or stage by stage:
 ```bash
 ./reproduce.sh acn        # ACN-Data: download, preparation, leakage audit and all analyses   -> runs/acn/
 ./reproduce.sh paloalto   # Palo Alto external validation                                      -> runs/paloalto/
-./reproduce.sh figures    # Figures 1 to 4 and Supplementary Figures S1 to S5                  -> figures/build/
+./reproduce.sh robustness # robustness analyses and ACN-Sim (after acn and paloalto)             -> runs/robustness/
+./reproduce.sh figures    # Figures 1 to 4 and Supplementary Figures S1 to S4                  -> figures/build/
 ```
 
 Each stage records a marker in `runs/<network>/.done/`, so an interrupted run resumes where it stopped. Logs are written to `runs/<network>/logs/`, and the package versions of each run to `runs/<network>/software_versions.txt`. On that workstation the ACN pipeline, including the twelve-learner benchmark, took about 14 hours, and the feature ablation and squared-error refits a few hours more; the Palo Alto pipeline took about 10 hours.
@@ -63,18 +79,20 @@ Each stage records a marker in `runs/<network>/.done/`, so an interrupted run re
 
 | In the paper | Output | Program |
 |---|---|---|
-| Every number in the text; Supplementary Tables S1 to S25 and S32 to S34 | `runs/acn/results/`: `FULL_REPORT.xlsx` and the CSV files under `metrics/`, `benchmark/`, `paper/` and `operational/` | `reproduce.sh acn` (summary by `scripts/full_report.py`) |
-| Table I (ACN and Palo Alto side by side) | `runs/acn/results/` and `runs/paloalto/results/` | `reproduce.sh acn` and `reproduce.sh paloalto` |
-| Supplementary Tables S26 to S30 | `runs/paloalto/results/` (same layout) | `reproduce.sh paloalto` |
-| Calibration over time, Supplementary Table S31 | `runs/<network>/results/paper/calibration_robustness.csv` | `scripts/calibration_robustness.py` |
+| Main-pipeline numbers in the text; Supplementary Tables S1 to S12, S14, S15, S18 to S20, S23, S25 to S27, S29, S42 to S47 | `runs/acn/results/`: `FULL_REPORT.xlsx` and the CSV files under `metrics/`, `benchmark/`, `paper/` and `operational/` | `reproduce.sh acn` (summary by `scripts/full_report.py`) |
+| Table II (ACN and Palo Alto side by side) | `runs/acn/results/`, `runs/paloalto/results/` and `runs/robustness/full/` | `reproduce.sh acn`, `paloalto` and `robustness` |
+| Supplementary Tables S37 to S41 | `runs/paloalto/results/` (same layout) | `reproduce.sh paloalto` |
+| Calibration over time, Supplementary Table S33 | `runs/<network>/results/paper/calibration_robustness.csv` | `scripts/calibration_robustness.py` |
+| Robustness analyses: Supplementary Tables S13, S16, S17, S21, S22, S24, S28, S30 to S32 | `runs/robustness/full/<network>/` (published run: `results/robustness/`) | `reproduce.sh robustness` |
+| ACN-Sim: Table III, Supplementary Tables S34 to S36 | `runs/robustness/full/acn/acnsim_*.csv` (published run: `results/robustness/acn/`) | `reproduce.sh robustness` |
 | Figure 1, evaluation framework | `figures/build/fig1_framework.svg` (and `.pdf`, `.png` with cairosvg) | `figures/make_fig1.py` |
 | Figure 2, evaluation protocols | `figures/build/fig2_protocols` (`.pdf`, `.svg`, `.png`) | `figures/make_figures.py` |
 | Figure 3, cold-start decomposition and warm-up | `figures/build/fig3_coldstart` | `figures/make_figures.py` |
-| Figure 4, smart charging | `figures/build/fig5_operation` | `figures/make_figures.py` |
-| Supplementary Figure S5, information availability | `figures/build/fig4_availability` | `figures/make_figures.py` |
-| Supplementary Figures S1 to S4 | `figures/build/si_cd_energy.pdf`, `si_cd_duration.pdf`, `si_ft.pdf`, `si_site.pdf` | `figures/make_si_figures.py` |
+| Figure 4, per-session and site-level smart charging | `figures/build/fig4_operation` | `figures/make_figures.py` |
+| Supplementary Figure S3, information availability | `figures/build/si_fig_availability` | `figures/make_figures.py` |
+| Supplementary Figures S1, S2 and S4 | `figures/build/si_cd_energy.pdf`, `si_cd_duration.pdf`, `si_ft.pdf` | `figures/make_si_figures.py` |
 
-The figure files keep the names of the first version of the paper, so that this release reproduces the archived outputs unchanged: `fig5_operation` is Figure 4 of the paper and `fig4_availability` is Supplementary Figure S5. Supplementary Tables S35 and S36 (protocol definitions and literature) contain no computed values.
+Supplementary Tables S4 and S48 (protocol definitions and literature) contain no computed values.
 
 ## Randomness
 

@@ -1,0 +1,6 @@
+calibration,gamma,n,P(D_hat>D)_pct,P(E_hat<E_ach)_pct,P(U>0)_pct,bound_2gamma_pct,undelivered_share_pct,flex_pct_of_oracle
+identified drivers (transfer),0.005,7130.0,0.4656381486676017,1.4305750350631137,0.0,1.0,0.0,0.0
+identified drivers (transfer),0.01,7130.0,0.8667601683029453,2.3422159887798037,0.0,2.0,0.0,0.0
+identified drivers (transfer),0.025,7130.0,2.3899018232819076,4.336605890603086,0.0,5.0,0.0,0.0
+identified drivers (transfer),0.05,7130.0,4.9144460028050485,7.133239831697054,0.0,10.0,0.0,0.0
+identified drivers (transfer),0.1,7130.0,9.360448807854137,11.887798036465638,0.0,20.0,0.0,0.0

@@ -8,7 +8,7 @@ from pathlib import Path
 W, H = 1800, 1134
 FONT = "Liberation Sans, Arial, Helvetica, sans-serif"
 INK = "#1F2933"
-SUB = "#52606D"
+SUB = "#323F4B"
 LINE = "#9AA5B1"
 PANEL_FILL = "#F8FAFC"
 PANEL_EDGE = "#CBD2D9"
@@ -91,9 +91,9 @@ arrow_down(AX + AW / 2, 364, 394)
 # plug-in information set
 IB_TOP = 394
 it = "<tspan font-style='italic'>t</tspan>"
-tau_j = "<tspan font-style='italic'>τ</tspan><tspan font-size='16' dy='5' font-style='italic'>j</tspan><tspan dy='-5'> </tspan>"
+tout_j = "<tspan font-style='italic'>t</tspan><tspan font-size='15' dy='-9' font-style='normal'>out</tspan><tspan font-size='15' dx='-21' dy='15' font-style='italic'>j</tspan><tspan dy='-6' dx='14'> </tspan>"
 items = [("Calendar, cyclic encodings", None),
-         ("Driver history from completed", f"sessions only ({tau_j}&lt; {it})"),
+         ("Driver history from completed", f"sessions only ({tout_j}&lt; {it})"),
          ("Station history from completed", "sessions only"),
          ("Driver request: last revision", f"made at or before {it}")]
 yy = IB_TOP + 66
@@ -287,7 +287,7 @@ x_plug, x_s, x_full, x_dep = DX + 46, DX + 180, DX + 310, DX + 338
 rect(x_plug, sy - 16, x_s - x_plug, 32, 3, "url(#hatch)", "#9AA5B1", 1)
 rect(x_s, sy - 16, x_full - x_s, 32, 3, BLUE)
 text((x_plug + x_s) / 2, sy + 7, "deferral Φ", 20, "bold", INK, "middle")
-text((x_s + x_full) / 2, sy + 7, "charge at P", 20, "bold", "#FFFFFF", "middle")
+text((x_s + x_full) / 2, sy + 7, "charge", 20, "bold", "#FFFFFF", "middle")
 line(x_plug, sy - 26, x_plug, sy + 26, INK, 2)
 line(x_dep, sy - 26, x_dep, sy + 26, ORANGE, 2.5)
 text(x_plug, sy + 44, "plug-in", 15.5, "normal", SUB, "middle")

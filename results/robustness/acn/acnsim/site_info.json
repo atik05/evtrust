@@ -1,0 +1,38 @@
+{
+ "caltech": {
+  "sessions": 27582,
+  "station_not_in_network": 0,
+  "overlapping_dropped": 625,
+  "week_boundary_spanning": 238,
+  "replayed": 26957,
+  "weeks": 97,
+  "origin": "2018-04-23 00:00:00"
+ },
+ "caltech (E3, 15-minute step)": {
+  "sessions": 27582,
+  "station_not_in_network": 0,
+  "overlapping_dropped": 1274,
+  "week_boundary_spanning": 234,
+  "replayed": 26308,
+  "weeks": 97,
+  "origin": "2018-04-23 00:00:00"
+ },
+ "jpl": {
+  "sessions": 25068,
+  "station_not_in_network": 0,
+  "overlapping_dropped": 655,
+  "week_boundary_spanning": 10,
+  "replayed": 24413,
+  "weeks": 78,
+  "origin": "2018-09-03 00:00:00"
+ },
+ "jpl (E3, 15-minute step)": {
+  "sessions": 25068,
+  "station_not_in_network": 0,
+  "overlapping_dropped": 1765,
+  "week_boundary_spanning": 10,
+  "replayed": 23303,
+  "weeks": 78,
+  "origin": "2018-09-03 00:00:00"
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "network": "paloalto",
+ "smoke": false,
+ "sessions": 256391,
+ "anonymous_share": 0.029455012071406564,
+ "catboost_kwh_delivered_seeds": [
+  11,
+  23,
+  37,
+  51,
+  79
+ ],
+ "catboost_duration_hours_seeds": [
+  11,
+  23,
+  37,
+  51,
+  79
+ ],
+ "ft_kwh_delivered_seeds": [
+  11,
+  23,
+  37,
+  51,
+  79
+ ],
+ "ft_duration_hours_seeds": [
+  11,
+  23,
+  37,
+  51,
+  79
+ ],
+ "rows_per_seed": 213405,
+ "drivers": 5703,
+ "cohort_kwh_delivered": {
+  "rebuilt": 213405,
+  "shards": 213405,
+  "only_rebuilt": 0,
+  "only_shards": 0
+ },
+ "max_abs_diff_kwh_delivered": {
+  "label": 0.0,
+  "history_count": 0.0
+ },
+ "cohort_duration_hours": {
+  "rebuilt": 213405,
+  "shards": 213405,
+  "only_rebuilt": 0,
+  "only_shards": 0
+ },
+ "max_abs_diff_duration_hours": {
+  "label": 0.0,
+  "history_count": 0.0
+ },
+ "value_of_history_energy_catboost": 42.83613778565958,
+ "flex_at_2pct_catboost": {
+  "A": 30.35199119522246,
+  "C": 27.013215966500685,
+  "D": 18.11192011277089
+ },
+ "torch_cuda": true,
+ "gpu": "NVIDIA GeForce RTX 4090",
+ "catboost_task_type": "GPU",
+ "cpu_count": 24,
+ "problems": []
+}

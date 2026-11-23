@@ -3,7 +3,8 @@
 #
 #   ./reproduce.sh acn        ACN-Data: download, prepare, audit, all analyses      (needs ACN_API_TOKEN)
 #   ./reproduce.sh paloalto   Palo Alto external validation                          (needs PALOALTO_CSV)
-#   ./reproduce.sh figures    Figures 1 to 5 and Supplementary Figures S1 to S4 into figures/build/
+#   ./reproduce.sh robustness robustness analyses and the ACN-Sim site-level study      (after acn and paloalto)
+#   ./reproduce.sh figures    Figures 1 to 4 and the Supplementary figures into figures/build/
 #   ./reproduce.sh all        all of the above, in order
 #
 # Every stage writes a marker in runs/<network>/.done/, so an interrupted run resumes where it stopped.
@@ -68,7 +69,8 @@ run_figures() {
   for f in "$A/FULL_REPORT.xlsx" "$P"; do [[ -f "$f" ]] || { echo "missing $f: run the network stages first"; exit 1; }; done
   mkdir -p "$B" && cd "$B"
   "$PY" "$ROOT/figures/make_fig1.py"
-  "$PY" "$ROOT/figures/make_figures.py" "$A" "$P" .
+  local S="$ROOT/runs/robustness/full/acn"; [[ -f "$S/acnsim_capacity_needed.csv" ]] || S="$ROOT/results/robustness/acn"
+  "$PY" "$ROOT/figures/make_figures.py" "$A" "$P" . "$S"
   "$PY" "$ROOT/figures/make_si_figures.py" "$A" "$P" .
   echo "figures written to $B; every number and table is in runs/<network>/results/FULL_REPORT.xlsx"
 }
@@ -76,7 +78,8 @@ run_figures() {
 case "${1:-}" in
   acn)      run_acn ;;
   paloalto) run_paloalto ;;
+  robustness) bash "$ROOT/scripts/run_robustness.sh" ;;
   figures)  run_figures ;;
-  all)      run_acn; run_paloalto; run_figures ;;
-  *)        sed -n '2,11p' "$0"; exit 1 ;;
+  all)      run_acn; run_paloalto; bash "$ROOT/scripts/run_robustness.sh"; run_figures ;;
+  *)        sed -n '2,12p' "$0"; exit 1 ;;
 esac

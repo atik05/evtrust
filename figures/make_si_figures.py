@@ -1,10 +1,10 @@
-"""Supplementary Figures S1 to S4 from the pipeline outputs of both networks.
+"""Supplementary Figures S1, S2 and S4 from the pipeline outputs of both networks.
 
     python make_si_figures.py ACN_RESULTS_DIR PALOALTO_FULL_REPORT.xlsx OUT_DIR
 
 S1 and S2: critical-difference diagrams of the learner benchmark (energy, duration).
-S3: cold-start dynamics and smart-charging trade-off for the FT-Transformer on both networks.
-S4: site-level undelivered energy for the six scheduling policies at Caltech and JPL.
+S4: cold-start dynamics and smart-charging trade-off for the FT-Transformer on both networks
+(S3, information availability, is drawn by make_figures.py).
 Each figure is written as vector PDF.
 """
 import sys
@@ -76,7 +76,7 @@ for t, tl in [('kwh_delivered', 'energy'), ('duration_hours', 'duration')]:
 
 plt.rcParams.update({'font.family': 'sans-serif', 'font.sans-serif': ['Liberation Sans', 'Arial'], 'font.size': 7.5,
                      'axes.spines.top': False, 'axes.spines.right': False, 'pdf.fonttype': 42})
-C = {'blue': '#0072B2', 'sky': '#56B4E9', 'verm': '#D55E00', 'orange': '#E69F00', 'grey': '#8C959F', 'black': '#1F2933'}
+C = {'blue': '#0072B2', 'sky': '#56B4E9', 'verm': '#D55E00', 'orange': '#E69F00', 'grey': '#8C959F', 'black': '#000000'}
 MM = 1 / 25.4
 tag = lambda ax, l: ax.text(-0.16, 1.07, l, transform=ax.transAxes, fontsize=9, fontweight='bold', va='bottom')
 w = pd.read_csv(R / 'paper/coldstart_warmup.csv'); tr = pd.read_csv(R / 'paper/impact_tradeoff.csv')
@@ -88,36 +88,21 @@ def PAS(name):
 pa_w = PAS('Cold-start warm-up curve'); pa_tr = PAS('Smart charging trade-off'); pa_dc = PAS('Cold-start decomposition')
 fig, axs = plt.subplots(2, 3, figsize=(190 * MM, 118 * MM), gridspec_kw={'wspace': 0.45, 'hspace': 0.75})
 order = ['0', '1', '2', '3-4', '5-9', '10-19', '20+']
-for row, (ww, tt, net) in enumerate([(w, tr, 'ACN workplace sites'), (pa_w, pa_tr, 'Palo Alto public network')]):
-    for ax, (t, unit, title) in zip(axs[row, :2], [('kwh_delivered', 'kWh', 'Energy: warm-up'), ('duration_hours', 'h', 'Duration: warm-up')]):
+for row, (ww, tt, net) in enumerate([(w, tr, 'ACN'), (pa_w, pa_tr, 'Palo Alto')]):
+    for ax, (t, unit, title) in zip(axs[row, :2], [('kwh_delivered', 'kWh', 'energy by driver history'), ('duration_hours', 'h', 'duration by driver history')]):
         z = ww[(ww.target == t) & (ww.learner == 'ft')].copy(); z['k'] = z.k_bucket.astype(str); z = z.set_index('k').loc[order]; x = np.arange(7)
         ax.plot(x, z.mae_random, '--o', color=C['grey'], ms=3, label='Random split'); ax.plot(x, z.mae_warm, '-o', color=C['blue'], ms=3, label='Unseen, history')
         ax.plot(x, z.mae_cold, '-s', color=C['verm'], ms=3, label='Cold start'); ax.set_xticks(x); ax.set_xticklabels(order, fontsize=5.8)
-        ax.set_xlabel("Driver's completed sessions before this one"); ax.set_ylabel(f'MAE ({unit})'); ax.set_title(title, loc='left', fontsize=8)
+        ax.set_xlabel("Driver's completed sessions before this one"); ax.set_ylabel(f'MAE ({unit})'); ax.set_title(f'{net}, {title}', loc='left', fontsize=8)
     z = tt[tt.learner == 'ft']
     for st, lab, col in [('A', 'Driver seen', C['blue']), ('C', 'Unseen, history', C['sky']), ('D', 'Cold start', C['verm'])]:
         q = z[z.setting == st].sort_values('unmet_share_pct'); axs[row, 2].plot(q.unmet_share_pct, q.flex_vs_oracle_pct, '-o', ms=2.6, lw=1.0, color=col, label=lab, markevery=max(1, len(q) // 10))
     axs[row, 2].set_xlim(0, 30); axs[row, 2].set_ylim(0, 102); axs[row, 2].axvline(2, color=C['grey'], lw=0.6, ls=':')
     axs[row, 2].set_xlabel('Undelivered energy (% of achievable)'); axs[row, 2].set_ylabel('Flexibility retained (% of oracle)')
-    axs[row, 2].set_title('Smart charging', loc='left', fontsize=8)
-    for ax_ in axs[row]:
-        ax_.annotate(net + ', FT-Transformer', xy=(0, 1), xycoords='axes fraction', xytext=(0, 17), textcoords='offset points', fontsize=6.8, color=C['grey'])
+    axs[row, 2].set_title(f'{net}, per-session charging', loc='left', fontsize=8)
 for ax_, l_ in zip(axs.ravel(), 'abcdef'):
     ax_.annotate(l_, xy=(-0.16, 1), xycoords='axes fraction', xytext=(0, 5), textcoords='offset points', fontsize=9, fontweight='bold', va='bottom')
 h_, l_ = axs[0, 0].get_legend_handles_labels(); fig.legend(h_, l_, frameon=False, ncol=3, loc='upper center', bbox_to_anchor=(0.5, 1.03), fontsize=6.8)
 axs[0, 2].legend(frameon=False, fontsize=6.3, loc='lower right')
 fig.savefig(OUT / 'si_ft.pdf', bbox_inches='tight'); plt.close(fig)
-sl = pd.read_csv(R / 'operational/site_level.csv')
-fig, axs = plt.subplots(1, 2, figsize=(190 * MM, 62 * MM), gridspec_kw={'wspace': 0.25})
-pols = [('oracle', 'Perfect information', C['black'], '-'), ('A', 'Driver seen', C['blue'], '-'), ('C', 'Unseen, history', C['sky'], '-'),
-        ('D', 'Cold start', C['verm'], '-'), ('request (D otherwise)', 'Request, else cold start', C['orange'], '--'), ('first come first served', 'Arrival order', C['grey'], '--')]
-for ax, site in zip(axs, ['caltech', 'jpl']):
-    for p_, lab, col, ls in pols:
-        q = sl[(sl.site == site) & (sl.policy == p_)].sort_values('cap_fraction')
-        ax.plot(100 * q.cap_fraction, q.undelivered_share_pct.clip(lower=1e-3), ls, color=col, label=lab, lw=1.1)
-    ax.set_yscale('log'); ax.set_ylim(0.01, 60); ax.axhline(1, color=C['grey'], lw=0.6, ls=':')
-    ax.set_xlabel('Site capacity limit (% of uncontrolled peak)'); ax.set_ylabel('Undelivered energy (%)'); ax.set_title(SN[site] + ': shared capacity limit', loc='left', fontsize=8)
-axs[0].legend(frameon=False, fontsize=6.5)
-for ax_, l_ in zip(axs, 'ab'): tag(ax_, l_)
-fig.savefig(OUT / 'si_site.pdf', bbox_inches='tight'); plt.close(fig)
-print(f'Supplementary Figures S1 to S4 written to {OUT}')
+print(f'Supplementary Figures S1, S2 and S4 written to {OUT}')

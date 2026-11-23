@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the paper given under preferred-citation."
 title: "The cold start of smart charging: forecast generalization, driver history, and reliable EV charging flexibility (code and reproduction package)"
-version: 1.0.5
-date-released: 2026-11-13
+version: 1.0.6
+date-released: 2026-11-24
 doi: 10.5281/zenodo.23659991
 license: MIT
 authors:
@@ -30,6 +30,9 @@ preferred-citation:
     - family-names: "Hossain"
       given-names: "Mohammad Alamgir"
       affiliation: "Department of Computer Science and Engineering, Islamic University, Kushtia, Bangladesh"
+    - family-names: "Al Amin"
+      given-names: "Md"
+      affiliation: "Department of Informatics and Engineering Systems, University of Texas Rio Grande Valley, Brownsville, TX, USA"
     - family-names: "Abdullah"
       given-names: "Md. Ibrahim"
       affiliation: "Department of Computer Science and Engineering, Islamic University, Kushtia, Bangladesh"

@@ -1,0 +1,9 @@
+target,protocol,manuscript,reproduced,ok
+energy,random,4.09,4.098610654075509,True
+energy,chronological,4.8,4.803471856052108,True
+energy,site_disjoint,6.87,6.870830749311554,True
+energy,user_disjoint,7.6,7.602264378834443,True
+duration,random,1.8,1.7982427470543196,True
+duration,chronological,2.17,2.1699762239840235,True
+duration,site_disjoint,2.4,2.4016797567338193,True
+duration,user_disjoint,2.04,2.0366096710274197,True

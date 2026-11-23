@@ -1,0 +1,76 @@
+# Robustness analyses and ACN-Sim study (robustness/; run with scripts/run_robustness.sh).
+# Paths are relative to the repository root. The main pipeline (./reproduce.sh acn and paloalto) must have run first.
+# Nothing under the input folders is written to; every output goes to output_dir.
+
+output_dir: runs/robustness
+
+networks:
+  acn:
+    sessions: runs/acn/data/processed/sessions.parquet
+    # The cold-start predictions reported in the paper (35,695 sessions per seed, 549 drivers), included in the
+    # repository so that these analyses start from exactly those predictions; preflight checks them.
+    shards: data/manuscript_shards/acn
+    expected: {rows_per_seed: 35695, drivers: 549, value_of_history_energy_catboost: 73.19,
+               flex_at_2pct_catboost: {A: 38.95, C: 35.77, D: 20.00}}
+    stages: [preflight, firstvisit, charging, metrics, anonymous, decomp, driver_id, cs_baselines, laxity, temporal,
+             subsets, reliability, periods, acnsim, report]
+    # protocol predictions of the main study; used only if they reproduce the paper's protocol MAEs (CatBoost)
+    regression_predictions: runs/acn/results/predictions/regression_predictions.parquet
+    expected_protocol_mae: {'energy:random': 4.09, 'energy:chronological': 4.80, 'energy:site_disjoint': 6.87, 'energy:user_disjoint': 7.60,
+                            'duration:random': 1.80, 'duration:chronological': 2.17, 'duration:site_disjoint': 2.40, 'duration:user_disjoint': 2.04}
+    temporal_origins: ['2018-10-01', '2019-01-01', '2019-04-01', '2019-07-01', '2019-10-01', '2019-12-01']
+    temporal_horizon_months: 3
+  paloalto:
+    sessions: runs/paloalto/data/processed/sessions.parquet
+    shards: runs/paloalto/results/paper/shards
+    expected: {value_of_history_energy_catboost: 42.8}
+    stages: [preflight, firstvisit, charging, metrics, anonymous, decomp, cs_baselines, temporal,
+             subsets, reliability, periods, report]
+    regression_predictions: runs/paloalto/results/predictions/regression_predictions.parquet
+    expected_protocol_mae: {'energy:random': 3.30, 'energy:chronological': 3.89, 'energy:site_disjoint': 4.42, 'energy:user_disjoint': 4.71,
+                            'duration:random': 0.95, 'duration:chronological': 0.94, 'duration:site_disjoint': 1.17, 'duration:user_disjoint': 1.36}
+    # one-year test windows; the City of Palo Alto began charging fees on 1 August 2017
+    temporal_origins: ['2013-08-01', '2014-08-01', '2015-08-01', '2016-08-01', '2017-08-01', '2018-08-01', '2019-03-01']
+    temporal_horizon_months: 12
+    fee_date: '2017-08-01'
+
+# identical to configs/acn.yaml and configs/paloalto.yaml
+decomposition_end: '2020-03-01'
+seeds: [11, 23, 37, 51, 79]
+charging_power_kw: 6.6
+n_boot: 1000
+features:
+  numeric: [arrival_hour_sin, arrival_hour_cos, weekday_sin, weekday_cos, month_sin, month_cos,
+            user_prior_count, user_prior_mean_duration, user_prior_median_duration, user_prior_mean_energy,
+            station_prior_count, station_prior_mean_duration, station_prior_mean_energy,
+            requested_energy_kwh, requested_duration_hours]
+catboost: {iterations: 2500, depth: 8, learning_rate: 0.03, loss_function: MAE, l2_leaf_reg: 5.0,
+           random_strength: 1.0, task_type: GPU, devices: '0', verbose: 0, allow_writing_files: false}
+ft: {epochs: 40, batch: 1024, lr: 0.0008, patience: 6}
+
+# stage options
+anonymous: {learners: [catboost, ft]}
+decomp: {learners: [catboost, ft]}               # alternative decomposition path
+driver_id: {learner: catboost, size_fractions: [0.75, 0.5]}
+cs_baselines: {learners: [catboost]}             # learned cold-start priors (similarity and regression)
+laxity: {learner: catboost, quantile_alphas: [0.3, 0.2, 0.1, 0.05, 0.02, 0.01], quantile_seeds: 3}
+temporal: {learner: catboost, seeds: 3, embargo_hours: 4}
+acnsim:
+  learner: catboost
+  seed: 11
+  sites: [caltech, jpl]
+  period_minutes: 5
+  taus: [0.5, 0.3, 0.2, 0.1, 0.05, 0.02, 0.01]   # quantile levels gamma of the conformal shifts (0.5 = raw forecast)
+  cap_fractions: [0.1, 0.15, 0.2, 0.25, 0.3, 0.4, 0.5, 0.6, 0.7, 1.0]   # of the transformer rating (Caltech 150 kW; JPL 45 + 150 kW)
+  extra_cap_fractions: []
+  sweep_taus: [0.5, 0.1]
+  tariff: sce_tou_ev_4_march_2019
+  asa_weeks: 8                                   # evenly spaced weeks for the optimisation scheduler (E3)
+  asa_period_minutes: 15
+  max_weeks: null                                # null = every week of the window
+  asa_solver: CLARABEL
+  event_hours: [16, 21]                          # E4 evening event, weekdays, local time
+  event_cap_fractions: [0.0, 0.1, 0.2, 0.3, 0.5]
+  midday_event_hours: [9, 13]                    # E5 morning event, weekdays, local time
+  midday_event_cap_fractions: [0.3, 0.4, 0.5, 0.6, 0.8]
+  workers: auto                                  # CPU processes; auto = CPU count minus 4

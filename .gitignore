@@ -1,5 +1,6 @@
 runs/
-data/
+/data/*
+!/data/manuscript_shards/
 paper/build/
 catboost_info/
 __pycache__/
