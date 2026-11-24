@@ -2,7 +2,7 @@
 
 Code and reproduction package for the paper
 
-> **The cold start of smart charging: forecast generalization, driver history, and reliable EV charging flexibility.** Md. Atiqur Rahman, Mohammad Alamgir Hossain, Md Al Amin, Md. Ibrahim Abdullah, Ahsan-Ul-Ambia and Md. Shahidul Islam. Manuscript submitted.
+> **The first-visit problem in electric vehicle smart charging: driver history, shortfall risk, and dependable grid flexibility.** Md. Atiqur Rahman, Mohammad Alamgir Hossain, Md Al Amin, Md. Ibrahim Abdullah, Ahsan-Ul-Ambia and Md. Shahidul Islam. Manuscript submitted.
 
 The package evaluates forecasts of EV charging session duration and energy, made at plug-in, under six evaluation protocols (random, chronological, driver-disjoint and site-disjoint among them), decomposes the error gap for unseen drivers on identical sessions, measures how much accuracy depends on information available only after plug-in, and translates forecast error into smart-charging flexibility and site capacity. The analyses run on the three ACN-Data workplace sites and, as an external validation, on the public charging network of the City of Palo Alto.
 
@@ -11,7 +11,7 @@ The package evaluates forecasts of EV charging session duration and energy, made
 ```
 src/evtrust/       pipeline: data, features, protocols, leakage audit, learners, conformal intervals,
                    cold-start decomposition, information availability, smart-charging impact
-robustness/        robustness analyses and the ACN-Sim site-level study (see below)
+robustness/        robustness analyses, the information-state rule, the ACN-Sim site-level study and the feeder study (see below)
 scripts/           analysis entry points used by reproduce.sh
 configs/           acn.yaml and paloalto.yaml; they differ only in the sites, the data period and the source
 figures/           programs that draw the figures of the paper
@@ -36,10 +36,18 @@ Without conda, `pip install -e ".[dev,torch,paper]"` installs the package with t
 
 ## Robustness analyses and the site-level simulation
 
-`robustness/` holds the analyses of Sections III-B to III-D of the paper that build on the cold-start predictions: the order of the decomposition (two-order shares), a driver-identity encoding and training size, the optimism ladder up to a literature-style random split, learned cold-start priors, genuine first visits and anonymous sessions, censored energy need, charging rate and laxity forecasting, the reliability of the conformal shifts (Proposition 1), protocol errors by period and rolling-origin evaluation, and the ACN-Sim study (acnportal 0.3.3) on the Caltech and JPL network models: real capacity (E1), the transformer capacity sweep (E2), the adaptive scheduling algorithm under a time-of-use tariff (E3) and weekday events (E4, E5).
+`robustness/` holds the analyses of Sections III-B to III-E of the paper that build on the cold-start predictions:
+
+- order of the decomposition (two-order shares), driver-identity encoding and training size;
+- optimism ladder up to a literature-style random split, and learned cold-start priors;
+- genuine first visits and anonymous sessions, censored energy need, charging rate and laxity forecasting;
+- reliability of the conformal shifts (Proposition 1), protocol errors by period, rolling-origin evaluation;
+- information-state calibration rule (Proposition 2; `robustness/infostate.py`), on both networks;
+- ACN-Sim study (acnportal 0.3.3) on the Caltech and JPL network models: real capacity (E1), transformer capacity sweep (E2), adaptive scheduling under a time-of-use tariff (E3), weekday events (E4, E5) and the information-state rule at real capacity;
+- feeder hosting capacity on the IEEE 33-bus and SimBench commercial feeders (pandapower; `robustness/feeder.py`).
 
 ```bash
-pip install -e ".[sim]"                 # cvxpy; acnportal and adacharge are installed from third_party/wheels
+pip install -e ".[sim]"                 # cvxpy, pandapower, simbench; acnportal and adacharge come from third_party/wheels
 ./reproduce.sh robustness               # or: bash scripts/run_robustness.sh
 ```
 
@@ -69,7 +77,7 @@ or stage by stage:
 ```bash
 ./reproduce.sh acn        # ACN-Data: download, preparation, leakage audit and all analyses   -> runs/acn/
 ./reproduce.sh paloalto   # Palo Alto external validation                                      -> runs/paloalto/
-./reproduce.sh robustness # robustness analyses and ACN-Sim (after acn and paloalto)             -> runs/robustness/
+./reproduce.sh robustness # robustness analyses, ACN-Sim and feeder study (after acn and paloalto) -> runs/robustness/
 ./reproduce.sh figures    # Figures 1 to 4 and Supplementary Figures S1 to S4                  -> figures/build/
 ```
 
@@ -79,12 +87,14 @@ Each stage records a marker in `runs/<network>/.done/`, so an interrupted run re
 
 | In the paper | Output | Program |
 |---|---|---|
-| Main-pipeline numbers in the text; Supplementary Tables S1 to S12, S14, S15, S18 to S20, S23, S25 to S27, S29, S42 to S47 | `runs/acn/results/`: `FULL_REPORT.xlsx` and the CSV files under `metrics/`, `benchmark/`, `paper/` and `operational/` | `reproduce.sh acn` (summary by `scripts/full_report.py`) |
+| Main-pipeline numbers in the text; Supplementary Tables S1 to S12, S14, S15, S18 to S20, S23, S25 to S27, S29, S46 to S51 | `runs/acn/results/`: `FULL_REPORT.xlsx` and the CSV files under `metrics/`, `benchmark/`, `paper/` and `operational/` | `reproduce.sh acn` (summary by `scripts/full_report.py`) |
 | Table II (ACN and Palo Alto side by side) | `runs/acn/results/`, `runs/paloalto/results/` and `runs/robustness/full/` | `reproduce.sh acn`, `paloalto` and `robustness` |
-| Supplementary Tables S37 to S41 | `runs/paloalto/results/` (same layout) | `reproduce.sh paloalto` |
+| Supplementary Tables S41 to S45 | `runs/paloalto/results/` (same layout) | `reproduce.sh paloalto` |
 | Calibration over time, Supplementary Table S33 | `runs/<network>/results/paper/calibration_robustness.csv` | `scripts/calibration_robustness.py` |
 | Robustness analyses: Supplementary Tables S13, S16, S17, S21, S22, S24, S28, S30 to S32 | `runs/robustness/full/<network>/` (published run: `results/robustness/`) | `reproduce.sh robustness` |
-| ACN-Sim: Table III, Supplementary Tables S34 to S36 | `runs/robustness/full/acn/acnsim_*.csv` (published run: `results/robustness/acn/`) | `reproduce.sh robustness` |
+| ACN-Sim: Table III (capacity and firm limits), Supplementary Tables S37 to S39 | `runs/robustness/full/acn/acnsim_*.csv` (published run: `results/robustness/acn/`) | `reproduce.sh robustness` |
+| Information-state calibration: Table II (last block), Supplementary Tables S34 to S36 | `runs/robustness/full/<network>/infostate_*.csv` (published run: `results/robustness/`) | `reproduce.sh robustness` |
+| Feeder hosting capacity: Table III (hubs hosted), Supplementary Table S40 | `runs/robustness/full/acn/feeder_*.csv` (published run: `results/robustness/acn/`) | `reproduce.sh robustness` |
 | Figure 1, evaluation framework | `figures/build/fig1_framework.svg` (and `.pdf`, `.png` with cairosvg) | `figures/make_fig1.py` |
 | Figure 2, evaluation protocols | `figures/build/fig2_protocols` (`.pdf`, `.svg`, `.png`) | `figures/make_figures.py` |
 | Figure 3, cold-start decomposition and warm-up | `figures/build/fig3_coldstart` | `figures/make_figures.py` |
@@ -92,7 +102,7 @@ Each stage records a marker in `runs/<network>/.done/`, so an interrupted run re
 | Supplementary Figure S3, information availability | `figures/build/si_fig_availability` | `figures/make_figures.py` |
 | Supplementary Figures S1, S2 and S4 | `figures/build/si_cd_energy.pdf`, `si_cd_duration.pdf`, `si_ft.pdf` | `figures/make_si_figures.py` |
 
-Supplementary Tables S4 and S48 (protocol definitions and literature) contain no computed values.
+Supplementary Tables S4 and S52 (protocol definitions and literature) contain no computed values.
 
 ## Randomness
 

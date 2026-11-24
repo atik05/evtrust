@@ -13,7 +13,7 @@ networks:
     expected: {rows_per_seed: 35695, drivers: 549, value_of_history_energy_catboost: 73.19,
                flex_at_2pct_catboost: {A: 38.95, C: 35.77, D: 20.00}}
     stages: [preflight, firstvisit, charging, metrics, anonymous, decomp, driver_id, cs_baselines, laxity, temporal,
-             subsets, reliability, periods, acnsim, report]
+             subsets, reliability, periods, infostate, acnsim, infostate_sim, feeder, report]
     # protocol predictions of the main study; used only if they reproduce the paper's protocol MAEs (CatBoost)
     regression_predictions: runs/acn/results/predictions/regression_predictions.parquet
     expected_protocol_mae: {'energy:random': 4.09, 'energy:chronological': 4.80, 'energy:site_disjoint': 6.87, 'energy:user_disjoint': 7.60,
@@ -25,7 +25,7 @@ networks:
     shards: runs/paloalto/results/paper/shards
     expected: {value_of_history_energy_catboost: 42.8}
     stages: [preflight, firstvisit, charging, metrics, anonymous, decomp, cs_baselines, temporal,
-             subsets, reliability, periods, report]
+             subsets, reliability, periods, infostate, report]
     regression_predictions: runs/paloalto/results/predictions/regression_predictions.parquet
     expected_protocol_mae: {'energy:random': 3.30, 'energy:chronological': 3.89, 'energy:site_disjoint': 4.42, 'energy:user_disjoint': 4.71,
                             'duration:random': 0.95, 'duration:chronological': 0.94, 'duration:site_disjoint': 1.17, 'duration:user_disjoint': 1.36}
@@ -74,3 +74,17 @@ acnsim:
   midday_event_hours: [9, 13]                    # E5 morning event, weekdays, local time
   midday_event_cap_fractions: [0.3, 0.4, 0.5, 0.6, 0.8]
   workers: auto                                  # CPU processes; auto = CPU count minus 4
+
+# Information-state calibration (robustness/infostate.py): the rule replayed in ACN-Sim at the real capacity (E1)
+infostate:
+  sim_gammas: [0.1, 0.05]
+  sim_calibrations: ['population, D and E', 'state, start']
+
+# Feeder hosting capacity (robustness/feeder.py): hubs at the contracted limits of acnsim_capacity_needed.csv
+feeder:
+  feeders: [ieee33, 1-MV-comm--0-sw]
+  ieee33_slack_pu: 1.05
+  ieee33_vmin_pu: 0.95
+  simbench_critical_steps: 24
+  orders: 40
+  nmax: 1000

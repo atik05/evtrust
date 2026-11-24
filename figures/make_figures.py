@@ -130,37 +130,41 @@ ax.set_ylabel('Mean Friedman rank, energy (1 = best)'); ax.spines['left'].set_vi
 ax.set_title('ACN, learner ranks for energy', loc='left'); tag(ax, 'c', -0.06)
 save(fig, 'fig2_protocols')
 
-# ------------------------------------------------------------ Figure 3: cold start
+# ------------------------------------------------------------ Figure 3: cold start, 2 x 3 layout
 dec = {'ACN': pd.read_csv(R / 'paper/coldstart_decomposition.csv'), 'PA': P('Cold-start decomposition')}
 wu = {'ACN': pd.read_csv(R / 'paper/coldstart_warmup.csv'), 'PA': P('Cold-start warm-up curve')}
 comps = ['future-session leakage', 'unseen-driver cost', 'value of own history', 'total gap']
 clab = ['Random-split\nleakage', 'Unseen-driver\ncost', 'Value of own\nhistory', 'Total gap']
-fig, axs = plt.subplots(3, 2, figsize=(190 * MM, 150 * MM), gridspec_kw={'hspace': 0.62, 'wspace': 0.42})
-for r, (t, title) in enumerate([('kwh_delivered', 'Energy'), ('duration_hours', 'Duration')]):
-    xmax = max(dec[n][(dec[n].target == t) & dec[n].component.isin(comps)].ci_high.max() for n, _ in NETS) * 1.08
-    for c, (n, nlab) in enumerate(NETS):
+fig = plt.figure(figsize=(182 * MM, 85 * MM))
+outer = fig.add_gridspec(1, 2, width_ratios=[2.1, 1.25], wspace=0.2, left=0.105, right=0.995, top=0.95, bottom=0.18)
+left = outer[0].subgridspec(2, 2, hspace=0.7, wspace=0.1); right = outer[1].subgridspec(2, 1, hspace=0.7)
+axs = np.array([[fig.add_subplot(left[r, 0]), fig.add_subplot(left[r, 1]), fig.add_subplot(right[r])] for r in range(2)])
+for r, (n, nlab) in enumerate(NETS):
+    for c, (t, title) in enumerate([('kwh_delivered', 'energy'), ('duration_hours', 'duration')]):
+        xmax = max(dec[m][(dec[m].target == t) & dec[m].component.isin(comps)].ci_high.max() for m, _ in NETS) * 1.08
         ax = axs[r, c]; d = dec[n]; y = np.arange(len(comps)); h = 0.36
         for k, (l, lab, col) in enumerate([('catboost', 'CatBoost', C['blue']), ('ft', 'FT-Transformer', C['orange'])]):
             z = d[(d.target == t) & (d.learner == l)].set_index('component').loc[comps]
             ax.barh(y + (k - 0.5) * h, z.effect_pct, h, xerr=[z.effect_pct - z.ci_low, z.ci_high - z.effect_pct],
                     color=col, label=lab, capsize=1.5, error_kw={'elinewidth': 0.6})
-        ax.set_xlim(min(0, d[d.target == t].ci_low.min() * 1.2), xmax)
-        ax.set_yticks(y); ax.set_yticklabels(clab); ax.invert_yaxis(); ax.set_xlabel('Change in MAE (%), 95% CI'); grid(ax, 'x')
-        ax.set_title(f'{SHORT[n]}, {title.lower()}', loc='left'); tag(ax, 'abcd'[2 * r + c])
-h_, l_ = axs[0, 0].get_legend_handles_labels()
-fig.legend(h_, l_, frameon=False, ncol=2, loc='upper center', bbox_to_anchor=(0.5, 0.985))
-order = ['0', '1', '2', '3-4', '5-9', '10-19', '20+']
-for c, (n, nlab) in enumerate(NETS):
-    ax = axs[2, c]; z = wu[n][(wu[n].target == 'kwh_delivered') & (wu[n].learner == 'catboost')].copy()
+        lo = min(min(0, dec[m][dec[m].target == t].ci_low.min() * 1.2) for m, _ in NETS)
+        ax.set_xlim(lo, xmax); ax.set_yticks(y); ax.invert_yaxis()
+        ax.set_yticklabels(clab if c == 0 else [])
+        ax.set_xlabel('Change in MAE (%), 95% CI'); grid(ax, 'x')
+        ax.set_title(f'{SHORT[n]}, {title}', loc='left'); tag(ax, 'abcdef'[3 * r + c], x=-0.42 if c == 0 else -0.08)
+    order = ['0', '1', '2', '3-4', '5-9', '10-19', '20+']
+    ax = axs[r, 2]; z = wu[n][(wu[n].target == 'kwh_delivered') & (wu[n].learner == 'catboost')].copy()
     z['k'] = z.k_bucket.astype(str); z = z.set_index('k').loc[order]; x = np.arange(len(order))
     ax.plot(x, z.mae_random, '--o', color=C['grey'], ms=3, label='Random split (driver seen)')
     ax.plot(x, z.mae_warm, '-o', color=C['blue'], ms=3, label='Unseen driver, own history')
     ax.plot(x, z.mae_cold, '-s', color=C['verm'], ms=3, label='Unseen driver, cold start')
     ax.fill_between(x, z.mae_warm, z.mae_cold, color=C['verm'], alpha=0.09, lw=0)
     ax.set_xticks(x); ax.set_xticklabels(order); ax.set_xlabel('Completed sessions of the driver'); grid(ax)
-    ax.set_ylabel('Energy MAE (kWh)'); ax.set_title(f'{SHORT[n]}, energy by driver history', loc='left'); tag(ax, 'ef'[c])
-h_, l_ = axs[2, 0].get_legend_handles_labels()
-fig.legend(h_, l_, frameon=False, ncol=3, loc='upper center', bbox_to_anchor=(0.5, 0.045))
+    ax.set_ylabel('Energy MAE (kWh)'); ax.set_title(f'{SHORT[n]}, energy by driver history', loc='left')
+    tag(ax, 'abcdef'[3 * r + 2], x=-0.2)
+h1, l1 = axs[0, 0].get_legend_handles_labels(); h2, l2 = axs[0, 2].get_legend_handles_labels()
+fig.legend(h1 + h2, l1 + l2, frameon=False, ncol=5, loc='lower center', bbox_to_anchor=(0.5, 0.0),
+           columnspacing=1.4, handlelength=1.8, handletextpad=0.5)
 save(fig, 'fig3_coldstart')
 
 # ------------------------------------------------------------ Supplementary Fig. S3: information availability

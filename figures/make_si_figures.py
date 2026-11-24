@@ -29,46 +29,86 @@ SN = {'caltech': 'Caltech', 'jpl': 'JPL', 'office001': 'Office001'}
 TN = {'duration': 'Duration', 'energy': 'Energy', 'duration_hours': 'Duration', 'kwh_delivered': 'Energy'}
 
 
+def cd_cliques(ranks, cd):
+    """Maximal groups of consecutive learners whose mean ranks differ by less than the critical difference."""
+    out = []
+    for a_ in range(len(ranks)):
+        b_ = a_
+        while b_ + 1 < len(ranks) and ranks[b_ + 1] - ranks[a_] < cd:
+            b_ += 1
+        if b_ > a_ and not any(c0 <= a_ and b_ <= c1 for c0, c1 in out):
+            out.append((a_, b_))
+    return out
+
+
+def cd_rows(cliques, ranks, gap=0.5):
+    """Rows for the clique bars such that bars sharing a row never overlap, so no two groups read as one."""
+    ends, rows = [], []
+    for a_, b_ in cliques:
+        for r_, e_ in enumerate(ends):
+            if ranks[a_] > e_ + gap:
+                ends[r_] = ranks[b_]; rows.append(r_); break
+        else:
+            ends.append(ranks[b_]); rows.append(len(ends) - 1)
+    return rows
+
+
 def cd_figure(target, path):
+    """Critical-difference diagrams (Demsar 2006) of the six benchmark protocols. Lower mean rank is better; learners
+    joined by a bar do not differ by the Nemenyi test. CatBoost and the FT-Transformer, the learners of the main
+    analyses, are drawn in colour so that their position can be followed across protocols."""
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt_
     plt_.rcParams.update({'font.family': 'sans-serif', 'font.sans-serif': ['Liberation Sans', 'Arial'], 'font.size': 7,
                           'pdf.fonttype': 42, 'svg.fonttype': 'none'})
+    INK = '#000000'
+    HL = {'CatBoost': '#0072B2', 'FT-Transformer': '#D55E00'}
     fz_ = pd.read_csv(R / 'benchmark/friedman.csv'); fz_ = fz_[fz_.target == target]
     prots = ['random', 'driver_grouped', 'chronological', 'chronological_prepandemic', 'site_transfer', 'site_transfer_strict']
-    fig_, axs_ = plt_.subplots(3, 2, figsize=(190 / 25.4, 168 / 25.4), gridspec_kw={'hspace': 0.24, 'wspace': 0.2})
+    fig_, axs_ = plt_.subplots(3, 2, figsize=(190 / 25.4, 176 / 25.4), gridspec_kw={'hspace': 0.12, 'wspace': 0.1})
     for i, (ax_, pr) in enumerate(zip(axs_.ravel(), prots)):
-        z = fz_[fz_.protocol == pr].sort_values('average_rank')
-        ranks = z.average_rank.to_numpy(); names = [MN.get(m_, m_) for m_ in z.model]; k = int(z.n_models.iloc[0]); cd = float(z.nemenyi_cd.iloc[0])
-        mx = 0.66 * k
-        ax_.set_xlim(1 - mx, k + mx); ax_.set_ylim(0.02, 1.5); ax_.axis('off')
-        ax_.plot([1, k], [1, 1], color='#1F2933', lw=0.8)
+        z = fz_[fz_.protocol == pr].sort_values(['average_rank', 'model'])
+        ranks = z.average_rank.to_numpy(float); names = [MN.get(m_, m_) for m_ in z.model]
+        k = int(z.n_models.iloc[0]); cd = float(z.nemenyi_cd.iloc[0])
+        nb = int(z.n_blocks.iloc[0]) if 'n_blocks' in z else None
+        pv = float(z.friedman_p.iloc[0]) if 'friedman_p' in z else None
+        # the rank axis fills the middle of the panel and the learner names the outer thirds
+        W = (k - 1) / 0.40; x_l = 1 - 0.30 * W
+        ax_.set_xlim(x_l, x_l + W); ax_.set_ylim(-0.05, 1.62); ax_.axis('off')
+        y0 = 1.0
+        ax_.plot([1, k], [y0, y0], color=INK, lw=0.8, solid_capstyle='butt')
         for r_ in range(1, k + 1):
-            ax_.plot([r_, r_], [1, 1.035], color='#1F2933', lw=0.6); ax_.text(r_, 1.05, str(r_), ha='center', va='bottom', fontsize=5.8)
-        ax_.plot([1, 1 + cd], [1.22, 1.22], color='#D55E00', lw=1.2)
-        for xx in (1, 1 + cd):
-            ax_.plot([xx, xx], [1.195, 1.245], color='#D55E00', lw=1.0)
-        ax_.text(1 + cd / 2, 1.255, f'CD = {cd:.2f}', ha='center', va='bottom', fontsize=5.8, color='#D55E00')
+            ax_.plot([r_, r_], [y0, y0 + 0.035], color=INK, lw=0.6)
+            ax_.text(r_, y0 + 0.05, str(r_), ha='center', va='bottom', fontsize=5.8)
+        ax_.text(1, y0 + 0.17, 'better', ha='left', va='bottom', fontsize=6, style='italic')
+        ax_.annotate('', xy=(1 - 0.012 * W, y0 + 0.2), xytext=(1 - 0.002 * W, y0 + 0.2),
+                     arrowprops=dict(arrowstyle='-|>', lw=0.6, color=INK, mutation_scale=6))
+        # critical difference
+        xc = k - cd
+        ax_.plot([xc, k], [y0 + 0.24, y0 + 0.24], color=INK, lw=1.0)
+        for xx in (xc, k):
+            ax_.plot([xx, xx], [y0 + 0.215, y0 + 0.265], color=INK, lw=0.8)
+        ax_.text((xc + k) / 2, y0 + 0.28, f'CD = {cd:.2f}', ha='center', va='bottom', fontsize=6.3)
+        # learners: best half to the left, rest to the right
         half = (len(ranks) + 1) // 2
         for j, (rk, nm) in enumerate(zip(ranks, names)):
             left = j < half; level = j if left else len(ranks) - 1 - j
-            y_ = 0.78 - 0.118 * level
-            xe = 1 - 0.08 * k if left else k + 0.08 * k
-            ax_.plot([rk, rk, xe], [1, y_, y_], color='#5B6670', lw=0.55)
-            ax_.text(xe - 0.03 * k if left else xe + 0.03 * k, y_, f'{nm} ({rk:.1f})' if left else f'({rk:.1f}) {nm}',
-                     ha='right' if left else 'left', va='center', fontsize=5.9)
-        cliques = []
-        for a_ in range(len(ranks)):
-            b_ = a_
-            while b_ + 1 < len(ranks) and ranks[b_ + 1] - ranks[a_] < cd:
-                b_ += 1
-            if b_ > a_ and not any(c0 <= a_ and b_ <= c1 for c0, c1 in cliques):
-                cliques.append((a_, b_))
-        for q, (a_, b_) in enumerate(cliques):
-            yq = 0.95 - 0.034 * (q % 5)
-            ax_.plot([ranks[a_] - 0.04, ranks[b_] + 0.04], [yq, yq], color='#1F2933', lw=2.0, solid_capstyle='round')
-        ax_.text(1 - mx, 1.49, f'({chr(97 + i)}) {PN[pr]}', ha='left', va='top', fontsize=7.5)
+            y_ = 0.70 - 0.115 * level
+            xe = 1 - 0.02 * W if left else k + 0.02 * W
+            col = HL.get(nm, INK); lw = 0.9 if nm in HL else 0.5
+            ax_.plot([rk, rk, xe], [y0, y_, y_], color=col, lw=lw)
+            lab = f'{nm} ({rk:.1f})' if left else f'({rk:.1f}) {nm}'
+            ax_.text(xe - 0.008 * W if left else xe + 0.008 * W, y_, lab, ha='right' if left else 'left', va='center', fontsize=6.1,
+                     color=col, fontweight='bold' if nm in HL else 'normal')
+        # Nemenyi groups, packed into rows without overlap
+        cl = cd_cliques(ranks, cd)
+        for (a_, b_), r_ in zip(cl, cd_rows(cl, ranks)):
+            yq = y0 - 0.06 - 0.045 * r_
+            ax_.plot([ranks[a_] - 0.05, ranks[b_] + 0.05], [yq, yq], color=INK, lw=2.2, solid_capstyle='round')
+        sub = f'{k} learners, {nb} folds' + (', Friedman p < 0.001' if pv is not None and pv < 0.001 else (f', Friedman p = {pv:.3f}' if pv is not None else '')) if nb else ''
+        ax_.text(x_l, 1.6, f'({chr(97 + i)}) {PN[pr]}', ha='left', va='top', fontsize=8, fontweight='bold')
+        ax_.text(x_l, 1.49, sub, ha='left', va='top', fontsize=6.5)
     fig_.savefig(path, bbox_inches='tight'); plt_.close(fig_)
 
 for t, tl in [('kwh_delivered', 'energy'), ('duration_hours', 'duration')]:

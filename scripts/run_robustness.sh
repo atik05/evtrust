@@ -4,7 +4,7 @@
 #
 #   bash scripts/run_robustness.sh            # smoke test on a small subset, then the full run
 #
-# 1. installs acnportal 0.3.3 and adacharge (third_party/wheels) and cvxpy if they are missing
+# 1. installs acnportal 0.3.3 and adacharge (third_party/wheels), cvxpy, pandapower and simbench if they are missing
 # 2. checks the included cold-start predictions of the paper (data/manuscript_shards) against their SHA-256 sums
 # 3. smoke test on a small subset of both networks; stops if anything fails
 # 4. full run: ACN stages on the GPU, then ACN-Sim on the CPU in parallel with the Palo Alto stages
@@ -28,6 +28,8 @@ $PY -m robustness.acnportal_compat
 $PY -c "import cvxpy" 2>/dev/null || $PY -m pip install -q cvxpy
 $PY -c "import adacharge" 2>/dev/null || $PY -m pip install -q --no-deps third_party/wheels/adacharge-0.1.0-py3-none-any.whl
 $PY -c "import acnportal, adacharge, cvxpy" || { say "ACN-Sim packages could not be installed"; exit 1; }
+$PY -c "import pandapower, simbench" 2>/dev/null || $PY -m pip install -q "pandapower==3.5.6" "simbench==1.6.3" numba
+$PY -c "import pandapower, simbench" || { say "power-flow packages (pandapower, simbench) could not be installed"; exit 1; }
 
 say "checking the included cold-start predictions"
 ( cd data/manuscript_shards && sha256sum -c SHA256SUMS --quiet ) || { say "data/manuscript_shards differ from SHA256SUMS"; exit 1; }

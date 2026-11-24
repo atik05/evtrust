@@ -19,8 +19,9 @@ STAGES = {
     'anonymous': ('anonymous', 'run'), 'decomp': ('decomp', 'run_alt'), 'driver_id': ('decomp', 'run_id'),
     'metrics': ('metrics', 'run'), 'cs_baselines': ('cs_baselines', 'run'), 'laxity': ('laxity', 'run'), 'temporal': ('temporal', 'run'), 'acnsim': ('acnsim', 'run'), 'report': ('report', 'run'),
     'subsets': ('population', 'run_subsets'), 'reliability': ('population', 'run_reliability'), 'periods': ('population', 'run_periods'),
+    'infostate': ('infostate', 'run'), 'infostate_sim': ('infostate', 'run_sim'), 'feeder': ('feeder', 'run'),
 }
-NEEDS = {'acnsim': 'anonymous'}
+NEEDS = {'acnsim': 'anonymous', 'infostate': 'anonymous', 'infostate_sim': 'anonymous', 'feeder': 'acnsim'}
 
 
 def main():
