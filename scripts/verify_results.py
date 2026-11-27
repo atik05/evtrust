@@ -45,6 +45,21 @@ PAPER = {
     'time series over deterministic hosting, smallest gain (%)': ('10', '{:.0f}'),
     'time series over deterministic hosting, largest gain (%)': ('31', '{:.0f}'),
     'check: largest |time series - deterministic| (hubs)': ('0.14', '{:.2f}'),
+    'flexibility loss of the cold start, metric of the paper, CatBoost (%)': ('44', '{:.0f}'),
+    'flexibility loss of the cold start, deferral credited up to the oracle only, CatBoost (%)': ('45', '{:.0f}'),
+    'flexibility loss of the cold start, absolute, CatBoost (percentage points)': ('15.8', '{:.1f}'),
+    'flexibility loss of the cold start, metric of the paper, FT-Transformer (%)': ('42', '{:.0f}'),
+    'flexibility loss of the cold start, deferral credited up to the oracle only, FT-Transformer (%)': ('43', '{:.0f}'),
+    'conservative metric: largest difference in the drop across settings (percentage points)': ('0.00', '{:.2f}'),
+    'information-state rule, ACN: nominal level gamma': ('0.054', '{:.3f}'),
+    'information-state rule, ACN: Pr(U>0) of first visit sessions with 95% interval (%)': ('5.2 [3.6, 7.0]', '{}'),
+    'information-state rule, ACN: Pr(U>0) of anonymous sessions with 95% interval (%)': ('5.4 [4.7, 6.2]', '{}'),
+    'information-state rule, ACN: Pr(U>0) of returning sessions with 95% interval (%)': ('5.5 [5.0, 6.0]', '{}'),
+    'information-state rule, Palo Alto: nominal level gamma': ('0.062', '{:.3f}'),
+    'information-state rule, Palo Alto: Pr(U>0) of first visit sessions with 95% interval (%)': ('6.2 [4.8, 7.7]', '{}'),
+    'information-state rule, Palo Alto: Pr(U>0) of anonymous sessions with 95% interval (%)': ('6.2 [4.8, 7.8]', '{}'),
+    'information-state rule, Palo Alto: Pr(U>0) of returning sessions with 95% interval (%)': ('6.2 [5.2, 7.3]', '{}'),
+    'information-state rule: intervals that do not contain 100 gamma': ('0', '{:d}'),
 }
 
 
@@ -133,6 +148,36 @@ def main():
                                                     on=['seed', 'site', 'order'], suffixes=('_ts', '_det'))
     got['check: largest |time series - deterministic| (hubs)'] = (c.hubs_ts - c.hubs_det).abs().max()
 
+    fc = A / 'flexibility_conservative.csv'
+    if not fc.exists():
+        sys.exit(f'missing {fc}: run  python -m robustness.run --site acn --stage flex_conservative')
+    fcs = pd.read_csv(fc)
+    drops = []
+    for lrn, name in [('catboost', 'CatBoost'), ('ft', 'FT-Transformer')]:
+        f = fcs[fcs.learner == lrn].set_index('quantity')['estimate']
+        assert all(f[f'{k}_safe'] <= f[f'{k}_paper'] for k in 'ACD')
+        drops += [f[f'{k}_paper'] - f[f'{k}_safe'] for k in 'ACD']
+        got[f'flexibility loss of the cold start, metric of the paper, {name} (%)'] = 100 * (1 - f['D_paper'] / f['C_paper'])
+        got[f'flexibility loss of the cold start, deferral credited up to the oracle only, {name} (%)'] = 100 * (1 - f['D_safe'] / f['C_safe'])
+        if lrn == 'catboost':
+            got['flexibility loss of the cold start, absolute, CatBoost (percentage points)'] = f['C_safe'] - f['D_safe']
+    # Phi - min(Phi, Phi*) = U / P: at matched undelivered energy every setting drops by the same amount
+    got['conservative metric: largest difference in the drop across settings (percentage points)'] = max(
+        max(drops[:3]) - min(drops[:3]), max(drops[3:]) - min(drops[3:]))
+
+    # information-state rule (states, start) at the network operating point: class rates with intervals
+    miss = 0
+    for net, N in [('acn', 'ACN'), ('paloalto', 'Palo Alto')]:
+        f = pd.read_csv(R / 'robustness' / net / 'infostate_flex.csv')
+        f = f[(f.forecast == 'deployment') & (f.calibration == 'state, start')].set_index('quantity')
+        gam = float(f.loc['gamma at network operating point', 'estimate'])
+        got[f'information-state rule, {N}: nominal level gamma'] = gam
+        for st in ('first visit', 'anonymous', 'returning'):
+            z = f.loc[f'{st} P(U>0)_pct']
+            got[f'information-state rule, {N}: Pr(U>0) of {st} sessions with 95% interval (%)'] = (
+                f'{z.estimate:.1f} [{z.ci_low:.1f}, {z.ci_high:.1f}]')
+            miss += not (z.ci_low <= 100 * gam <= z.ci_high)
+    got['information-state rule: intervals that do not contain 100 gamma'] = miss
     bad = 0
     for k, (txt, fmt) in PAPER.items():
         v = fmt.format(got[k]); ok = v == txt; bad += not ok

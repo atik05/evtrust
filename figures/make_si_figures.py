@@ -138,7 +138,7 @@ for row, (ww, tt, net) in enumerate([(w, tr, 'ACN'), (pa_w, pa_tr, 'Palo Alto')]
         z = ww[(ww.target == t) & (ww.learner == 'ft')].copy(); z['k'] = z.k_bucket.astype(str); z = z.set_index('k').loc[order]; x = np.arange(7)
         ax.fill_between(x, z.mae_warm, z.mae_cold, color=C['verm'], alpha=0.09, lw=0)
         setting_line(ax, x, z.mae_random, 'seen'); setting_line(ax, x, z.mae_warm, 'history'); setting_line(ax, x, z.mae_cold, 'cold')
-        ax.set_xticks(x); ax.set_xticklabels(order, rotation=45, ha='right', rotation_mode='anchor')
+        ax.set_xticks(x); ax.set_xticklabels([o.replace('-', '\u2013') for o in order], rotation=45, ha='right', rotation_mode='anchor')
         ax.set_xlabel('Completed sessions'); ax.set_ylabel(f'MAE ({unit})')
         head(ax, 'abcdef'[3 * row + c], f'{net}, {title}')
     ax = axs[row, 2]; z = tt[tt.learner == 'ft']

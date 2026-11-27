@@ -137,7 +137,7 @@ for r, (n, nlab) in enumerate(NETS):
     z['k'] = z.k_bucket.astype(str); z = z.set_index('k').loc[order]; x = np.arange(len(order))
     ax.fill_between(x, z.mae_warm, z.mae_cold, color=C['verm'], alpha=0.09, lw=0)
     setting_line(ax, x, z.mae_random, 'seen'); setting_line(ax, x, z.mae_warm, 'history'); setting_line(ax, x, z.mae_cold, 'cold')
-    ax.set_xticks(x); ax.set_xticklabels(order); ax.set_xlabel('Completed sessions of the driver'); grid(ax)
+    ax.set_xticks(x); ax.set_xticklabels([o.replace('-', '\u2013') for o in order]); ax.set_xlabel('Completed sessions of the driver'); grid(ax)
     ax.set_ylabel('MAE (kWh)'); head(ax, 'abcdef'[3 * r + 2], f'{SHORT[n]}, energy by driver history')
 h1, l1 = axs[0, 0].get_legend_handles_labels(); h2, l2 = axs[0, 2].get_legend_handles_labels()
 fig.legend(h1 + h2, l1 + l2, frameon=False, ncol=5, loc='lower center', bbox_to_anchor=(0.5, -0.01),

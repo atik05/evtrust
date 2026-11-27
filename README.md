@@ -40,7 +40,7 @@ Without conda, `pip install -e ".[dev,torch,paper]"` installs the package with t
 
 - order of the decomposition (two-order shares), driver-identity encoding and training size;
 - optimism ladder up to a literature-style random split, and learned cold-start priors;
-- genuine first visits and anonymous sessions, censored energy need, charging rate and laxity forecasting;
+- first recorded visits and anonymous sessions, censored energy need, charging rate and laxity forecasting, and a conservative flexibility metric that credits deferral only up to the oracle's (`robustness/flexsafe.py`);
 - reliability of the conformal shifts (Proposition 1), protocol errors by period, rolling-origin evaluation;
 - information-state calibration rule (Proposition 2; `robustness/infostate.py`), on both networks;
 - ACN-Sim study (acnportal 0.3.3) on the Caltech and JPL network models: real capacity (E1), transformer capacity sweep (E2), adaptive scheduling under a time-of-use tariff (E3), weekday events (E4, E5) and the information-state rule at real capacity;

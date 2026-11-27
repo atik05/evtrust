@@ -20,7 +20,7 @@ STAGES = {
     'metrics': ('metrics', 'run'), 'cs_baselines': ('cs_baselines', 'run'), 'laxity': ('laxity', 'run'), 'temporal': ('temporal', 'run'), 'acnsim': ('acnsim', 'run'), 'report': ('report', 'run'),
     'subsets': ('population', 'run_subsets'), 'reliability': ('population', 'run_reliability'), 'periods': ('population', 'run_periods'),
     'infostate': ('infostate', 'run'), 'infostate_sim': ('infostate', 'run_sim'), 'feeder': ('feeder', 'run'),
-    'feeder_ts': ('feeder_ts', 'run'), 'e3_weeks': ('tariffs', 'run'),
+    'feeder_ts': ('feeder_ts', 'run'), 'e3_weeks': ('tariffs', 'run'), 'flex_conservative': ('flexsafe', 'run'),
 }
 NEEDS = {'acnsim': 'anonymous', 'infostate': 'anonymous', 'infostate_sim': 'anonymous', 'feeder': 'acnsim',
          'feeder_ts': 'acnsim', 'e3_weeks': 'acnsim'}

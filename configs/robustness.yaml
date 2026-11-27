@@ -12,7 +12,7 @@ networks:
     shards: data/manuscript_shards/acn
     expected: {rows_per_seed: 35695, drivers: 549, value_of_history_energy_catboost: 73.19,
                flex_at_2pct_catboost: {A: 38.95, C: 35.77, D: 20.00}}
-    stages: [preflight, firstvisit, charging, metrics, anonymous, decomp, driver_id, cs_baselines, laxity, temporal,
+    stages: [preflight, firstvisit, charging, flex_conservative, metrics, anonymous, decomp, driver_id, cs_baselines, laxity, temporal,
              subsets, reliability, periods, infostate, acnsim, infostate_sim, feeder, report]
     # protocol predictions of the main study; used only if they reproduce the paper's protocol MAEs (CatBoost)
     regression_predictions: runs/acn/results/predictions/regression_predictions.parquet
@@ -24,7 +24,7 @@ networks:
     sessions: runs/paloalto/data/processed/sessions.parquet
     shards: runs/paloalto/results/paper/shards
     expected: {value_of_history_energy_catboost: 42.8}
-    stages: [preflight, firstvisit, charging, metrics, anonymous, decomp, cs_baselines, temporal,
+    stages: [preflight, firstvisit, charging, flex_conservative, metrics, anonymous, decomp, cs_baselines, temporal,
              subsets, reliability, periods, infostate, report]
     regression_predictions: runs/paloalto/results/predictions/regression_predictions.parquet
     expected_protocol_mae: {'energy:random': 3.30, 'energy:chronological': 3.89, 'energy:site_disjoint': 4.42, 'energy:user_disjoint': 4.71,

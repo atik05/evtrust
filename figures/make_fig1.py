@@ -223,6 +223,9 @@ assert XV + 40 <= H, 'external band does not fit'
 Path('fig1_framework.svg').write_text('\n'.join(out), encoding='utf-8')
 import cairosvg  # noqa: E402
 cairosvg.svg2pdf(url='fig1_framework.svg', write_to='fig1_framework.pdf')
-cairosvg.svg2png(url='fig1_framework.svg', write_to='fig1_framework.png', output_width=6000)
+cairosvg.svg2png(url='fig1_framework.svg', write_to='fig1_framework.png', output_width=round(7.16 * 600))   # 600 dpi
+from PIL import Image  # noqa: E402
+_im = Image.open('fig1_framework.png').convert('RGBA'); _bg = Image.new('RGB', _im.size, 'white')
+_bg.paste(_im, mask=_im.split()[-1]); _bg.save('fig1_framework.png', dpi=(600, 600))
 print('fig1_framework.svg, .pdf and .png written; smallest text', MIN, 'units =',
       round(MIN * 7.16 * 72 / W, 2), 'pt at the full text width')

@@ -17,7 +17,9 @@ plt.rcParams.update({'font.family': 'sans-serif', 'font.sans-serif': ['Liberatio
                      'font.size': 8, 'axes.titlesize': 8.5, 'axes.labelsize': 8, 'xtick.labelsize': 8,
                      'ytick.labelsize': 8, 'legend.fontsize': 8, 'axes.linewidth': 0.6, 'lines.linewidth': 1.2,
                      'xtick.major.width': 0.6, 'ytick.major.width': 0.6, 'axes.spines.top': False,
-                     'axes.spines.right': False, 'pdf.fonttype': 42, 'svg.fonttype': 'none', 'savefig.dpi': 600})
+                     'axes.spines.right': False, 'pdf.fonttype': 42, 'svg.fonttype': 'none', 'savefig.dpi': 600,
+                     'mathtext.fontset': 'custom', 'mathtext.rm': 'Liberation Sans', 'mathtext.it': 'Liberation Sans:italic',
+                     'mathtext.bf': 'Liberation Sans:bold'})   # symbols in the same typeface as the text
 C = {'blue': '#0072B2', 'sky': '#56B4E9', 'verm': '#D55E00', 'orange': '#E69F00', 'green': '#009E73',
      'purple': '#CC79A7', 'grey': '#8C959F', 'black': '#000000'}
 
@@ -76,9 +78,19 @@ def save(fig, path, width=TEXTWIDTH):
             break
         fig.set_size_inches(fig.get_figwidth() + width - bb.width, fig.get_figheight())
     _place_heads(fig)
-    for ext, kw in [('pdf', {}), ('svg', {}), ('png', {'dpi': 1000})]:
+    for ext, kw in [('pdf', {}), ('svg', {}), ('png', {'dpi': 600, 'facecolor': 'white'})]:
         fig.savefig(f'{path}.{ext}', bbox_inches='tight', pad_inches=2 / 72, **kw)
     plt.close(fig)
+    flatten_png(f'{path}.png')
+
+
+def flatten_png(path, dpi=600):
+    """Store a PNG as opaque RGB on white with its resolution recorded, as journal submission systems expect."""
+    from PIL import Image
+    im = Image.open(path)
+    if im.mode != 'RGB':
+        bg = Image.new('RGB', im.size, 'white'); bg.paste(im, mask=im.convert('RGBA').split()[-1]); im = bg
+    im.save(path, dpi=(dpi, dpi))
 
 
 def setting_line(ax, x, y, key, **kw):
