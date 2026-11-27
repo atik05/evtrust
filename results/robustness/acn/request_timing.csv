@@ -1,0 +1,2 @@
+sessions,identified_sessions,identified_with_request_pct,first_request_at_or_before_plugin_pct,late_request_delay_median_s,late_request_delay_q25_s,late_request_delay_q75_s,late_request_delay_q90_s,late_within_5_min_pct
+66727,48417,100.0,20.41018650474007,22.0,12.0,44.0,100.0,97.07538601271571

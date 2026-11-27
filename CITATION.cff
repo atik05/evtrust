@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the paper given under preferred-citation."
 title: "The first-visit problem in electric vehicle smart charging: driver history, shortfall risk, and dependable grid flexibility (code and reproduction package)"
-version: 1.0.7
-date-released: 2026-11-24
+version: 1.0.10
+date-released: 2026-11-27
 doi: 10.5281/zenodo.23659991
 license: MIT
 authors:

@@ -1,0 +1,35 @@
+feeder,site,hub_profiles,contrast,mean,median,p5,p95,relative_pct_of_b
+1-MV-comm--0-sw,caltech,coincident,"unseen driver, own history minus cold start (hubs)",-31.05546875,-31.49609375,-38.513671875,-23.859765625,-5.047342244366482
+1-MV-comm--0-sw,caltech,coincident,perfect information minus no forecast (FCFS) (hubs),136.34609375,138.31640625,105.07109375,164.795703125,23.7251292815156
+1-MV-comm--0-sw,caltech,coincident,"unseen driver, own history minus no forecast (FCFS) (hubs)",9.5375,9.37890625,3.64296875,15.826953124999996,1.6595885829875856
+1-MV-comm--0-sw,caltech,coincident,cold start minus no forecast (FCFS) (hubs),40.59296875,40.9140625,36.03046875,43.678515625,7.0634471808201145
+1-MV-comm--0-sw,caltech,coincident,"driver seen minus unseen driver, own history (hubs)",31.5453125,27.51171875,22.201171875,47.95624999999999,5.3994854321674435
+1-MV-comm--0-sw,caltech,coincident,share of the forecast hosting gain forfeited by a cold start (%),-325.6143512450852,,,,
+1-MV-comm--0-sw,caltech,diverse,"unseen driver, own history minus cold start (hubs)",54.52734375,56.75,32.446484375,73.25507812499998,8.53809510993891
+1-MV-comm--0-sw,caltech,diverse,perfect information minus no forecast (FCFS) (hubs),124.72890625,117.390625,97.61171875,157.46953125,19.241606888040415
+1-MV-comm--0-sw,caltech,diverse,"unseen driver, own history minus no forecast (FCFS) (hubs)",44.93828125,46.3984375,19.930859375,74.021875,6.9325128234795015
+1-MV-comm--0-sw,caltech,diverse,cold start minus no forecast (FCFS) (hubs),-9.5890625,-6.94921875,-28.180859375,5.423828124999988,-1.4792799568051218
+1-MV-comm--0-sw,caltech,diverse,"driver seen minus unseen driver, own history (hubs)",10.83515625,2.92578125,-2.0160156249999996,28.135546874999996,1.5631463095478273
+1-MV-comm--0-sw,caltech,diverse,share of the forecast hosting gain forfeited by a cold start (%),121.33829384051042,,,,
+1-MV-comm--0-sw,jpl,coincident,"unseen driver, own history minus cold start (hubs)",7.33359375,4.0546875,1.433203125,20.199609374999998,2.7035355920878317
+1-MV-comm--0-sw,jpl,coincident,perfect information minus no forecast (FCFS) (hubs),64.9796875,66.02734375,36.28046875,91.990234375,25.403234427255928
+1-MV-comm--0-sw,jpl,coincident,"unseen driver, own history minus no forecast (FCFS) (hubs)",22.8,17.4765625,5.83046875,41.54179687499999,8.913458454866149
+1-MV-comm--0-sw,jpl,coincident,cold start minus no forecast (FCFS) (hubs),15.46640625,14.17578125,3.06484375,31.41914062499999,6.0464548050639095
+1-MV-comm--0-sw,jpl,coincident,"driver seen minus unseen driver, own history (hubs)",0.984375,-0.91015625,-6.975,8.83203125,0.353338063202645
+1-MV-comm--0-sw,jpl,coincident,share of the forecast hosting gain forfeited by a cold start (%),32.164884868421055,,,,
+1-MV-comm--0-sw,jpl,diverse,"unseen driver, own history minus cold start (hubs)",10.85,10.12890625,3.409375,21.776562499999986,3.8808797927663847
+1-MV-comm--0-sw,jpl,diverse,perfect information minus no forecast (FCFS) (hubs),83.76484375,88.4609375,63.257421875,103.787890625,32.25339698640604
+1-MV-comm--0-sw,jpl,diverse,"unseen driver, own history minus no forecast (FCFS) (hubs)",30.7171875,22.015625,14.51796875,59.797656249999996,11.8275591332834
+1-MV-comm--0-sw,jpl,diverse,cold start minus no forecast (FCFS) (hubs),19.8671875,15.87109375,4.089453125,41.72695312499999,7.649799805671622
+1-MV-comm--0-sw,jpl,diverse,"driver seen minus unseen driver, own history (hubs)",1.646875,0.3515625,-0.64453125,6.560937499999997,0.5670553739794753
+1-MV-comm--0-sw,jpl,diverse,share of the forecast hosting gain forfeited by a cold start (%),35.32224426471336,,,,
+1-MV-comm--0-sw,caltech,diverse vs coincident,cold start: diverse over coincident hubs (%),3.8700000160472556,3.700531745109137,0.5450722902777494,8.35868125304971,
+1-MV-comm--0-sw,caltech,diverse vs coincident,driver seen: diverse over coincident hubs (%),14.588796318128164,15.413042678563038,8.57937001638143,20.92842394436997,
+1-MV-comm--0-sw,caltech,diverse vs coincident,no forecast (FCFS): diverse over coincident hubs (%),12.984186386972809,12.12327161775978,8.340737056327082,17.51420748835964,
+1-MV-comm--0-sw,caltech,diverse vs coincident,perfect information: diverse over coincident hubs (%),8.833255059440036,8.554244221109762,4.935295187587901,13.898602127885429,
+1-MV-comm--0-sw,caltech,diverse vs coincident,"unseen driver, own history: diverse over coincident hubs (%)",18.999520524215097,18.814284916002876,10.93973778171042,27.087690562748417,
+1-MV-comm--0-sw,jpl,diverse vs coincident,cold start: diverse over coincident hubs (%),3.0122226482809533,2.7603729047664283,0.12214962559165876,7.613151377031678,
+1-MV-comm--0-sw,jpl,diverse vs coincident,driver seen: diverse over coincident hubs (%),4.603827878449688,4.977708032444095,-0.3757671179428229,11.424277567247023,
+1-MV-comm--0-sw,jpl,diverse vs coincident,no forecast (FCFS): diverse over coincident hubs (%),1.4633597243626406,0.8356161697857467,0.2441303586168564,4.141549987489151,
+1-MV-comm--0-sw,jpl,diverse vs coincident,perfect information: diverse over coincident hubs (%),7.607164285736685,5.820543368099839,1.6378945521576627,18.69843722203355,
+1-MV-comm--0-sw,jpl,diverse vs coincident,"unseen driver, own history: diverse over coincident hubs (%)",4.354947551336819,4.464235184545551,1.3396280912073144,8.30376592438114,

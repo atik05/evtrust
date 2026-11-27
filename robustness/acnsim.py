@@ -27,6 +27,8 @@ Experiments
       reduction is the uncontrolled event-window load minus the realised event-window load under that limit
   E5  weekday morning congestion event (09:00 to 13:00 by default), when workplace charging load is
       highest: the same construction as E4, with event limits suited to the higher load in that window
+  E6  (optional, acnsim.e6_capacity_needed) each forecast at its own capacity needed for <= 2 % undelivered energy,
+      whose load profiles feed the time-series hosting analysis (feeder_ts.py)
 The capacity sweep includes 60 % of the rating, and paired contrasts between forecasts in the capacity needed use a
 day-block bootstrap shared across the forecasts of a site.
 Weeks are simulated independently (Monday 00:00 local); sessions spanning a week boundary are counted.
@@ -269,7 +271,30 @@ def _event_hours(sc: dict) -> dict:
 
 def run_id(site, r):
     e, sch, f, v, t = r
-    return f'{site}__{e}__{sch}__cap{f:.2f}__{v}__tau{"na" if t is None else t}'
+    cap = f'{f:.4f}' if e == 'E6' else f'{f:.2f}'          # E6 limits are not on a grid: four decimals keep ids unique
+    return f'{site}__{e}__{sch}__cap{cap}__{v}__tau{"na" if t is None else t}'
+
+
+# E6: each forecast at the site's own capacity needed for <= 2 % undelivered energy, so that the hub load profiles of
+# the time-series hosting analysis (robustness/feeder_ts.py) are those of a site connected at its contracted limit
+E6_POLICIES = [('fcfs', 'none', None), ('llf', 'oracle', None), ('llf', 'benchmark', 0.5), ('llf', 'deployment', 0.5),
+               ('llf', 'cold', 0.5)]
+
+
+def site_runs(sc: dict, site: str) -> list:
+    """E6 runs of one site, read from acnsim.e6_capacity_needed (an acnsim_capacity_needed.csv of the same forecasts);
+    none when the key is not set. The limit is rounded to four decimals of the rating (below 0.02 kW)."""
+    path = sc.get('e6_capacity_needed')
+    if not path:
+        return []
+    n = pd.read_csv(path)
+    n['tau_s'] = n['tau'].map(lambda v: 'na' if pd.isna(v) or str(v) == 'na' else f'{float(v):g}')
+    out = []
+    for sch, fc, tau in E6_POLICIES:
+        r = n[(n['site'] == site) & (n['scheduler'] == sch) & (n['forecast'] == fc) & (n['tau_s'] == ('na' if tau is None else f'{tau:g}'))]
+        if len(r) == 1 and np.isfinite(float(r['capacity_needed_fraction'].iloc[0])):
+            out.append(('E6', sch, round(float(r['capacity_needed_fraction'].iloc[0]), 4), fc, tau))
+    return out
 
 
 def run(ctx: Ctx):
@@ -299,12 +324,15 @@ def run(ctx: Ctx):
             weeks = weeks[len(weeks) // 2: len(weeks) // 2 + 1]
         elif sc.get('max_weeks'):                                  # optional evenly spaced subsample (testing only)
             weeks = [weeks[int(i)] for i in np.linspace(0, len(weeks) - 1, int(sc['max_weeks'])).round().astype(int)]
-        n_asa = 1 if ctx.smoke else int(sc['asa_weeks'])
-        asa_weeks = [weeks[int(i)] for i in np.linspace(0, len(weeks) - 1, n_asa).round().astype(int)] if weeks else []
+        if not ctx.smoke and str(sc.get('asa_weeks')).lower() in ('all', 'none', '0'):
+            asa_weeks = list(weeks)                                # E3 on every week of the window
+        else:
+            n_asa = 1 if ctx.smoke else int(sc['asa_weeks'])
+            asa_weeks = [weeks[int(i)] for i in np.linspace(0, len(weeks) - 1, n_asa).round().astype(int)] if weeks else []
         pos = {k: i for i, k in enumerate(z['session_key'])}
         gi = np.array([pos[k] for k in g['session_key']])
         gia = np.array([pos[k] for k in ga['session_key']])
-        for r in runs:
+        for r in runs + site_runs(sc, site):
             rid = run_id(site, r)
             e3 = r[0] == 'E3'
             per = asa_period if e3 else period

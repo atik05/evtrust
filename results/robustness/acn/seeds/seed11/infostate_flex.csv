@@ -1,0 +1,238 @@
+forecast,calibration,quantity,estimate,ci_low,ci_high,p_two_sided
+deployment,"population, D and E",network flex_pct,29.397796819564284,26.933168503948746,31.796064606605288,
+deployment,"population, D and E",anonymous flex_pct,14.902339766840695,13.44916727934537,16.359629764941218,
+deployment,"population, D and E",anonymous undelivered_pct,1.9308180651097813,1.6156669769607568,2.2868018316982344,
+deployment,"population, D and E",anonymous P(U>0)_pct,4.542088706534554,3.9848613448219394,5.217554980270508,
+deployment,"population, D and E",first visit flex_pct,26.722260771338036,22.22812113059068,31.579014354745535,
+deployment,"population, D and E",first visit undelivered_pct,4.414576536162962,3.0460434005712353,5.933967611131008,
+deployment,"population, D and E",first visit P(U>0)_pct,9.56482880192528,7.0131755382579035,12.242147052473213,
+deployment,"population, D and E",returning flex_pct,35.97455941026485,32.98993020444079,38.91315666102927,
+deployment,"population, D and E",returning undelivered_pct,1.9688750253789906,1.8569606030776038,2.074539018558773,
+deployment,"population, D and E",returning P(U>0)_pct,5.6573157371527305,5.199788001082408,6.158588463172522,
+deployment,"population, D and E",gamma at network operating point,0.10496979691269921,0.09888343190897492,0.11006955688692358,
+deployment,"pooled, D and E",network flex_pct,28.8609765152354,26.674032665784893,31.13109395256572,
+deployment,"pooled, D and E",anonymous flex_pct,20.356752778963408,18.577836530182978,22.126434130279577,
+deployment,"pooled, D and E",anonymous undelivered_pct,3.3273129824186527,2.8585020819638984,3.868619630495436,
+deployment,"pooled, D and E",anonymous P(U>0)_pct,6.756212437540795,6.061383405505235,7.527763750625003,
+deployment,"pooled, D and E",first visit flex_pct,26.6767519121462,22.251042599886116,31.42462078969655,
+deployment,"pooled, D and E",first visit undelivered_pct,4.288146612220156,3.055731543203812,5.646515305692733,
+deployment,"pooled, D and E",first visit P(U>0)_pct,9.513765308488914,7.4726188566694125,12.31829075205892,
+deployment,"pooled, D and E",returning flex_pct,32.730218127824074,30.11994939361438,35.362093869818324,
+deployment,"pooled, D and E",returning undelivered_pct,1.5654136097079852,1.4057473161892073,1.7114083349173683,
+deployment,"pooled, D and E",returning P(U>0)_pct,4.7239574006687715,4.203714196953004,5.299930346750361,
+deployment,"pooled, D and E",gamma at network operating point,0.10570159778174393,0.10105502971625045,0.11066558144847305,
+deployment,"pooled, D and E",network flex_pct minus paper (pp),-0.5368203043288844,-0.9445353818298293,-0.07556375077619726,0.02
+deployment,"pooled, D and E",first visit undelivered_pct minus paper (pp),-0.1264299239428066,-0.5818200617558679,0.3591486304790431,0.592
+deployment,"pooled, D and E",first visit P(U>0)_pct minus paper (pp),-0.051063493436366514,-1.2171847290549989,1.4787772678139672,0.882
+deployment,"pooled, D and E",first visit flex_pct minus paper (pp),-0.045508859191834006,-0.8426319539682634,0.8197830639857107,0.98
+deployment,"pooled, D and E",anonymous undelivered_pct minus paper (pp),1.3964949173088714,1.1996483392925852,1.6193923327001947,0.0
+deployment,"pooled, D and E",returning flex_pct minus paper (pp),-3.2443412824407787,-3.9645755686906172,-2.435688964887847,0.0
+deployment,"state, D and E",network flex_pct,29.590864435905036,27.06730429496488,31.998890385149913,
+deployment,"state, D and E",anonymous flex_pct,14.991330532046245,13.53031132427895,16.479606758406913,
+deployment,"state, D and E",anonymous undelivered_pct,1.9503587137647562,1.636995374446758,2.312814175146233,
+deployment,"state, D and E",anonymous P(U>0)_pct,4.584135608402158,3.9860372699204514,5.259776671877266,
+deployment,"state, D and E",first visit flex_pct,4.403559713333611,2.910438794937787,6.742587261375148,
+deployment,"state, D and E",first visit undelivered_pct,0.17525139434914871,0.03945012716921507,0.44854702681825315,
+deployment,"state, D and E",first visit P(U>0)_pct,0.8262840472308909,0.26595744680851063,1.6379099348650488,
+deployment,"state, D and E",returning flex_pct,36.60916334094587,33.51702924434582,39.5804901702337,
+deployment,"state, D and E",returning undelivered_pct,2.053164417741489,1.9466568969743954,2.146793265726581,
+deployment,"state, D and E",returning P(U>0)_pct,5.863108750707751,5.403848671957253,6.356048878486482,
+deployment,"state, D and E",gamma at network operating point,0.10535609339196049,0.09910189633412926,0.11066911532016677,
+deployment,"state, D and E",network flex_pct minus paper (pp),0.19306761634075187,0.06534737096848522,0.352139869122373,0.002
+deployment,"state, D and E",first visit undelivered_pct minus paper (pp),-4.239325141813813,-5.598142350141689,-2.9333697075891427,0.0
+deployment,"state, D and E",first visit P(U>0)_pct minus paper (pp),-8.73854475469439,-10.897487352810582,-6.229408605021971,0.0
+deployment,"state, D and E",first visit flex_pct minus paper (pp),-22.318701058004425,-25.546814990651807,-18.728379240295272,0.0
+deployment,"state, D and E",anonymous undelivered_pct minus paper (pp),0.019540648654974957,0.0014729732924894548,0.041823148157745724,0.032
+deployment,"state, D and E",returning flex_pct minus paper (pp),0.634603930681017,0.4607558459200233,0.8336607349005187,0.0
+deployment,"population, start",network flex_pct,29.297663786848094,26.982168846581786,31.620434326994562,
+deployment,"population, start",anonymous flex_pct,16.908780071561463,15.108174764329872,18.702166587329554,
+deployment,"population, start",anonymous undelivered_pct,2.3855497394050778,1.9810179241156916,2.8809608480861995,
+deployment,"population, start",anonymous P(U>0)_pct,5.415135642415405,4.666721585966932,6.1764551186588825,
+deployment,"population, start",first visit flex_pct,28.49873966899334,23.811456790576127,33.43292117188925,
+deployment,"population, start",first visit undelivered_pct,4.87408883451582,3.5911523753392025,6.312502214390531,
+deployment,"population, start",first visit P(U>0)_pct,10.927694617723846,8.425792529944285,13.596945699270092,
+deployment,"population, start",returning flex_pct,34.89256654366353,32.128471834924945,37.59807863570481,
+deployment,"population, start",returning undelivered_pct,1.8268723795736694,1.6792425403906337,1.9589825954680282,
+deployment,"population, start",returning P(U>0)_pct,5.348239030644423,4.828075590821786,5.88996023434922,
+deployment,"population, start",gamma at network operating point,0.053986813069601854,0.04660299578174186,0.06052989586259533,
+deployment,"population, start",network flex_pct minus paper (pp),-0.10013303271619023,-0.2706056871299266,0.06763792053725133,0.29
+deployment,"population, start",first visit undelivered_pct minus paper (pp),0.4595122983528581,0.03980800716844111,0.9274397822125061,0.03
+deployment,"population, start",first visit P(U>0)_pct minus paper (pp),1.3628658157985658,0.24848993981765394,2.551129507170147,0.016
+deployment,"population, start",first visit flex_pct minus paper (pp),1.7764788976553056,1.016498366909198,2.6075022360794593,0.0
+deployment,"population, start",anonymous undelivered_pct minus paper (pp),0.4547316742952965,0.34045993152399767,0.6230726940584932,0.0
+deployment,"population, start",returning flex_pct minus paper (pp),-1.0819928666013254,-1.4898170600483733,-0.717809829693271,0.0
+deployment,"state, start",network flex_pct,29.511754582572927,27.13522787251717,31.84045753931295,
+deployment,"state, start",anonymous flex_pct,16.969314557289685,15.138323789586568,18.797023940594954,
+deployment,"state, start",anonymous undelivered_pct,2.4001650801522816,1.985834028860339,2.911805329567111,
+deployment,"state, start",anonymous P(U>0)_pct,5.442094335925389,4.6827042971045785,6.220900817592994,
+deployment,"state, start",first visit flex_pct,17.07444138582586,14.07853513524524,20.603045798042093,
+deployment,"state, start",first visit undelivered_pct,1.7898032068714447,1.105195642513227,2.5856993522303795,
+deployment,"state, start",first visit P(U>0)_pct,5.243475013254515,3.611242653539133,7.030748446465036,
+deployment,"state, start",returning flex_pct,35.37986254694099,32.51071816108715,38.11418868066276,
+deployment,"state, start",returning undelivered_pct,1.8880804676179366,1.7410568398282897,2.015775298493118,
+deployment,"state, start",returning P(U>0)_pct,5.492501417309001,4.974590039413155,6.012709610711837,
+deployment,"state, start",gamma at network operating point,0.05428866512459244,0.046760022636960705,0.06081497704158534,
+deployment,"state, start",network flex_pct minus paper (pp),0.11395776300864213,-0.04449760014217263,0.27041729425118416,0.142
+deployment,"state, start",first visit undelivered_pct minus paper (pp),-2.624773329291518,-3.509037798993037,-1.7961069657008542,0.0
+deployment,"state, start",first visit P(U>0)_pct minus paper (pp),-4.321353788670765,-6.148531206560141,-2.5169870954742533,0.0
+deployment,"state, start",first visit flex_pct minus paper (pp),-9.647819385512175,-11.225848710849506,-7.98428162010947,0.0
+deployment,"state, start",anonymous undelivered_pct minus paper (pp),0.4693470150425003,0.34555532873053274,0.6470656622722221,0.0
+deployment,"state, start",returning flex_pct minus paper (pp),-0.5946968633238612,-0.9825681209050634,-0.28803630215733367,0.0
+cold,"population, D and E",network flex_pct,18.356696849558823,16.90732782155577,19.90153881345444,
+cold,"population, D and E",anonymous flex_pct,16.8128997188398,15.8085729394654,17.883882783006396,
+cold,"population, D and E",anonymous undelivered_pct,2.366251035204466,2.137545710244741,2.654085403042767,
+cold,"population, D and E",anonymous P(U>0)_pct,5.365271385790756,4.965293782010382,5.8374831269641385,
+cold,"population, D and E",first visit flex_pct,16.464877964304,13.81166480835291,19.438148826515654,
+cold,"population, D and E",first visit undelivered_pct,1.7743059784582318,1.2101862483675416,2.40992722578697,
+cold,"population, D and E",first visit P(U>0)_pct,5.2423141729584755,3.8061674456398453,6.814750156762656,
+cold,"population, D and E",returning flex_pct,19.08530600575399,17.100405043562613,21.12311047535948,
+cold,"population, D and E",returning undelivered_pct,1.898272641461981,1.813378764619015,1.9649885773179399,
+cold,"population, D and E",returning P(U>0)_pct,4.834606121725398,4.352416843524324,5.384470882273735,
+cold,"population, D and E",gamma at network operating point,0.11368516881720644,0.1104010568526768,0.11727594079437668,
+cold,"pooled, D and E",network flex_pct,18.325643480239147,16.761705184262254,19.99158855223834,
+cold,"pooled, D and E",anonymous flex_pct,13.949953001276153,12.552219427760296,15.524637841685896,
+cold,"pooled, D and E",anonymous undelivered_pct,1.720161449526337,1.4370045739427186,2.056542041689461,
+cold,"pooled, D and E",anonymous P(U>0)_pct,4.1942325880797835,3.6843645277875483,4.830405143009093,
+cold,"pooled, D and E",first visit flex_pct,19.272265669726604,16.267087438461033,22.68220440630116,
+cold,"pooled, D and E",first visit undelivered_pct,2.192322876298545,1.598414379581535,2.8723239486855734,
+cold,"pooled, D and E",first visit P(U>0)_pct,6.39877107065628,4.949289503453683,8.134015600030786,
+cold,"pooled, D and E",returning flex_pct,20.280192600208014,18.35136476347613,22.23081729073165,
+cold,"pooled, D and E",returning undelivered_pct,2.0773041337701557,1.977210521870775,2.163123380942793,
+cold,"pooled, D and E",returning P(U>0)_pct,5.2149230492568215,4.698350702876027,5.785884517173938,
+cold,"pooled, D and E",gamma at network operating point,0.11444922403208452,0.11135275163813148,0.117883497725655,
+cold,"pooled, D and E",network flex_pct minus paper (pp),-0.031053369319675284,-0.33701822742464393,0.18235459675561072,0.776
+cold,"pooled, D and E",first visit undelivered_pct minus paper (pp),0.4180168978403134,0.23925164089318404,0.6590683917702898,0.0
+cold,"pooled, D and E",first visit P(U>0)_pct minus paper (pp),1.1564568976978045,0.44433503261651613,2.106065180993545,0.0
+cold,"pooled, D and E",first visit flex_pct minus paper (pp),2.8073877054226024,2.2165651871765544,3.53178416897729,0.0
+cold,"pooled, D and E",anonymous undelivered_pct minus paper (pp),-0.646089585678129,-0.7797476078459997,-0.5145578152070631,0.0
+cold,"pooled, D and E",returning flex_pct minus paper (pp),1.194886594454026,0.8855879935415737,1.4665493298214645,0.0
+cold,"state, D and E",network flex_pct,18.380912914079534,16.93087221838492,19.91823322294695,
+cold,"state, D and E",anonymous flex_pct,16.849294127230877,15.84878004388204,17.92373628410053,
+cold,"state, D and E",anonymous undelivered_pct,2.374983884282319,2.1454693481012246,2.6625949406094076,
+cold,"state, D and E",anonymous P(U>0)_pct,5.378253185963265,4.975678465760339,5.856047978159536,
+cold,"state, D and E",first visit flex_pct,7.546802279752269,6.025784771118366,9.219622723855808,
+cold,"state, D and E",first visit undelivered_pct,0.41226886044209093,0.16864899527937152,0.7053516890765423,
+cold,"state, D and E",first visit P(U>0)_pct,1.5051535766836008,0.7251847351258444,2.2983408947806865,
+cold,"state, D and E",returning flex_pct,19.2608026803952,17.26699468243573,21.285356574012994,
+cold,"state, D and E",returning undelivered_pct,1.9246397632012742,1.8391393407970142,1.9912871636735434,
+cold,"state, D and E",returning P(U>0)_pct,4.899506631287864,4.418809185887889,5.438223909967389,
+cold,"state, D and E",gamma at network operating point,0.11386459149443447,0.1106143498702185,0.11743031022137217,
+cold,"state, D and E",network flex_pct minus paper (pp),0.024216064520711456,-0.02030810989557423,0.06399178625964223,0.332
+cold,"state, D and E",first visit undelivered_pct minus paper (pp),-1.3620371180161408,-1.8053504833547924,-0.9622111507599581,0.0
+cold,"state, D and E",first visit P(U>0)_pct minus paper (pp),-3.7371605962748746,-4.985168204578723,-2.471262430900489,0.0
+cold,"state, D and E",first visit flex_pct minus paper (pp),-8.918075684551733,-10.404685759096841,-7.482977994065078,0.0
+cold,"state, D and E",anonymous undelivered_pct minus paper (pp),0.0087328490778531,0.0037439853328355755,0.01454197918733392,0.0
+cold,"state, D and E",returning flex_pct minus paper (pp),0.175496674641213,0.11985226328058482,0.22893254123368018,0.0
+cold,"population, start",network flex_pct,18.45781222365129,16.9006447231341,20.025181233060696,
+cold,"population, start",anonymous flex_pct,15.972242261104684,14.540862335805691,17.380951448700095,
+cold,"population, start",anonymous undelivered_pct,2.1619353607092617,1.8576804865469885,2.501378735430814,
+cold,"population, start",anonymous P(U>0)_pct,5.0012329591921105,4.417441817865271,5.591850242622204,
+cold,"population, start",first visit flex_pct,19.00652409451246,16.007046132012587,22.40776002267436,
+cold,"population, start",first visit undelivered_pct,2.1661739964044164,1.5482647576229933,2.8344395977780916,
+cold,"population, start",first visit P(U>0)_pct,6.342160064404293,4.883712377763077,8.173377616650834,
+cold,"population, start",returning flex_pct,19.567882830849708,17.63345001107306,21.52071572615649,
+cold,"population, start",returning undelivered_pct,1.9493773414606612,1.851699494435621,2.039181870932372,
+cold,"population, start",returning P(U>0)_pct,4.991312423769798,4.465419006730732,5.525473011653042,
+cold,"population, start",gamma at network operating point,0.04948840614053381,0.04484741593713438,0.05492383033460623,
+cold,"population, start",network flex_pct minus paper (pp),0.10111537409246552,-0.14908680653038972,0.3107860274082188,0.434
+cold,"population, start",first visit undelivered_pct minus paper (pp),0.39186801794618464,0.1771272364726748,0.6629900464925848,0.0
+cold,"population, start",first visit P(U>0)_pct minus paper (pp),1.0998458914458178,0.37373645574408976,2.0908382823457283,0.002
+cold,"population, start",first visit flex_pct minus paper (pp),2.541646130208459,1.8799544012193992,3.310530916008291,0.0
+cold,"population, start",anonymous undelivered_pct minus paper (pp),-0.20431567449520438,-0.344419640808475,-0.11201360244035925,0.0
+cold,"population, start",returning flex_pct minus paper (pp),0.48257682509571964,0.19006530921685771,0.7644688191284829,0.002
+cold,"state, start",network flex_pct,18.47334046040223,16.916725014888897,20.056968239647755,
+cold,"state, start",anonymous flex_pct,15.951250767372825,14.506297780351396,17.373373936836604,
+cold,"state, start",anonymous undelivered_pct,2.1572505019148966,1.8480445659062175,2.5000720240495227,
+cold,"state, start",anonymous P(U>0)_pct,4.992371607773074,4.402430520050277,5.589632697649794,
+cold,"state, start",first visit flex_pct,16.037225903184456,13.373225449210828,18.921356365446243,
+cold,"state, start",first visit undelivered_pct,1.5860500783401716,1.064102767218249,2.1533804436355535,
+cold,"state, start",first visit P(U>0)_pct,4.755852290242379,3.4994710899911654,6.310370759562831,
+cold,"state, start",returning flex_pct,19.652189110088987,17.726694010847392,21.614772551264586,
+cold,"state, start",returning undelivered_pct,1.9630519841491259,1.8635241115178494,2.053494989453676,
+cold,"state, start",returning P(U>0)_pct,4.996296325484389,4.4887240051453166,5.5364664923165705,
+cold,"state, start",gamma at network operating point,0.04941002305655673,0.044705100709648775,0.054956031304476474,
+cold,"state, start",network flex_pct minus paper (pp),0.11664361084340769,-0.1384420310233831,0.33758516648669046,0.36
+cold,"state, start",first visit undelivered_pct minus paper (pp),-0.18825590011806015,-0.402067199339896,0.0030867625171879607,0.058
+cold,"state, start",first visit P(U>0)_pct minus paper (pp),-0.48646188271609603,-1.3387067957473961,0.4826668075268805,0.38
+cold,"state, start",first visit flex_pct minus paper (pp),-0.4276520611195451,-1.1182321993504438,0.12413401863739514,0.102
+cold,"state, start",anonymous undelivered_pct minus paper (pp),-0.20900053328956947,-0.35136200265686734,-0.11350055520249742,0.0
+cold,"state, start",returning flex_pct minus paper (pp),0.5668831043349982,0.2802090553269153,0.849577798851784,0.0
+benchmark,"population, D and E",network flex_pct,31.633950807861005,29.698774269851928,33.667883910632824,
+benchmark,"population, D and E",anonymous flex_pct,14.448150718497683,13.425374007988827,15.569305008853709,
+benchmark,"population, D and E",anonymous undelivered_pct,1.834681857449096,1.6200137091256568,2.100174631578099,
+benchmark,"population, D and E",anonymous P(U>0)_pct,4.364367250518734,3.952661500340591,4.862235497892054,
+benchmark,"population, D and E",first visit flex_pct,29.430791399558757,24.586664720979858,34.28739229939089,
+benchmark,"population, D and E",first visit undelivered_pct,5.115603975135844,3.7875095358709507,6.629685870762624,
+benchmark,"population, D and E",first visit P(U>0)_pct,10.08014085752501,7.905849000238604,12.705019572491318,
+benchmark,"population, D and E",returning flex_pct,39.41436762308853,37.17585698455559,41.59476611757237,
+benchmark,"population, D and E",returning undelivered_pct,1.981956351497224,1.8944340695120128,2.057943554870166,
+benchmark,"population, D and E",returning P(U>0)_pct,5.57970339074323,5.209894744453318,5.975315131509774,
+benchmark,"population, D and E",gamma at network operating point,0.10290132962429403,0.09930475172973897,0.1066580208742335,
+benchmark,"pooled, D and E",network flex_pct,30.83457509832616,29.04520613390336,32.66689259212389,
+benchmark,"pooled, D and E",anonymous flex_pct,21.465365226090256,20.100961048044137,22.84922295582433,
+benchmark,"pooled, D and E",anonymous undelivered_pct,3.6491515664305094,3.284103514199308,4.064903488070929,
+benchmark,"pooled, D and E",anonymous P(U>0)_pct,7.276246833882451,6.681002784597641,7.88888840066384,
+benchmark,"pooled, D and E",first visit flex_pct,28.84460379460145,24.169100776682036,33.891371603747416,
+benchmark,"pooled, D and E",first visit undelivered_pct,4.733840059593685,3.47825542114275,6.157276394101712,
+benchmark,"pooled, D and E",first visit P(U>0)_pct,10.853810665555644,8.75886039937314,13.36610535965729,
+benchmark,"pooled, D and E",returning flex_pct,35.09006691142478,32.92196489547676,37.25447557020084,
+benchmark,"pooled, D and E",returning undelivered_pct,1.462353738663538,1.3322229197018745,1.5694655433324114,
+benchmark,"pooled, D and E",returning P(U>0)_pct,4.340146457573305,3.9615874800133555,4.710985388804387,
+benchmark,"pooled, D and E",gamma at network operating point,0.10413791012811152,0.10067500179755345,0.10789342609817786,
+benchmark,"pooled, D and E",network flex_pct minus paper (pp),-0.7993757095348464,-1.2408358030613007,-0.41755684485934164,0.0
+benchmark,"pooled, D and E",first visit undelivered_pct minus paper (pp),-0.3817639155421588,-0.8858600275579154,0.16559909255115077,0.176
+benchmark,"pooled, D and E",first visit P(U>0)_pct minus paper (pp),0.7736698080306343,-0.5692949840437675,2.081151432266358,0.288
+benchmark,"pooled, D and E",first visit flex_pct minus paper (pp),-0.5861876049573063,-1.4895735588972256,0.3202679213986265,0.216
+benchmark,"pooled, D and E",anonymous undelivered_pct minus paper (pp),1.8144697089814135,1.6099394578144886,2.020979382157502,0.0
+benchmark,"pooled, D and E",returning flex_pct minus paper (pp),-4.324300711663753,-5.043923089511906,-3.763002167098066,0.0
+benchmark,"state, D and E",network flex_pct,31.856423967144863,29.907623451443584,33.9257519907118,
+benchmark,"state, D and E",anonymous flex_pct,14.553573166105464,13.520734760881094,15.70745292310249,
+benchmark,"state, D and E",anonymous undelivered_pct,1.8569961654499028,1.6399802125237453,2.1342540174388893,
+benchmark,"state, D and E",anonymous P(U>0)_pct,4.40561842324947,3.9969429414225703,4.919287078875459,
+benchmark,"state, D and E",first visit flex_pct,3.9633270243831653,2.8011888290106874,5.487108166644754,
+benchmark,"state, D and E",first visit undelivered_pct,0.15604856216737645,0.0190447406528138,0.3493050020594146,
+benchmark,"state, D and E",first visit P(U>0)_pct,0.7548256495959264,0.22234061578628003,1.4627659574468086,
+benchmark,"state, D and E",returning flex_pct,40.13993775797052,37.818251828200076,42.35832498314607,
+benchmark,"state, D and E",returning undelivered_pct,2.0807247325261446,1.9985681652715832,2.1523081460502826,
+benchmark,"state, D and E",returning P(U>0)_pct,5.811328640412894,5.427412164192046,6.229202386137451,
+benchmark,"state, D and E",gamma at network operating point,0.10338144442480683,0.09963763841316799,0.10727595890026245,
+benchmark,"state, D and E",network flex_pct minus paper (pp),0.22247315928385802,0.0816562914088764,0.3819510189317701,0.002
+benchmark,"state, D and E",first visit undelivered_pct minus paper (pp),-4.959555412968467,-6.392637206922795,-3.6937311102898303,0.0
+benchmark,"state, D and E",first visit P(U>0)_pct minus paper (pp),-9.325315207929084,-11.696936940523535,-7.197834106744875,0.0
+benchmark,"state, D and E",first visit flex_pct minus paper (pp),-25.46746437517559,-29.34063408079165,-21.39802212795729,0.0
+benchmark,"state, D and E",anonymous undelivered_pct minus paper (pp),0.022314308000806804,0.004413177970847215,0.0455114872097465,0.012
+benchmark,"state, D and E",returning flex_pct minus paper (pp),0.7255701348819912,0.5447084076275173,0.9300629906088854,0.0
+benchmark,"population, start",network flex_pct,31.589966504411745,29.691837236129487,33.58980952956621,
+benchmark,"population, start",anonymous flex_pct,16.784439133194674,15.598462277911151,18.04369490485917,
+benchmark,"population, start",anonymous undelivered_pct,2.355529079921547,2.0998740033393792,2.6908836337121618,
+benchmark,"population, start",anonymous P(U>0)_pct,5.3597611032936285,4.873252162463374,5.900055119380613,
+benchmark,"population, start",first visit flex_pct,31.319242092548627,26.328392471202765,36.54764608346157,
+benchmark,"population, start",first visit undelivered_pct,5.5851907951880735,4.230000067092933,7.170412514415791,
+benchmark,"population, start",first visit P(U>0)_pct,11.840445766061903,9.634939197457543,14.37804789211772,
+benchmark,"population, start",returning flex_pct,38.26424980713051,36.096042403927626,40.4187836252454,
+benchmark,"population, start",returning undelivered_pct,1.8205114088908465,1.7134721134446786,1.9090419415955493,
+benchmark,"population, start",returning P(U>0)_pct,5.2347218725308196,4.856029307608553,5.603406849956864,
+benchmark,"population, start",gamma at network operating point,0.05336679346732126,0.048987335043670914,0.05765478211160415,
+benchmark,"population, start",network flex_pct minus paper (pp),-0.04398430344926041,-0.2170287205619262,0.09187461310962315,0.516
+benchmark,"population, start",first visit undelivered_pct minus paper (pp),0.4695868200522293,0.08106583447348036,0.9384851739938164,0.024
+benchmark,"population, start",first visit P(U>0)_pct minus paper (pp),1.7603049085368934,0.6435439382484239,2.9134814272999026,0.0
+benchmark,"population, start",first visit flex_pct minus paper (pp),1.8884506929898706,1.1607489706061007,2.64946383232099,0.0
+benchmark,"population, start",anonymous undelivered_pct minus paper (pp),0.520847222472451,0.4523025691985197,0.607967045611934,0.0
+benchmark,"population, start",returning flex_pct minus paper (pp),-1.1501178159580192,-1.4401022536824155,-0.9423080154971066,0.0
+benchmark,"state, start",network flex_pct,31.853723253106683,29.95426652690313,33.85860114150454,
+benchmark,"state, start",anonymous flex_pct,16.85071103704143,15.67674923941409,18.12987390845872,
+benchmark,"state, start",anonymous undelivered_pct,2.3715296529013,2.1111880596156767,2.729630185443405,
+benchmark,"state, start",anonymous P(U>0)_pct,5.389274923765301,4.911575209100068,5.947827690249323,
+benchmark,"state, start",first visit flex_pct,18.670842577792317,15.540865735519109,22.038920461620272,
+benchmark,"state, start",first visit undelivered_pct,1.855542369502592,1.1044696226832003,2.641022218151238,
+benchmark,"state, start",first visit P(U>0)_pct,5.313537750897654,3.7206529373025936,7.213359194654108,
+benchmark,"state, start",returning flex_pct,38.84333084099569,36.63296613460339,40.960706647323235,
+benchmark,"state, start",returning undelivered_pct,1.8950133497916783,1.7921836404761602,1.9788135332045553,
+benchmark,"state, start",returning P(U>0)_pct,5.395880052179921,5.033468298032099,5.784837902321908,
+benchmark,"state, start",gamma at network operating point,0.053697254858437946,0.04915186373826597,0.058075507507160715,
+benchmark,"state, start",network flex_pct minus paper (pp),0.21977244524567752,0.05828615241130084,0.3640240051491506,0.01
+benchmark,"state, start",first visit undelivered_pct minus paper (pp),-3.2600616056332523,-4.20375195283259,-2.3722724469054004,0.0
+benchmark,"state, start",first visit P(U>0)_pct minus paper (pp),-4.766603106627356,-6.486242686769269,-3.0087663937587914,0.0
+benchmark,"state, start",first visit flex_pct minus paper (pp),-10.75994882176644,-12.568278243312331,-8.984635583240598,0.0
+benchmark,"state, start",anonymous undelivered_pct minus paper (pp),0.536847795452204,0.4643497895093006,0.6312524651455655,0.0
+benchmark,"state, start",returning flex_pct minus paper (pp),-0.5710367820928397,-0.8290021151594926,-0.3796625502081755,0.0

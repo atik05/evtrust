@@ -1,0 +1,24 @@
+{
+ "validation": {
+  "max_abs_vm_pu": 9.873801776194568e-11,
+  "max_abs_line_loading_pct": 1.0672039607584338e-07,
+  "max_abs_trafo_loading_pct": 9.055717953287967e-09,
+  "points": 100
+ },
+ "steps_with_hub_load": 34062,
+ "vmin_pu": 0.965,
+ "vmax_pu": 1.055,
+ "base_case_steps_checked": 35136,
+ "base_case_violations": {
+  "undervoltage": 0,
+  "overvoltage": 86,
+  "line": 0,
+  "transformer": 0
+ },
+ "hub_year": "2019-01-04 to 2020-01-04 23:45:00 mapped onto 2016",
+ "diverse": {
+  "variants": 20,
+  "week_window": 4,
+  "seed": 20261126
+ }
+}

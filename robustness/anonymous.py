@@ -141,8 +141,10 @@ def summarise(ctx: Ctx, learner: str):
                 if (pop, var) in fill_curves:
                     cv, cid = fill_curves[(pop, var)]
                     cs.add(*cv, cid, key=seed)
-        # ---- forecasts for the ACN-Sim study (every window session, one seed)
-        if learner == ctx.cfg['acnsim']['learner'] and seed == int(ctx.cfg['acnsim']['seed']):
+        # ---- forecasts for the ACN-Sim study (every window session; by default one seed, acnsim.seed, or every
+        #      seed listed in acnsim.forecast_seeds)
+        fseeds = {int(x) for x in ctx.cfg['acnsim'].get('forecast_seeds', [ctx.cfg['acnsim']['seed']])}
+        if learner == ctx.cfg['acnsim']['learner'] and seed in fseeds:
             c = pd.DataFrame({'session_key': j.index.astype(str), 'population': 'cohort', 'calib_group': gc,
                               'D': Dc, 'E': Ec, 'requested_duration': j['requested_duration'].to_numpy(float),
                               'requested_energy': j['requested_energy'].to_numpy(float)})

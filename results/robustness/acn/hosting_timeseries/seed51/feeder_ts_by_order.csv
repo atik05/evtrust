@@ -1,0 +1,221 @@
+feeder,site,forecast,hub_profiles,order,hubs,binding,checks
+1-MV-comm--0-sw,caltech,no forecast (FCFS),coincident,0,605.796875,voltage,18
+1-MV-comm--0-sw,caltech,no forecast (FCFS),coincident,1,583.0625,voltage,18
+1-MV-comm--0-sw,caltech,no forecast (FCFS),coincident,2,538.4296875,voltage,18
+1-MV-comm--0-sw,caltech,no forecast (FCFS),coincident,3,495.53125,voltage,18
+1-MV-comm--0-sw,caltech,no forecast (FCFS),coincident,4,543.2734375,voltage,18
+1-MV-comm--0-sw,caltech,no forecast (FCFS),coincident,5,640.34375,voltage,18
+1-MV-comm--0-sw,caltech,no forecast (FCFS),coincident,6,553.84375,voltage,18
+1-MV-comm--0-sw,caltech,no forecast (FCFS),coincident,7,675.5390625,thermal,18
+1-MV-comm--0-sw,caltech,no forecast (FCFS),coincident,8,549.546875,thermal,18
+1-MV-comm--0-sw,caltech,no forecast (FCFS),coincident,9,561.5390625,voltage,18
+1-MV-comm--0-sw,caltech,no forecast (FCFS),diverse,0,677.4765625,thermal,18
+1-MV-comm--0-sw,caltech,no forecast (FCFS),diverse,1,655.4453125,voltage,18
+1-MV-comm--0-sw,caltech,no forecast (FCFS),diverse,2,597.46875,voltage,18
+1-MV-comm--0-sw,caltech,no forecast (FCFS),diverse,3,572.28125,voltage,18
+1-MV-comm--0-sw,caltech,no forecast (FCFS),diverse,4,600.7578125,thermal,18
+1-MV-comm--0-sw,caltech,no forecast (FCFS),diverse,5,689.71875,voltage,18
+1-MV-comm--0-sw,caltech,no forecast (FCFS),diverse,6,650.3046875,voltage,18
+1-MV-comm--0-sw,caltech,no forecast (FCFS),diverse,7,737.0859375,thermal,18
+1-MV-comm--0-sw,caltech,no forecast (FCFS),diverse,8,646.234375,thermal,18
+1-MV-comm--0-sw,caltech,no forecast (FCFS),diverse,9,655.4765625,voltage,18
+1-MV-comm--0-sw,caltech,perfect information,coincident,0,736.2265625,voltage,18
+1-MV-comm--0-sw,caltech,perfect information,coincident,1,720.40625,voltage,18
+1-MV-comm--0-sw,caltech,perfect information,coincident,2,691.3046875,voltage,18
+1-MV-comm--0-sw,caltech,perfect information,coincident,3,636.1171875,voltage,18
+1-MV-comm--0-sw,caltech,perfect information,coincident,4,667.609375,voltage,18
+1-MV-comm--0-sw,caltech,perfect information,coincident,5,742.9609375,voltage,18
+1-MV-comm--0-sw,caltech,perfect information,coincident,6,709.4140625,voltage,18
+1-MV-comm--0-sw,caltech,perfect information,coincident,7,783.609375,voltage,18
+1-MV-comm--0-sw,caltech,perfect information,coincident,8,721.890625,voltage,18
+1-MV-comm--0-sw,caltech,perfect information,coincident,9,700.828125,voltage,18
+1-MV-comm--0-sw,caltech,perfect information,diverse,0,773.0,voltage,18
+1-MV-comm--0-sw,caltech,perfect information,diverse,1,755.609375,voltage,18
+1-MV-comm--0-sw,caltech,perfect information,diverse,2,755.7890625,voltage,18
+1-MV-comm--0-sw,caltech,perfect information,diverse,3,727.03125,voltage,18
+1-MV-comm--0-sw,caltech,perfect information,diverse,4,757.1875,voltage,18
+1-MV-comm--0-sw,caltech,perfect information,diverse,5,794.7109375,voltage,18
+1-MV-comm--0-sw,caltech,perfect information,diverse,6,776.4140625,voltage,18
+1-MV-comm--0-sw,caltech,perfect information,diverse,7,845.4765625,voltage,18
+1-MV-comm--0-sw,caltech,perfect information,diverse,8,780.171875,voltage,18
+1-MV-comm--0-sw,caltech,perfect information,diverse,9,764.1484375,voltage,18
+1-MV-comm--0-sw,caltech,driver seen,coincident,0,644.0546875,thermal,18
+1-MV-comm--0-sw,caltech,driver seen,coincident,1,625.7265625,voltage,17
+1-MV-comm--0-sw,caltech,driver seen,coincident,2,585.03125,thermal,18
+1-MV-comm--0-sw,caltech,driver seen,coincident,3,548.2890625,voltage,18
+1-MV-comm--0-sw,caltech,driver seen,coincident,4,573.84375,thermal,18
+1-MV-comm--0-sw,caltech,driver seen,coincident,5,679.6484375,thermal,18
+1-MV-comm--0-sw,caltech,driver seen,coincident,6,613.4375,voltage,18
+1-MV-comm--0-sw,caltech,driver seen,coincident,7,714.7890625,thermal,18
+1-MV-comm--0-sw,caltech,driver seen,coincident,8,592.75,thermal,18
+1-MV-comm--0-sw,caltech,driver seen,coincident,9,610.859375,voltage,18
+1-MV-comm--0-sw,caltech,driver seen,diverse,0,726.8046875,voltage,18
+1-MV-comm--0-sw,caltech,driver seen,diverse,1,680.2734375,voltage,18
+1-MV-comm--0-sw,caltech,driver seen,diverse,2,687.171875,thermal,17
+1-MV-comm--0-sw,caltech,driver seen,diverse,3,672.2109375,voltage,18
+1-MV-comm--0-sw,caltech,driver seen,diverse,4,665.3125,voltage,18
+1-MV-comm--0-sw,caltech,driver seen,diverse,5,742.2109375,voltage,18
+1-MV-comm--0-sw,caltech,driver seen,diverse,6,711.8671875,voltage,18
+1-MV-comm--0-sw,caltech,driver seen,diverse,7,790.5703125,voltage,18
+1-MV-comm--0-sw,caltech,driver seen,diverse,8,721.75,voltage,18
+1-MV-comm--0-sw,caltech,driver seen,diverse,9,700.84375,voltage,18
+1-MV-comm--0-sw,caltech,"unseen driver, own history",coincident,0,612.453125,voltage,18
+1-MV-comm--0-sw,caltech,"unseen driver, own history",coincident,1,585.234375,voltage,18
+1-MV-comm--0-sw,caltech,"unseen driver, own history",coincident,2,540.4609375,voltage,18
+1-MV-comm--0-sw,caltech,"unseen driver, own history",coincident,3,513.046875,voltage,18
+1-MV-comm--0-sw,caltech,"unseen driver, own history",coincident,4,549.328125,voltage,18
+1-MV-comm--0-sw,caltech,"unseen driver, own history",coincident,5,640.9921875,voltage,18
+1-MV-comm--0-sw,caltech,"unseen driver, own history",coincident,6,559.53125,voltage,18
+1-MV-comm--0-sw,caltech,"unseen driver, own history",coincident,7,681.9296875,thermal,18
+1-MV-comm--0-sw,caltech,"unseen driver, own history",coincident,8,553.9296875,thermal,18
+1-MV-comm--0-sw,caltech,"unseen driver, own history",coincident,9,563.4921875,voltage,18
+1-MV-comm--0-sw,caltech,"unseen driver, own history",diverse,0,726.609375,voltage,18
+1-MV-comm--0-sw,caltech,"unseen driver, own history",diverse,1,680.546875,voltage,18
+1-MV-comm--0-sw,caltech,"unseen driver, own history",diverse,2,655.0390625,voltage,18
+1-MV-comm--0-sw,caltech,"unseen driver, own history",diverse,3,672.046875,voltage,18
+1-MV-comm--0-sw,caltech,"unseen driver, own history",diverse,4,662.421875,voltage,18
+1-MV-comm--0-sw,caltech,"unseen driver, own history",diverse,5,711.7734375,voltage,18
+1-MV-comm--0-sw,caltech,"unseen driver, own history",diverse,6,681.6015625,voltage,18
+1-MV-comm--0-sw,caltech,"unseen driver, own history",diverse,7,781.4375,voltage,17
+1-MV-comm--0-sw,caltech,"unseen driver, own history",diverse,8,718.046875,thermal,18
+1-MV-comm--0-sw,caltech,"unseen driver, own history",diverse,9,680.875,voltage,18
+1-MV-comm--0-sw,caltech,cold start,coincident,0,656.9453125,voltage,17
+1-MV-comm--0-sw,caltech,cold start,coincident,1,625.15625,voltage,17
+1-MV-comm--0-sw,caltech,cold start,coincident,2,580.9453125,voltage,18
+1-MV-comm--0-sw,caltech,cold start,coincident,3,539.625,voltage,18
+1-MV-comm--0-sw,caltech,cold start,coincident,4,586.4296875,voltage,18
+1-MV-comm--0-sw,caltech,cold start,coincident,5,681.4609375,voltage,18
+1-MV-comm--0-sw,caltech,cold start,coincident,6,613.0,voltage,18
+1-MV-comm--0-sw,caltech,cold start,coincident,7,715.421875,voltage,18
+1-MV-comm--0-sw,caltech,cold start,coincident,8,609.3046875,thermal,18
+1-MV-comm--0-sw,caltech,cold start,coincident,9,607.4921875,voltage,18
+1-MV-comm--0-sw,caltech,cold start,diverse,0,688.4140625,voltage,18
+1-MV-comm--0-sw,caltech,cold start,diverse,1,641.7578125,voltage,18
+1-MV-comm--0-sw,caltech,cold start,diverse,2,590.0859375,voltage,18
+1-MV-comm--0-sw,caltech,cold start,diverse,3,572.140625,voltage,18
+1-MV-comm--0-sw,caltech,cold start,diverse,4,606.6875,voltage,18
+1-MV-comm--0-sw,caltech,cold start,diverse,5,682.21875,voltage,18
+1-MV-comm--0-sw,caltech,cold start,diverse,6,632.6015625,voltage,18
+1-MV-comm--0-sw,caltech,cold start,diverse,7,733.859375,voltage,18
+1-MV-comm--0-sw,caltech,cold start,diverse,8,661.953125,thermal,18
+1-MV-comm--0-sw,caltech,cold start,diverse,9,642.5703125,voltage,18
+1-MV-comm--0-sw,jpl,no forecast (FCFS),coincident,0,253.734375,voltage,18
+1-MV-comm--0-sw,jpl,no forecast (FCFS),coincident,1,251.2890625,voltage,18
+1-MV-comm--0-sw,jpl,no forecast (FCFS),coincident,2,271.109375,thermal,18
+1-MV-comm--0-sw,jpl,no forecast (FCFS),coincident,3,250.4921875,thermal,17
+1-MV-comm--0-sw,jpl,no forecast (FCFS),coincident,4,214.359375,voltage,18
+1-MV-comm--0-sw,jpl,no forecast (FCFS),coincident,5,294.578125,voltage,18
+1-MV-comm--0-sw,jpl,no forecast (FCFS),coincident,6,266.359375,voltage,18
+1-MV-comm--0-sw,jpl,no forecast (FCFS),coincident,7,311.7578125,voltage,18
+1-MV-comm--0-sw,jpl,no forecast (FCFS),coincident,8,238.171875,thermal,18
+1-MV-comm--0-sw,jpl,no forecast (FCFS),coincident,9,206.078125,voltage,18
+1-MV-comm--0-sw,jpl,no forecast (FCFS),diverse,0,265.71875,thermal,18
+1-MV-comm--0-sw,jpl,no forecast (FCFS),diverse,1,251.8125,voltage,18
+1-MV-comm--0-sw,jpl,no forecast (FCFS),diverse,2,274.3125,thermal,18
+1-MV-comm--0-sw,jpl,no forecast (FCFS),diverse,3,251.3359375,thermal,18
+1-MV-comm--0-sw,jpl,no forecast (FCFS),diverse,4,214.9765625,voltage,18
+1-MV-comm--0-sw,jpl,no forecast (FCFS),diverse,5,297.53125,voltage,18
+1-MV-comm--0-sw,jpl,no forecast (FCFS),diverse,6,268.140625,voltage,18
+1-MV-comm--0-sw,jpl,no forecast (FCFS),diverse,7,322.453125,voltage,18
+1-MV-comm--0-sw,jpl,no forecast (FCFS),diverse,8,244.0859375,thermal,18
+1-MV-comm--0-sw,jpl,no forecast (FCFS),diverse,9,206.71875,voltage,18
+1-MV-comm--0-sw,jpl,perfect information,coincident,0,330.8984375,voltage,18
+1-MV-comm--0-sw,jpl,perfect information,coincident,1,312.1484375,voltage,17
+1-MV-comm--0-sw,jpl,perfect information,coincident,2,320.6171875,thermal,18
+1-MV-comm--0-sw,jpl,perfect information,coincident,3,297.953125,thermal,18
+1-MV-comm--0-sw,jpl,perfect information,coincident,4,305.8125,thermal,18
+1-MV-comm--0-sw,jpl,perfect information,coincident,5,387.0078125,voltage,18
+1-MV-comm--0-sw,jpl,perfect information,coincident,6,337.5546875,voltage,18
+1-MV-comm--0-sw,jpl,perfect information,coincident,7,387.7890625,voltage,18
+1-MV-comm--0-sw,jpl,perfect information,coincident,8,294.734375,thermal,18
+1-MV-comm--0-sw,jpl,perfect information,coincident,9,233.2109375,voltage,18
+1-MV-comm--0-sw,jpl,perfect information,diverse,0,352.734375,voltage,18
+1-MV-comm--0-sw,jpl,perfect information,diverse,1,322.5703125,voltage,18
+1-MV-comm--0-sw,jpl,perfect information,diverse,2,338.4765625,thermal,18
+1-MV-comm--0-sw,jpl,perfect information,diverse,3,313.8515625,thermal,18
+1-MV-comm--0-sw,jpl,perfect information,diverse,4,319.0703125,voltage,18
+1-MV-comm--0-sw,jpl,perfect information,diverse,5,387.9609375,voltage,18
+1-MV-comm--0-sw,jpl,perfect information,diverse,6,358.046875,voltage,18
+1-MV-comm--0-sw,jpl,perfect information,diverse,7,416.1875,voltage,18
+1-MV-comm--0-sw,jpl,perfect information,diverse,8,347.5,thermal,18
+1-MV-comm--0-sw,jpl,perfect information,diverse,9,278.3359375,voltage,18
+1-MV-comm--0-sw,jpl,driver seen,coincident,0,293.8203125,thermal,18
+1-MV-comm--0-sw,jpl,driver seen,coincident,1,293.8359375,voltage,18
+1-MV-comm--0-sw,jpl,driver seen,coincident,2,280.3359375,thermal,18
+1-MV-comm--0-sw,jpl,driver seen,coincident,3,263.65625,thermal,18
+1-MV-comm--0-sw,jpl,driver seen,coincident,4,255.5625,thermal,18
+1-MV-comm--0-sw,jpl,driver seen,coincident,5,344.203125,thermal,18
+1-MV-comm--0-sw,jpl,driver seen,coincident,6,287.7421875,voltage,18
+1-MV-comm--0-sw,jpl,driver seen,coincident,7,339.859375,voltage,18
+1-MV-comm--0-sw,jpl,driver seen,coincident,8,261.296875,thermal,18
+1-MV-comm--0-sw,jpl,driver seen,coincident,9,217.796875,voltage,18
+1-MV-comm--0-sw,jpl,driver seen,diverse,0,310.390625,voltage,18
+1-MV-comm--0-sw,jpl,driver seen,diverse,1,293.8671875,voltage,18
+1-MV-comm--0-sw,jpl,driver seen,diverse,2,296.8125,thermal,18
+1-MV-comm--0-sw,jpl,driver seen,diverse,3,272.8125,thermal,18
+1-MV-comm--0-sw,jpl,driver seen,diverse,4,281.5703125,thermal,17
+1-MV-comm--0-sw,jpl,driver seen,diverse,5,359.2890625,thermal,18
+1-MV-comm--0-sw,jpl,driver seen,diverse,6,287.7734375,voltage,18
+1-MV-comm--0-sw,jpl,driver seen,diverse,7,339.96875,voltage,18
+1-MV-comm--0-sw,jpl,driver seen,diverse,8,268.328125,thermal,18
+1-MV-comm--0-sw,jpl,driver seen,diverse,9,217.9375,voltage,18
+1-MV-comm--0-sw,jpl,"unseen driver, own history",coincident,0,281.203125,thermal,17
+1-MV-comm--0-sw,jpl,"unseen driver, own history",coincident,1,288.4375,voltage,18
+1-MV-comm--0-sw,jpl,"unseen driver, own history",coincident,2,276.671875,thermal,18
+1-MV-comm--0-sw,jpl,"unseen driver, own history",coincident,3,254.09375,thermal,18
+1-MV-comm--0-sw,jpl,"unseen driver, own history",coincident,4,241.0,thermal,18
+1-MV-comm--0-sw,jpl,"unseen driver, own history",coincident,5,319.6640625,thermal,18
+1-MV-comm--0-sw,jpl,"unseen driver, own history",coincident,6,287.09375,voltage,18
+1-MV-comm--0-sw,jpl,"unseen driver, own history",coincident,7,330.9453125,voltage,18
+1-MV-comm--0-sw,jpl,"unseen driver, own history",coincident,8,245.7109375,thermal,18
+1-MV-comm--0-sw,jpl,"unseen driver, own history",coincident,9,217.1796875,voltage,18
+1-MV-comm--0-sw,jpl,"unseen driver, own history",diverse,0,308.453125,voltage,18
+1-MV-comm--0-sw,jpl,"unseen driver, own history",diverse,1,288.859375,voltage,18
+1-MV-comm--0-sw,jpl,"unseen driver, own history",diverse,2,296.9375,thermal,18
+1-MV-comm--0-sw,jpl,"unseen driver, own history",diverse,3,272.8671875,thermal,18
+1-MV-comm--0-sw,jpl,"unseen driver, own history",diverse,4,281.609375,thermal,17
+1-MV-comm--0-sw,jpl,"unseen driver, own history",diverse,5,357.375,voltage,18
+1-MV-comm--0-sw,jpl,"unseen driver, own history",diverse,6,287.4609375,voltage,18
+1-MV-comm--0-sw,jpl,"unseen driver, own history",diverse,7,339.3671875,voltage,18
+1-MV-comm--0-sw,jpl,"unseen driver, own history",diverse,8,268.203125,thermal,18
+1-MV-comm--0-sw,jpl,"unseen driver, own history",diverse,9,217.515625,voltage,18
+1-MV-comm--0-sw,jpl,cold start,coincident,0,271.6015625,thermal,18
+1-MV-comm--0-sw,jpl,cold start,coincident,1,286.390625,voltage,18
+1-MV-comm--0-sw,jpl,cold start,coincident,2,276.046875,thermal,18
+1-MV-comm--0-sw,jpl,cold start,coincident,3,253.453125,thermal,18
+1-MV-comm--0-sw,jpl,cold start,coincident,4,240.3671875,thermal,18
+1-MV-comm--0-sw,jpl,cold start,coincident,5,319.046875,thermal,18
+1-MV-comm--0-sw,jpl,cold start,coincident,6,274.859375,voltage,18
+1-MV-comm--0-sw,jpl,cold start,coincident,7,330.1328125,voltage,18
+1-MV-comm--0-sw,jpl,cold start,coincident,8,245.09375,thermal,18
+1-MV-comm--0-sw,jpl,cold start,coincident,9,208.3984375,voltage,18
+1-MV-comm--0-sw,jpl,cold start,diverse,0,289.984375,voltage,18
+1-MV-comm--0-sw,jpl,cold start,diverse,1,288.7265625,voltage,18
+1-MV-comm--0-sw,jpl,cold start,diverse,2,280.609375,thermal,18
+1-MV-comm--0-sw,jpl,cold start,diverse,3,263.9296875,thermal,18
+1-MV-comm--0-sw,jpl,cold start,diverse,4,255.9921875,thermal,18
+1-MV-comm--0-sw,jpl,cold start,diverse,5,344.21875,thermal,18
+1-MV-comm--0-sw,jpl,cold start,diverse,6,287.1171875,voltage,18
+1-MV-comm--0-sw,jpl,cold start,diverse,7,336.046875,voltage,18
+1-MV-comm--0-sw,jpl,cold start,diverse,8,261.46875,thermal,18
+1-MV-comm--0-sw,jpl,cold start,diverse,9,217.09375,voltage,18
+1-MV-comm--0-sw,caltech,deployment limit through weekday 07:00-19:00 (check),coincident,0,519.03125,voltage,18
+1-MV-comm--0-sw,caltech,deployment limit through weekday 07:00-19:00 (check),coincident,1,482.375,voltage,18
+1-MV-comm--0-sw,caltech,deployment limit through weekday 07:00-19:00 (check),coincident,2,474.6171875,voltage,18
+1-MV-comm--0-sw,caltech,deployment limit through weekday 07:00-19:00 (check),coincident,3,431.0546875,voltage,18
+1-MV-comm--0-sw,caltech,deployment limit through weekday 07:00-19:00 (check),coincident,4,428.6640625,voltage,18
+1-MV-comm--0-sw,caltech,deployment limit through weekday 07:00-19:00 (check),coincident,5,531.09375,voltage,17
+1-MV-comm--0-sw,caltech,deployment limit through weekday 07:00-19:00 (check),coincident,6,475.453125,voltage,18
+1-MV-comm--0-sw,caltech,deployment limit through weekday 07:00-19:00 (check),coincident,7,594.234375,thermal,18
+1-MV-comm--0-sw,caltech,deployment limit through weekday 07:00-19:00 (check),coincident,8,504.203125,thermal,18
+1-MV-comm--0-sw,caltech,deployment limit through weekday 07:00-19:00 (check),coincident,9,477.359375,voltage,18
+1-MV-comm--0-sw,jpl,deployment limit through weekday 07:00-19:00 (check),coincident,0,253.3671875,voltage,18
+1-MV-comm--0-sw,jpl,deployment limit through weekday 07:00-19:00 (check),coincident,1,251.015625,voltage,18
+1-MV-comm--0-sw,jpl,deployment limit through weekday 07:00-19:00 (check),coincident,2,266.5234375,thermal,18
+1-MV-comm--0-sw,jpl,deployment limit through weekday 07:00-19:00 (check),coincident,3,244.890625,thermal,18
+1-MV-comm--0-sw,jpl,deployment limit through weekday 07:00-19:00 (check),coincident,4,214.09375,voltage,18
+1-MV-comm--0-sw,jpl,deployment limit through weekday 07:00-19:00 (check),coincident,5,287.9765625,voltage,18
+1-MV-comm--0-sw,jpl,deployment limit through weekday 07:00-19:00 (check),coincident,6,263.0234375,voltage,18
+1-MV-comm--0-sw,jpl,deployment limit through weekday 07:00-19:00 (check),coincident,7,304.8671875,voltage,18
+1-MV-comm--0-sw,jpl,deployment limit through weekday 07:00-19:00 (check),coincident,8,236.5625,thermal,18
+1-MV-comm--0-sw,jpl,deployment limit through weekday 07:00-19:00 (check),coincident,9,202.390625,voltage,18

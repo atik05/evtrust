@@ -1,0 +1,226 @@
+forecast,calibration,state,gamma,sessions,P(U>0)_pct,undelivered_pct
+deployment,"population, D and E",anonymous,0.2,17691,12.938782431744954,7.921914222314084
+deployment,"population, D and E",anonymous,0.1,17691,4.115086767282799,1.699836685462699
+deployment,"population, D and E",anonymous,0.05,17691,0.3108925442315301,0.05854513145824578
+deployment,"population, D and E",anonymous,0.02,17691,0.0,0.0
+deployment,"population, D and E",anonymous,0.01,17691,0.0,0.0
+deployment,"population, D and E",first visit,0.2,752,25.398936170212767,16.20667741416306
+deployment,"population, D and E",first visit,0.1,752,7.9787234042553195,3.8092217589908066
+deployment,"population, D and E",first visit,0.05,752,0.7978723404255319,0.14909758097892853
+deployment,"population, D and E",first visit,0.02,752,0.0,0.0
+deployment,"population, D and E",first visit,0.01,752,0.0,0.0
+deployment,"population, D and E",returning,0.2,35346,18.449046568211397,9.278544528268196
+deployment,"population, D and E",returning,0.1,35346,5.021784643241102,1.699662550382291
+deployment,"population, D and E",returning,0.05,35346,0.543201493804108,0.1363952306392744
+deployment,"population, D and E",returning,0.02,35346,0.0594126633848243,0.00976115064722723
+deployment,"population, D and E",returning,0.01,35346,0.016975046681378374,0.0023129570378362207
+deployment,"pooled, D and E",anonymous,0.2,17691,17.70391724605732,11.4193846077781
+deployment,"pooled, D and E",anonymous,0.1,17691,6.0369679498049855,2.7691436816014727
+deployment,"pooled, D and E",anonymous,0.05,17691,0.26567181052512573,0.04123556562666675
+deployment,"pooled, D and E",anonymous,0.02,17691,0.0,0.0
+deployment,"pooled, D and E",anonymous,0.01,17691,0.0,0.0
+deployment,"pooled, D and E",first visit,0.2,752,25.0,15.76096650137874
+deployment,"pooled, D and E",first visit,0.1,752,8.51063829787234,3.5464505284415404
+deployment,"pooled, D and E",first visit,0.05,752,0.7978723404255319,0.10595503218982681
+deployment,"pooled, D and E",first visit,0.02,752,0.0,0.0
+deployment,"pooled, D and E",first visit,0.01,752,0.0,0.0
+deployment,"pooled, D and E",returning,0.2,35346,14.689073728286086,6.987182698711432
+deployment,"pooled, D and E",returning,0.1,35346,4.051377807955638,1.2979227864192793
+deployment,"pooled, D and E",returning,0.05,35346,0.47247213263169807,0.11365145637702338
+deployment,"pooled, D and E",returning,0.02,35346,0.03677926780965314,0.00702922254859535
+deployment,"pooled, D and E",returning,0.01,35346,0.005658348893792791,0.0012291962393408313
+deployment,"state, D and E",anonymous,0.2,17691,12.938782431744954,7.921914222314084
+deployment,"state, D and E",anonymous,0.1,17691,4.115086767282799,1.699836685462699
+deployment,"state, D and E",anonymous,0.05,17691,0.3108925442315301,0.05854513145824578
+deployment,"state, D and E",anonymous,0.02,17691,0.0,0.0
+deployment,"state, D and E",anonymous,0.01,17691,0.0,0.0
+deployment,"state, D and E",first visit,0.2,752,15.691489361702127,7.707614997110418
+deployment,"state, D and E",first visit,0.1,752,0.7978723404255319,0.11567524092263644
+deployment,"state, D and E",first visit,0.05,752,0.0,0.0
+deployment,"state, D and E",first visit,0.02,752,0.0,0.0
+deployment,"state, D and E",first visit,0.01,752,0.0,0.0
+deployment,"state, D and E",returning,0.2,35346,18.647088779494144,9.395229113850053
+deployment,"state, D and E",returning,0.1,35346,5.14909749335144,1.7526872415154482
+deployment,"state, D and E",returning,0.05,35346,0.5743224127199683,0.14398594187496028
+deployment,"state, D and E",returning,0.02,35346,0.0622418378317207,0.01048175623197709
+deployment,"state, D and E",returning,0.01,35346,0.016975046681378374,0.002491178922717451
+deployment,"population, start",anonymous,0.2,17691,20.03843762365044,12.978572966718971
+deployment,"population, start",anonymous,0.1,17691,10.027697699395173,5.686598665645093
+deployment,"population, start",anonymous,0.05,17691,5.05906958340399,2.1925126851784555
+deployment,"population, start",anonymous,0.02,17691,2.0349330167881976,0.5941630843358428
+deployment,"population, start",anonymous,0.01,17691,1.000508733254197,0.25819169785805113
+deployment,"population, start",first visit,0.2,752,29.521276595744684,19.908125535998686
+deployment,"population, start",first visit,0.1,752,17.68617021276596,9.55652152494458
+deployment,"population, start",first visit,0.05,752,9.97340425531915,4.519055708366353
+deployment,"population, start",first visit,0.02,752,5.319148936170213,1.5342815095131876
+deployment,"population, start",first visit,0.01,752,2.5265957446808507,0.6888009319794623
+deployment,"population, start",returning,0.2,35346,20.02206756068579,10.209404102454634
+deployment,"population, start",returning,0.1,35346,9.87381881966842,4.072859818370664
+deployment,"population, start",returning,0.05,35346,4.9963220732190345,1.681570819156699
+deployment,"population, start",returning,0.02,35346,2.079443218468851,0.5548768673361828
+deployment,"population, start",returning,0.01,35346,0.9788943586261528,0.267050732632512
+deployment,"state, start",anonymous,0.2,17691,20.03843762365044,12.978572966718971
+deployment,"state, start",anonymous,0.1,17691,10.027697699395173,5.686598665645093
+deployment,"state, start",anonymous,0.05,17691,5.05906958340399,2.1925126851784555
+deployment,"state, start",anonymous,0.02,17691,2.0349330167881976,0.5941630843358428
+deployment,"state, start",anonymous,0.01,17691,1.000508733254197,0.25819169785805113
+deployment,"state, start",first visit,0.2,752,19.9468085106383,11.265146638564744
+deployment,"state, start",first visit,0.1,752,10.106382978723403,4.494698933386231
+deployment,"state, start",first visit,0.05,752,4.787234042553192,1.6144178799066402
+deployment,"state, start",first visit,0.02,752,1.9946808510638299,0.5940714006051698
+deployment,"state, start",first visit,0.01,752,1.0638297872340425,0.224582791115737
+deployment,"state, start",returning,0.2,35346,20.21162224862785,10.315872254605987
+deployment,"state, start",returning,0.1,35346,10.071861030951169,4.159796547730388
+deployment,"state, start",returning,0.05,35346,5.106659876647994,1.7205572724118445
+deployment,"state, start",returning,0.02,35346,2.1501725796412607,0.5797099871517218
+deployment,"state, start",returning,0.01,35346,1.0043569286482206,0.27593965041437213
+cold,"population, D and E",anonymous,0.2,17691,12.938782431744954,7.921914222314084
+cold,"population, D and E",anonymous,0.1,17691,4.115086767282799,1.699836685462699
+cold,"population, D and E",anonymous,0.05,17691,0.3108925442315301,0.05854513145824578
+cold,"population, D and E",anonymous,0.02,17691,0.0,0.0
+cold,"population, D and E",anonymous,0.01,17691,0.0,0.0
+cold,"population, D and E",first visit,0.2,752,19.81382978723404,11.890072049842818
+cold,"population, D and E",first visit,0.1,752,2.5265957446808507,0.7329698810274238
+cold,"population, D and E",first visit,0.05,752,0.0,0.0
+cold,"population, D and E",first visit,0.02,752,0.0,0.0
+cold,"population, D and E",first visit,0.01,752,0.0,0.0
+cold,"population, D and E",returning,0.2,35346,18.638601256153454,12.773457266952773
+cold,"population, D and E",returning,0.1,35346,2.7725909579584678,0.8058773506254453
+cold,"population, D and E",returning,0.05,35346,0.0,0.0
+cold,"population, D and E",returning,0.02,35346,0.0,0.0
+cold,"population, D and E",returning,0.01,35346,0.0,0.0
+cold,"pooled, D and E",anonymous,0.2,17691,15.912045672941044,10.182158361166826
+cold,"pooled, D and E",anonymous,0.1,17691,2.2214685433271155,0.6961161394760985
+cold,"pooled, D and E",anonymous,0.05,17691,0.0,0.0
+cold,"pooled, D and E",anonymous,0.02,17691,0.0,0.0
+cold,"pooled, D and E",anonymous,0.01,17691,0.0,0.0
+cold,"pooled, D and E",first visit,0.2,752,22.73936170212766,13.942690717961417
+cold,"pooled, D and E",first visit,0.1,752,3.4574468085106385,0.9008154516473202
+cold,"pooled, D and E",first visit,0.05,752,0.0,0.0
+cold,"pooled, D and E",first visit,0.02,752,0.0,0.0
+cold,"pooled, D and E",first visit,0.01,752,0.0,0.0
+cold,"pooled, D and E",returning,0.2,35346,17.727607084252814,11.941756825477963
+cold,"pooled, D and E",returning,0.1,35346,3.078141798223278,0.944880225348148
+cold,"pooled, D and E",returning,0.05,35346,0.0,0.0
+cold,"pooled, D and E",returning,0.02,35346,0.0,0.0
+cold,"pooled, D and E",returning,0.01,35346,0.0,0.0
+cold,"state, D and E",anonymous,0.2,17691,12.938782431744954,7.921914222314084
+cold,"state, D and E",anonymous,0.1,17691,4.115086767282799,1.699836685462699
+cold,"state, D and E",anonymous,0.05,17691,0.3108925442315301,0.05854513145824578
+cold,"state, D and E",anonymous,0.02,17691,0.0,0.0
+cold,"state, D and E",anonymous,0.01,17691,0.0,0.0
+cold,"state, D and E",first visit,0.2,752,15.691489361702127,7.707614997110418
+cold,"state, D and E",first visit,0.1,752,0.7978723404255319,0.11567524092263644
+cold,"state, D and E",first visit,0.05,752,0.0,0.0
+cold,"state, D and E",first visit,0.02,752,0.0,0.0
+cold,"state, D and E",first visit,0.01,752,0.0,0.0
+cold,"state, D and E",returning,0.2,35346,18.723476489560344,12.84238079876065
+cold,"state, D and E",returning,0.1,35346,2.7867368301929494,0.8190729521195805
+cold,"state, D and E",returning,0.05,35346,0.0,0.0
+cold,"state, D and E",returning,0.02,35346,0.0,0.0
+cold,"state, D and E",returning,0.01,35346,0.0,0.0
+cold,"population, start",anonymous,0.2,17691,20.03843762365044,12.978572966718971
+cold,"population, start",anonymous,0.1,17691,10.027697699395173,5.686598665645093
+cold,"population, start",anonymous,0.05,17691,5.05906958340399,2.1925126851784555
+cold,"population, start",anonymous,0.02,17691,2.0349330167881976,0.5941630843358428
+cold,"population, start",anonymous,0.01,17691,1.000508733254197,0.25819169785805113
+cold,"population, start",first visit,0.2,752,24.069148936170212,15.097758362397988
+cold,"population, start",first visit,0.1,752,12.76595744680851,6.031972051126846
+cold,"population, start",first visit,0.05,752,6.382978723404255,2.196031231979695
+cold,"population, start",first visit,0.02,752,2.5265957446808507,0.6343116442505442
+cold,"population, start",first visit,0.01,752,1.7287234042553192,0.28539330567500815
+cold,"population, start",returning,0.2,35346,20.183330504158885,14.12993864555175
+cold,"population, start",returning,0.1,35346,10.018106716460137,5.413873842865276
+cold,"population, start",returning,0.05,35346,5.050076387710066,1.9778121296877984
+cold,"population, start",returning,0.02,35346,2.0426639506591977,0.49257287145391826
+cold,"population, start",returning,0.01,35346,1.0269903242233915,0.1940587309284865
+cold,"state, start",anonymous,0.2,17691,20.03843762365044,12.978572966718971
+cold,"state, start",anonymous,0.1,17691,10.027697699395173,5.686598665645093
+cold,"state, start",anonymous,0.05,17691,5.05906958340399,2.1925126851784555
+cold,"state, start",anonymous,0.02,17691,2.0349330167881976,0.5941630843358428
+cold,"state, start",anonymous,0.01,17691,1.000508733254197,0.25819169785805113
+cold,"state, start",first visit,0.2,752,19.9468085106383,11.265146638564744
+cold,"state, start",first visit,0.1,752,10.106382978723403,4.494698933386231
+cold,"state, start",first visit,0.05,752,4.787234042553192,1.6144178799066402
+cold,"state, start",first visit,0.02,752,1.9946808510638299,0.5940714006051698
+cold,"state, start",first visit,0.01,752,1.0638297872340425,0.224582791115737
+cold,"state, start",returning,0.2,35346,20.25971821422509,14.19042567113246
+cold,"state, start",returning,0.1,35346,10.063373507610478,5.456890322681796
+cold,"state, start",returning,0.05,35346,5.061393085497651,1.9954837350956955
+cold,"state, start",returning,0.02,35346,2.068126520681265,0.49848333703311737
+cold,"state, start",returning,0.01,35346,1.029819498670288,0.1944742331247351
+benchmark,"population, D and E",anonymous,0.2,17691,12.938782431744954,7.921914222314084
+benchmark,"population, D and E",anonymous,0.1,17691,4.115086767282799,1.699836685462699
+benchmark,"population, D and E",anonymous,0.05,17691,0.3108925442315301,0.05854513145824578
+benchmark,"population, D and E",anonymous,0.02,17691,0.0,0.0
+benchmark,"population, D and E",anonymous,0.01,17691,0.0,0.0
+benchmark,"population, D and E",first visit,0.2,752,26.1968085106383,17.194483093122408
+benchmark,"population, D and E",first visit,0.1,752,9.308510638297872,4.739181295117835
+benchmark,"population, D and E",first visit,0.05,752,1.3297872340425532,0.29302114332072593
+benchmark,"population, D and E",first visit,0.02,752,0.0,0.0
+benchmark,"population, D and E",first visit,0.01,752,0.0,0.0
+benchmark,"population, D and E",returning,0.2,35346,18.58767611610932,9.412422476811411
+benchmark,"population, D and E",returning,0.1,35346,5.197193458948679,1.8068790088328628
+benchmark,"population, D and E",returning,0.05,35346,0.744072879533752,0.1795253307878012
+benchmark,"population, D and E",returning,0.02,35346,0.0679001867255135,0.009683389661121046
+benchmark,"population, D and E",returning,0.01,35346,0.016975046681378374,0.003187397914478529
+benchmark,"pooled, D and E",anonymous,0.2,17691,18.523543044485898,11.93306412007421
+benchmark,"pooled, D and E",anonymous,0.1,17691,6.658753038268046,3.2373655656969063
+benchmark,"pooled, D and E",anonymous,0.05,17691,0.3617658696512351,0.06484891201370133
+benchmark,"pooled, D and E",anonymous,0.02,17691,0.0,0.0
+benchmark,"pooled, D and E",anonymous,0.01,17691,0.0,0.0
+benchmark,"pooled, D and E",first visit,0.2,752,25.53191489361702,16.66226332538352
+benchmark,"pooled, D and E",first visit,0.1,752,9.97340425531915,4.141320545615893
+benchmark,"pooled, D and E",first visit,0.05,752,0.9308510638297872,0.16349823141461045
+benchmark,"pooled, D and E",first visit,0.02,752,0.0,0.0
+benchmark,"pooled, D and E",first visit,0.01,752,0.0,0.0
+benchmark,"pooled, D and E",returning,0.2,35346,14.485373168109545,6.887677054651704
+benchmark,"pooled, D and E",returning,0.1,35346,3.8929440389294405,1.2875406941286882
+benchmark,"pooled, D and E",returning,0.05,35346,0.5262264471227296,0.12599552118291157
+benchmark,"pooled, D and E",returning,0.02,35346,0.03960844225654954,0.007380352870060642
+benchmark,"pooled, D and E",returning,0.01,35346,0.016975046681378374,0.00198478225153996
+benchmark,"state, D and E",anonymous,0.2,17691,12.938782431744954,7.921914222314084
+benchmark,"state, D and E",anonymous,0.1,17691,4.115086767282799,1.699836685462699
+benchmark,"state, D and E",anonymous,0.05,17691,0.3108925442315301,0.05854513145824578
+benchmark,"state, D and E",anonymous,0.02,17691,0.0,0.0
+benchmark,"state, D and E",anonymous,0.01,17691,0.0,0.0
+benchmark,"state, D and E",first visit,0.2,752,15.824468085106384,7.725976050868056
+benchmark,"state, D and E",first visit,0.1,752,0.6648936170212766,0.11456887600401564
+benchmark,"state, D and E",first visit,0.05,752,0.0,0.0
+benchmark,"state, D and E",first visit,0.02,752,0.0,0.0
+benchmark,"state, D and E",first visit,0.01,752,0.0,0.0
+benchmark,"state, D and E",returning,0.2,35346,18.805522548520344,9.536596638743879
+benchmark,"state, D and E",returning,0.1,35346,5.332993832399706,1.870241238444213
+benchmark,"state, D and E",returning,0.05,35346,0.7836813217903017,0.1895721311656815
+benchmark,"state, D and E",returning,0.02,35346,0.07355853561930628,0.01033588389685191
+benchmark,"state, D and E",returning,0.01,35346,0.01980422112827477,0.0034558095720175377
+benchmark,"population, start",anonymous,0.2,17691,20.03843762365044,12.978572966718971
+benchmark,"population, start",anonymous,0.1,17691,10.027697699395173,5.686598665645093
+benchmark,"population, start",anonymous,0.05,17691,5.05906958340399,2.1925126851784555
+benchmark,"population, start",anonymous,0.02,17691,2.0349330167881976,0.5941630843358428
+benchmark,"population, start",anonymous,0.01,17691,1.000508733254197,0.25819169785805113
+benchmark,"population, start",first visit,0.2,752,30.0531914893617,20.75747539472467
+benchmark,"population, start",first visit,0.1,752,18.882978723404257,10.49565581927435
+benchmark,"population, start",first visit,0.05,752,11.303191489361703,5.22783190090681
+benchmark,"population, start",first visit,0.02,752,5.053191489361701,1.6173883855289874
+benchmark,"population, start",first visit,0.01,752,2.7925531914893615,0.6582834867853989
+benchmark,"population, start",returning,0.2,35346,19.829683698296837,10.183004040045933
+benchmark,"population, start",returning,0.1,35346,9.879477168562213,4.147248677274428
+benchmark,"population, start",returning,0.05,35346,4.8746675720024895,1.6733652068746454
+benchmark,"population, start",returning,0.02,35346,1.9436428450178238,0.5620552749878868
+benchmark,"population, start",returning,0.01,35346,0.9873818819668421,0.2549230110131801
+benchmark,"state, start",anonymous,0.2,17691,20.03843762365044,12.978572966718971
+benchmark,"state, start",anonymous,0.1,17691,10.027697699395173,5.686598665645093
+benchmark,"state, start",anonymous,0.05,17691,5.05906958340399,2.1925126851784555
+benchmark,"state, start",anonymous,0.02,17691,2.0349330167881976,0.5941630843358428
+benchmark,"state, start",anonymous,0.01,17691,1.000508733254197,0.25819169785805113
+benchmark,"state, start",first visit,0.2,752,20.47872340425532,11.639309745872282
+benchmark,"state, start",first visit,0.1,752,10.106382978723403,4.300136857090535
+benchmark,"state, start",first visit,0.05,752,4.920212765957447,1.6541515379003078
+benchmark,"state, start",first visit,0.02,752,2.6595744680851063,0.7084710524079866
+benchmark,"state, start",first visit,0.01,752,1.0638297872340425,0.21593947234603278
+benchmark,"state, start",returning,0.2,35346,20.05601765404855,10.292816350345005
+benchmark,"state, start",returning,0.1,35346,10.046398460929101,4.253137929426787
+benchmark,"state, start",returning,0.05,35346,5.044418038816274,1.7291657043009483
+benchmark,"state, start",returning,0.02,35346,2.025688903977819,0.5914520401227232
+benchmark,"state, start",returning,0.01,35346,1.0071861030951168,0.26753674994426047

@@ -4,8 +4,10 @@
 #   ./reproduce.sh acn        ACN-Data: download, prepare, audit, all analyses      (needs ACN_API_TOKEN)
 #   ./reproduce.sh paloalto   Palo Alto external validation                          (needs PALOALTO_CSV)
 #   ./reproduce.sh robustness robustness analyses and the ACN-Sim site-level study      (after acn and paloalto)
+#   ./reproduce.sh sensitivity five forecast seeds, two tariffs, time-series hosting and the tuning budget (after robustness)
 #   ./reproduce.sh figures    Figures 1 to 4 and the Supplementary figures into figures/build/
-#   ./reproduce.sh all        all of the above, in order
+#   ./reproduce.sh verify     recompute the sensitivity values of the paper from results/ and compare
+#   ./reproduce.sh all        acn, paloalto, robustness, sensitivity and figures, in order
 #
 # Every stage writes a marker in runs/<network>/.done/, so an interrupted run resumes where it stopped.
 # Delete runs/<network>/.done/<stage> to repeat one stage.
@@ -79,7 +81,9 @@ case "${1:-}" in
   acn)      run_acn ;;
   paloalto) run_paloalto ;;
   robustness) bash "$ROOT/scripts/run_robustness.sh" ;;
+  sensitivity) bash "$ROOT/scripts/run_sensitivity.sh" ;;
   figures)  run_figures ;;
-  all)      run_acn; run_paloalto; bash "$ROOT/scripts/run_robustness.sh"; run_figures ;;
-  *)        sed -n '2,12p' "$0"; exit 1 ;;
+  verify)   "$PY" "$ROOT/scripts/verify_results.py" --results "$ROOT/results" ;;
+  all)      run_acn; run_paloalto; bash "$ROOT/scripts/run_robustness.sh"; bash "$ROOT/scripts/run_sensitivity.sh"; run_figures ;;
+  *)        sed -n '2,13p' "$0"; exit 1 ;;
 esac

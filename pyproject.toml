@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "evtrust"
-version = "1.0.7"
+version = "1.0.10"
 description = "Leakage-aware evaluation, cold-start decomposition and smart-charging impact for EV charging session prediction"
 readme = "README.md"
 requires-python = ">=3.10"

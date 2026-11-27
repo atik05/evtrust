@@ -44,7 +44,11 @@ Without conda, `pip install -e ".[dev,torch,paper]"` installs the package with t
 - reliability of the conformal shifts (Proposition 1), protocol errors by period, rolling-origin evaluation;
 - information-state calibration rule (Proposition 2; `robustness/infostate.py`), on both networks;
 - ACN-Sim study (acnportal 0.3.3) on the Caltech and JPL network models: real capacity (E1), transformer capacity sweep (E2), adaptive scheduling under a time-of-use tariff (E3), weekday events (E4, E5) and the information-state rule at real capacity;
-- feeder hosting capacity on the IEEE 33-bus and SimBench commercial feeders (pandapower; `robustness/feeder.py`).
+- feeder hosting capacity on the IEEE 33-bus and SimBench commercial feeders (pandapower; `robustness/feeder.py`), and its time-series version on the SimBench feeder, in which hubs draw the load simulated for the site at each forecast's own capacity (E6) and the feeder is checked at every 15-minute step of the year, with coincident hubs and with hubs whose sessions do not coincide (`robustness/feeder_ts.py`, with the Newton-Raphson power flow of `robustness/fastpf.py`, checked against pandapower);
+- E3 by week under a chosen tariff (`robustness/tariffs.py`; TOU-EV-4 and TOU-EV-8 as distributed with acnportal), and the summary of the site-level results over the five forecast seeds (`robustness/seeds_summary.py`);
+- sensitivity of the protocol results to the tuning budget (`scripts/tuning_budget.py`: the eight-trial search of the main study extended to 40 trials, both selections refitted on all five seeds).
+
+The five-seed, tariff, time-series and tuning-budget analyses run together with `./reproduce.sh sensitivity` (`scripts/run_sensitivity.sh`, settings in `configs/robustness_seeds.yaml`), after the robustness stage. Their published tables are in `results/robustness/acn/seeds/`, `tariffs/`, `hosting_timeseries/` and `results/tuning/`; `scripts/summarise_sensitivity.py` writes the summary tables from the per-seed files, and `./reproduce.sh verify` (`scripts/verify_results.py`) recomputes every sensitivity value quoted in the paper from the per-seed files and compares it with the printed value.
 
 ```bash
 pip install -e ".[sim]"                 # cvxpy, pandapower, simbench; acnportal and adacharge come from third_party/wheels
@@ -78,6 +82,8 @@ or stage by stage:
 ./reproduce.sh acn        # ACN-Data: download, preparation, leakage audit and all analyses   -> runs/acn/
 ./reproduce.sh paloalto   # Palo Alto external validation                                      -> runs/paloalto/
 ./reproduce.sh robustness # robustness analyses, ACN-Sim and feeder study (after acn and paloalto) -> runs/robustness/
+./reproduce.sh sensitivity # five forecast seeds, two tariffs, time-series hosting, tuning budget  -> runs/sensitivity/
+./reproduce.sh verify     # recompute the sensitivity values of the paper from results/
 ./reproduce.sh figures    # Figures 1 to 4 and Supplementary Figures S1 to S4                  -> figures/build/
 ```
 
@@ -87,14 +93,18 @@ Each stage records a marker in `runs/<network>/.done/`, so an interrupted run re
 
 | In the paper | Output | Program |
 |---|---|---|
-| Main-pipeline numbers in the text; Supplementary Tables S1 to S12, S14, S15, S18 to S20, S23, S25 to S27, S29, S46 to S51 | `runs/acn/results/`: `FULL_REPORT.xlsx` and the CSV files under `metrics/`, `benchmark/`, `paper/` and `operational/` | `reproduce.sh acn` (summary by `scripts/full_report.py`) |
+| Main-pipeline numbers in the text; Supplementary Tables S1 to S12, S14, S15, S18 to S20, S23, S25 to S27, S29, S49 to S54 | `runs/acn/results/`: `FULL_REPORT.xlsx` and the CSV files under `metrics/`, `benchmark/`, `paper/` and `operational/` | `reproduce.sh acn` (summary by `scripts/full_report.py`) |
 | Table II (ACN and Palo Alto side by side) | `runs/acn/results/`, `runs/paloalto/results/` and `runs/robustness/full/` | `reproduce.sh acn`, `paloalto` and `robustness` |
-| Supplementary Tables S41 to S45 | `runs/paloalto/results/` (same layout) | `reproduce.sh paloalto` |
+| Supplementary Tables S44 to S48 | `runs/paloalto/results/` (same layout) | `reproduce.sh paloalto` |
 | Calibration over time, Supplementary Table S33 | `runs/<network>/results/paper/calibration_robustness.csv` | `scripts/calibration_robustness.py` |
 | Robustness analyses: Supplementary Tables S13, S16, S17, S21, S22, S24, S28, S30 to S32 | `runs/robustness/full/<network>/` (published run: `results/robustness/`) | `reproduce.sh robustness` |
-| ACN-Sim: Table III (capacity and firm limits), Supplementary Tables S37 to S39 | `runs/robustness/full/acn/acnsim_*.csv` (published run: `results/robustness/acn/`) | `reproduce.sh robustness` |
+| ACN-Sim: Table III (capacity), Supplementary Tables S37, S39 and S40 | `runs/robustness/full/acn/acnsim_*.csv` (published run: `results/robustness/acn/`) | `reproduce.sh robustness` |
 | Information-state calibration: Table II (last block), Supplementary Tables S34 to S36 | `runs/robustness/full/<network>/infostate_*.csv` (published run: `results/robustness/`) | `reproduce.sh robustness` |
-| Feeder hosting capacity: Table III (hubs hosted), Supplementary Table S40 | `runs/robustness/full/acn/feeder_*.csv` (published run: `results/robustness/acn/`) | `reproduce.sh robustness` |
+| Feeder hosting capacity: Table III (hubs hosted), Supplementary Table S42 | `runs/robustness/full/acn/feeder_*.csv` (published run: `results/robustness/acn/`) | `reproduce.sh robustness` |
+| Five forecast seeds and the E5 firm limits (fifteen event limits): Table III (firm event limit), Supplementary Table S41 | `runs/sensitivity/seed*/full/acn/` (published run: `results/robustness/acn/seeds/`, Table III from `seed11/`) | `reproduce.sh sensitivity` (`robustness/seeds_summary.py`) |
+| E3 under TOU-EV-4 and TOU-EV-8, every week: Supplementary Table S38 | `runs/sensitivity/e3_*/` (published run: `results/robustness/acn/tariffs/`) | `reproduce.sh sensitivity` (`robustness/tariffs.py`, `scripts/summarise_sensitivity.py`) |
+| Time-series hosting capacity: Supplementary Table S43 | `runs/sensitivity/hosting/` (published run: `results/robustness/acn/hosting_timeseries/`) | `reproduce.sh sensitivity` (`robustness/feeder_ts.py`, `scripts/summarise_sensitivity.py`) |
+| Tuning budget: Supplementary Table S55 | `runs/sensitivity/tuning/all/` (published run: `results/tuning/`) | `reproduce.sh sensitivity` (`scripts/tuning_budget.py`) |
 | Figure 1, evaluation framework | `figures/build/fig1_framework.svg` (and `.pdf`, `.png` with cairosvg) | `figures/make_fig1.py` |
 | Figure 2, evaluation protocols | `figures/build/fig2_protocols` (`.pdf`, `.svg`, `.png`) | `figures/make_figures.py` |
 | Figure 3, cold-start decomposition and warm-up | `figures/build/fig3_coldstart` | `figures/make_figures.py` |
@@ -102,7 +112,7 @@ Each stage records a marker in `runs/<network>/.done/`, so an interrupted run re
 | Supplementary Figure S3, information availability | `figures/build/si_fig_availability` | `figures/make_figures.py` |
 | Supplementary Figures S1, S2 and S4 | `figures/build/si_cd_energy.pdf`, `si_cd_duration.pdf`, `si_ft.pdf` | `figures/make_si_figures.py` |
 
-Supplementary Tables S4 and S52 (protocol definitions and literature) contain no computed values.
+Supplementary Tables S4 and S56 (protocol definitions and literature) contain no computed values.
 
 ## Randomness
 

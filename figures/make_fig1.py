@@ -1,336 +1,228 @@
-"""Figure 1: evaluation framework. Generates fig1_framework.svg (and PDF/PNG via cairosvg).
+"""Figure 1: evaluation framework, printed at the full text width.
 
-Canvas 1800 x 1060 user units printed at 190 mm x 111.9 mm (1 unit = 0.1056 mm);
-the smallest text (20 units) prints at 6.0 pt.
+Canvas 1500 x 684 user units, printed at the IEEE text width (515.5 pt), so 1 unit = 0.344 pt: the smallest text
+(23.3 units) prints at 8.0 pt, panel letters at 10.0 pt and panel titles at 8.5 pt, as in Figs. 2 to 4.
+Panel letters are plain bold letters, as in the other figures.
+Every text element is measured with the Liberation Sans metrics and checked against the space it may use.
+Writes fig1_framework.svg, .pdf and .png in the current folder.
 """
 from pathlib import Path
+from PIL import ImageFont
 
-W, H = 1800, 1134
+W, H = 1500, 684
 FONT = "Liberation Sans, Arial, Helvetica, sans-serif"
-INK = "#1F2933"
-SUB = "#323F4B"
-LINE = "#9AA5B1"
-PANEL_FILL = "#F8FAFC"
-PANEL_EDGE = "#CBD2D9"
-BLUE, SKY, ORANGE, GREEN, VERM, PURPLE, YELLOW, GREY = (
-    "#0072B2", "#56B4E9", "#E69F00", "#009E73", "#D55E00", "#CC79A7", "#F0E442", "#8C959F")
-
+INK, SUB, LINE = "#1F2933", "#323F4B", "#9AA5B1"
+PANEL_FILL, PANEL_EDGE = "#F8FAFC", "#CBD2D9"
+BLUE, SKY, ORANGE, GREEN, VERM, GREY = "#0072B2", "#56B4E9", "#E69F00", "#009E73", "#D55E00", "#8C959F"
+MIN = 23.3                                   # smallest text size, 8.0 pt in print
+TTF = {('normal', False): 'LiberationSans-Regular.ttf', ('bold', False): 'LiberationSans-Bold.ttf',
+       ('normal', True): 'LiberationSans-Italic.ttf', ('bold', True): 'LiberationSans-BoldItalic.ttf'}
+_fonts = {}
 out = []
+
+
+def width(s, size, weight='normal', italic=False):
+    k = (weight, italic)
+    if k not in _fonts:
+        _fonts[k] = ImageFont.truetype('/usr/share/fonts/truetype/liberation/' + TTF[k], 200)
+    return _fonts[k].getlength(s) * size / 200
 
 
 def add(s):
     out.append(s)
 
 
-def rect(x, y, w, h, r=0, fill="none", stroke="none", sw=1.5, extra=""):
-    add(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" ry="{r}" fill="{fill}" '
-        f'stroke="{stroke}" stroke-width="{sw}" {extra}/>')
+def esc(s):
+    return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
 
 
-def text(x, y, s, size=22, weight="normal", fill=INK, anchor="start", italic=False, extra=""):
-    size = max(size, 20)
+def rect(x, y, w, h, r=0, fill="none", stroke="none", sw=1.5):
+    add(f'<rect x="{x:.1f}" y="{y:.1f}" width="{w:.1f}" height="{h:.1f}" rx="{r}" ry="{r}" fill="{fill}" '
+        f'stroke="{stroke}" stroke-width="{sw}"/>')
+
+
+def line(x1, y1, x2, y2, stroke=LINE, sw=2):
+    add(f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{stroke}" stroke-width="{sw}"/>')
+
+
+def text(x, y, s, size=MIN, weight="normal", fill=INK, anchor="start", italic=False, maxw=None, raw=None, measure=None):
+    """Plain text s (escaped) or raw SVG content; measure gives the plain string used to check the width."""
+    assert size >= MIN, (s, size)
+    w = width(measure if measure is not None else s, size, weight, italic)
+    if maxw is not None and w > maxw + 0.5:
+        raise ValueError(f'text too wide: {s or measure!r} {w:.0f} > {maxw:.0f}')
     st = ' font-style="italic"' if italic else ''
-    add(f'<text x="{x}" y="{y}" font-family="{FONT}" font-size="{size}" font-weight="{weight}" '
-        f'fill="{fill}" text-anchor="{anchor}"{st} {extra}>{s}</text>')
-
-
-def line(x1, y1, x2, y2, stroke=LINE, sw=2, extra=""):
-    add(f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{stroke}" stroke-width="{sw}" {extra}/>')
-
-
-def sub(base, s, size):
-    """italic symbol with subscript, as tspans."""
-    return (f'<tspan font-style="italic">{base}</tspan>'
-            f'<tspan font-size="{int(size * 0.72)}" dy="{int(size * 0.28)}">{s}</tspan>'
-            f'<tspan dy="-{int(size * 0.28)}"> </tspan>')
-
-
-def arrow_down(x, y1, y2, color=LINE):
-    line(x, y1, x, y2 - 9, color, 2.5)
-    add(f'<polygon points="{x - 8},{y2 - 11} {x + 8},{y2 - 11} {x},{y2}" fill="{color}"/>')
+    add(f'<text x="{x:.1f}" y="{y:.1f}" font-family="{FONT}" font-size="{size}" font-weight="{weight}" '
+        f'fill="{fill}" text-anchor="{anchor}"{st}>{raw if raw is not None else esc(s)}</text>')
+    return w
 
 
 def panel(x, y, w, h, letter, title):
-    rect(x, y, w, h, 14, PANEL_FILL, PANEL_EDGE, 1.6)
-    add(f'<circle cx="{x + 30}" cy="{y + 34}" r="17" fill="{INK}"/>')
-    text(x + 30, y + 42, letter, 22, "bold", "#FFFFFF", "middle")
-    text(x + 58, y + 43, title, 27, "bold")
+    rect(x, y, w, h, 12, PANEL_FILL, PANEL_EDGE, 1.6)
+    head(x + 14, y + 34, letter, title, w - 28)
 
 
-def chip(x, y, label, color, size=21, h=36, pad=14, w=None):
-    w = w or int(len(label) * size * 0.53 + 2 * pad)
-    rect(x, y, w, h, h / 2, "#FFFFFF", color, 2)
+def head(x, y, letter, title, maxw):
+    """Panel letter (bold, 10 pt) followed by the panel title (regular, 8.5 pt), as in Figs. 2 to 4."""
+    lw = text(x, y, letter, 29.1, "bold")
+    text(x + lw + 12, y, title, 24.7, "normal", maxw=maxw - lw - 12)
+
+
+def chip(x, y, label, color, size=MIN, h=30, pad=9, maxright=None):
+    w = width(label, size) + 2 * pad
+    if maxright is not None and x + w > maxright + 0.5:
+        raise ValueError(f'chip too wide: {label!r}')
+    rect(x, y, w, h, h / 2, "#FFFFFF", color, 1.8)
     text(x + w / 2, y + h / 2 + size * 0.36, label, size, "normal", INK, "middle")
     return w
 
 
-add(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="190mm" height="{190 * H / W:.1f}mm">')
-add('<defs>'
-    f'<pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">'
-    f'<rect width="7" height="7" fill="#E4E7EB"/><line x1="0" y1="0" x2="0" y2="7" stroke="#9AA5B1" stroke-width="3"/></pattern>'
-    f'<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">'
-    f'<path d="M0,0 L10,5 L0,10 z" fill="{INK}"/></marker>'
-    '</defs>')
+def card(x, y, w, h, title):
+    rect(x, y, w, h, 9, "#FFFFFF", PANEL_EDGE, 1.3)
+    text(x + 12, y + 27, title, MIN, "bold", maxw=w - 24)
+
+
+add(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="181.9mm" height="{181.9 * H / W:.1f}mm">')
+add('<defs><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">'
+    '<rect width="7" height="7" fill="#E4E7EB"/><line x1="0" y1="0" x2="0" y2="7" stroke="#9AA5B1" stroke-width="3"/>'
+    '</pattern></defs>')
 rect(0, 0, W, H, 0, "#FFFFFF")
 
-# ---------------------------------------------------------------- panel a
-AX, AW = 20, 390
-panel(AX, 20, AW, 800, "a", "Data and information")
-text(AX + 24, 108, "ACN-Data, three workplace sites", 20, "bold", SUB)
-for i, (site, n) in enumerate([("Caltech", "31,424"), ("JPL", "33,638"), ("Office001", "1,683")]):
-    y = 122 + i * 46
-    rect(AX + 24, y, AW - 48, 38, 8, "#FFFFFF", PANEL_EDGE, 1.4)
-    text(AX + 40, y + 26, site, 21)
-    text(AX + AW - 40, y + 26, f"{n} sessions", 21, "normal", SUB, "end")
-arrow_down(AX + AW / 2, 262, 292)
-rect(AX + 24, 294, AW - 48, 70, 10, "#FFFFFF", INK, 1.8)
-text(AX + AW / 2, 324, "66,727 sessions after cleaning", 22, "bold", INK, "middle")
-text(AX + AW / 2, 352, "2018 to 2021; 18 sessions removed", 19, "normal", SUB, "middle")
-arrow_down(AX + AW / 2, 364, 394)
+PY, PH, GAP = 8, 480, 26                     # panel row
+PW = (W - 16 - 3 * GAP) / 4                  # four equal panels
+XS = [8 + i * (PW + GAP) for i in range(4)]
+IN = PW - 28                                 # usable width inside a panel
 
-# plug-in information set
-IB_TOP = 394
-it = "<tspan font-style='italic'>t</tspan>"
-tout_j = "<tspan font-style='italic'>t</tspan><tspan font-size='15' dy='-9' font-style='normal'>out</tspan><tspan font-size='15' dx='-21' dy='15' font-style='italic'>j</tspan><tspan dy='-6' dx='14'> </tspan>"
-items = [("Calendar, cyclic encodings", None),
-         ("Driver history from completed", f"sessions only ({tout_j}&lt; {it})"),
-         ("Station history from completed", "sessions only"),
-         ("Driver request: last revision", f"made at or before {it}")]
-yy = IB_TOP + 66
-body = []
-for head, tail in items:
-    body.append(("sq", yy))
-    body.append(("t", yy, head, INK))
-    yy += 25
-    if tail:
-        body.append(("t", yy, tail, SUB))
-        yy += 25
-    yy += 5
-IB_H = yy - IB_TOP + 2
-rect(AX + 24, IB_TOP, AW - 48, IB_H, 10, "#EAF4FB", BLUE, 2)
-add(f'<text x="{AX + 40}" y="{IB_TOP + 32}" font-family="{FONT}" font-size="22" font-weight="bold" fill="{INK}">'
-    f'Plug-in information set <tspan font-style="italic">F</tspan><tspan font-size="20" dy="5" font-style="italic">t</tspan></text>')
-for b in body:
-    if b[0] == "sq":
-        rect(AX + 42, b[1] - 13, 11, 11, 2, BLUE)
-    else:
-        text(AX + 62, b[1] - 2, b[2], 19.5, "normal", b[3])
-
-# timeline: forecast at plug-in, labels revealed at departure
-TL = IB_TOP + IB_H + 24
-text(AX + 24, TL, "Timing of information", 20, "bold", SUB)
-ty = TL + 42
-x_p, x_c, x_d, x_end = AX + 70, AX + 200, AX + 322, AX + AW - 24
-line(AX + 40, ty, x_end, ty, INK, 2.2, 'marker-end="url(#arr)"')
-for xx, col in [(x_p, BLUE), (x_c, GREY), (x_d, ORANGE)]:
-    add(f'<circle cx="{xx}" cy="{ty}" r="7" fill="{col}"/>')
-text(x_p, ty - 15, "forecast", 18, "bold", BLUE, "middle")
-text(x_c, ty - 15, "diagnostic", 20, "normal", GREY, "middle")
-add(f'<text x="{x_d - 52}" y="{ty - 15}" font-family="{FONT}" font-size="20" font-weight="bold" fill="{ORANGE}">'
-    f'<tspan font-style="italic">D</tspan>, <tspan font-style="italic">E</tspan> known</text>')
-text(x_p, ty + 26, "plug-in", 20, "normal", SUB, "middle")
-text(x_c, ty + 26, "charging ends", 20, "normal", SUB, "middle")
-text(x_d, ty + 26, "departure", 20, "normal", SUB, "middle")
-
-# leakage audit strip
-AU = 756
-rect(AX + 24, AU, AW - 48, 52, 10, "#E8F6F1", GREEN, 2)
-add(f'<path d="M{AX + 42},{AU + 26} l9,10 l17,-21" fill="none" stroke="{GREEN}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>')
-text(AX + 80, AU + 23, "Automated leakage audit", 19.5, "bold")
-text(AX + 80, AU + 44, "the run stops on any violation", 20, "normal", SUB)
-
-# ---------------------------------------------------------------- panel b
-BX, BW = 450, 440
-panel(BX, 20, BW, 800, "b", "Evaluation protocols")
-cols = {"T": BLUE, "C": SKY, "Q": ORANGE}
-lx = BX + 24
-for lab, key in [("Train/validation", "T"), ("Calibration", "C"), ("Test", "Q")]:
-    rect(lx, 86, 17, 17, 3, cols[key])
-    text(lx + 23, 101, lab, 20, "normal", SUB)
-    lx += 34 + len(lab) * 10.2
-rect(BX + 24, 113, 17, 17, 3, "url(#hatch)", "#9AA5B1", 1)
-text(BX + 47, 128, "Purged (immature label)", 20, "normal", SUB)
-rect(BX + 290, 113, 17, 17, 3, "#FFFFFF", "#9AA5B1", 1.2)
-text(BX + 313, 128, "Excluded", 20, "normal", SUB)
-
-CELL, NC = 23, 16
-X0 = BX + 24
-
-
-def bar(y, pattern, groups=None, divider=None, labels=None):
-    for i, c in enumerate(pattern):
-        x = X0 + i * CELL
-        if c == "G":
-            rect(x + 1, y, CELL - 2, 26, 3, "url(#hatch)", "#9AA5B1", 0.8)
-        elif c == "X":
-            rect(x + 1, y, CELL - 2, 26, 3, "#FFFFFF", "#9AA5B1", 1)
+# ---------------------------------------------------------------- a: data and plug-in information
+x = XS[0]
+panel(x, PY, PW, PH, "a", "Data")
+text(x + 14, PY + 76, "ACN-Data, three", MIN, "bold", SUB, maxw=IN)
+text(x + 14, PY + 102, "workplace sites", MIN, "bold", SUB, maxw=IN)
+text(x + 14, PY + 128, "66,727 sessions", MIN, "normal", INK, maxw=IN)
+bx, by, bw, bh = x + 12, PY + 150, PW - 24, 200
+rect(bx, by, bw, bh, 9, "#EAF4FB", BLUE, 1.8)
+text(bx + 12, by + 30, "", MIN, "bold", BLUE, maxw=bw - 24, measure="Plug-in set Ft",
+     raw='Plug-in set <tspan font-style="italic">F</tspan><tspan font-size="18.5" dy="5" font-style="italic">t</tspan>')
+for i, s in enumerate(["calendar, site, station", "driver history", "station history", "driver request"]):
+    add(f'<circle cx="{bx + 18}" cy="{by + 56 + i * 28}" r="4" fill="{INK}"/>')
+    text(bx + 30, by + 63 + i * 28, s, MIN, maxw=bw - 42)
+text(bx + 8, by + 182, "completed sessions only", MIN, "normal", SUB, italic=True, maxw=bw - 14)
+ay = PY + 382
+rect(x + 12, ay, PW - 24, 62, 9, "#E8F6F1", GREEN, 1.8)
+add(f'<path d="M{x + 26},{ay + 31} l8,9 l15,-18" fill="none" stroke="{GREEN}" stroke-width="4"/>')
+text(x + 58, ay + 27, "Leakage audit", MIN, "bold", maxw=PW - 80)
+text(x + 58, ay + 51, "stops any violation", MIN, maxw=PW - 80)
+# ---------------------------------------------------------------- b: protocols
+x = XS[1]
+panel(x, PY, PW, PH, "b", "Protocols")
+# legend
+lx, ly = x + 14, PY + 62
+for col, lab in [(BLUE, "train"), (ORANGE, "test")]:
+    rect(lx, ly, 18, 18, 3, col)
+    lx += 24 + text(lx + 24, ly + 16, lab, MIN, "normal", SUB) + 14
+rect(lx, ly, 18, 18, 3, "url(#hatch)", "#9AA5B1", 1)
+text(lx + 24, ly + 16, "purged", MIN, "normal", SUB, maxw=x + PW - lx - 34)
+CELL = (PW - 28) / 12
+rows = [("Random", "BBOBBBOBBOBB", None),
+        ("Chronological", "BBBBBBBHOOOO", None),
+        ("Site-disjoint", "BBBBBBBBOOOO", "site"),
+        ("Driver-disjoint", "BOBBOBBOBBBO", "driver")]
+for r, (name, pat, note) in enumerate(rows):
+    yy = PY + 108 + r * 88
+    text(x + 14, yy, name, MIN, "bold", maxw=IN)
+    for c, k in enumerate(pat):
+        cx = x + 14 + c * CELL
+        if k == 'H':
+            rect(cx + 1, yy + 12, CELL - 2, 24, 3, "url(#hatch)", "#9AA5B1", 0.8)
         else:
-            rect(x + 1, y, CELL - 2, 26, 3, cols[c])
-    if groups:
-        for g in groups:
-            line(X0 + g * CELL, y - 4, X0 + g * CELL, y + 30, INK, 2.2)
-    if divider is not None:
-        xd = X0 + divider * CELL
-        line(xd, y - 12, xd, y + 36, VERM, 2.4, 'stroke-dasharray="5,4"')
-    if labels:
-        for (a, b), s in labels:
-            text(X0 + (a + b) / 2 * CELL, y + 51, s, 20, "normal", SUB, "middle")
+            rect(cx + 1, yy + 12, CELL - 2, 24, 3, BLUE if k == "B" else ORANGE)
+    sub_ = {"Random": "driver seen in training", "Chronological": "train before test",
+            "Site-disjoint": "test site held out", "Driver-disjoint": "test driver unseen"}[name]
+    text(x + 14, yy + 59, sub_, MIN, "normal", SUB, maxw=IN)
+# arrow: optimistic -> deployment-like
+ax_ = x + PW - 14
+text(x + 14, PY + 466, "↓ closer to deployment", MIN, "normal", SUB, maxw=IN)
 
+# ---------------------------------------------------------------- c: learners
+x = XS[2]
+panel(x, PY, PW, PH, "c", "Learners")
+text(x + 14, PY + 76, "Main learners", MIN, "bold", SUB, maxw=IN)
+cy = PY + 88
+w1 = chip(x + 14, cy, "CatBoost", BLUE, maxright=x + PW - 14)
+chip(x + 14, cy + 40, "FT-Transformer", BLUE, maxright=x + PW - 14)
+text(x + 14, PY + 200, "Benchmark (12)", MIN, "bold", SUB, maxw=IN)
+yy, xx = PY + 212, x + 14
+for lab in ["LightGBM", "XGBoost", "TabPFN v2", "MLP", "Ridge", "+5 more"]:
+    wch = width(lab, MIN) + 18
+    if xx + wch > x + PW - 14:
+        xx, yy = x + 14, yy + 40
+    chip(xx, yy, lab, GREY, maxright=x + PW - 14)
+    xx += wch + 8
+for i, s in enumerate(["absolute-error loss", "8 tuning trials", "5 seeds"]):
+    add(f'<circle cx="{x + 20}" cy="{PY + 382 + i * 30}" r="4" fill="{INK}"/>')
+    text(x + 32, PY + 389 + i * 30, s, MIN, maxw=IN - 18)
 
-rows = [
-    ("Random", "uniform permutation", "TTQTCTTQTTCTTQTT", {}),
-    ("Chronological", "maturation purge, 4 h embargo", "TTTTTTTTTGCCGQQQ", {}),
-    ("Chronological, pre-2020", "rolling origin, before 1 Mar 2020", "TTTTTTTTGQQQXXXX", {"divider": 12, "sens": True}),
-    ("Driver-disjoint", "no shared drivers; anonymous excluded", "TTTTTTTTCCQQQQXX",
-     {"groups": [4, 8, 10, 14], "labels": [((0, 8), "drivers in training"), ((14, 16), "anon.")]}),
-    ("Site-disjoint, online", "own history accrues at the target", "TTTTTTTTTTTCGQQQ",
-     {"groups": [6, 11], "labels": [((0, 6), "source"), ((6, 11), "source"), ((11, 16), "target")]}),
-    ("Site-disjoint, strict", "no target-site information", "TTTTTTTTTTTQQQQQ",
-     {"groups": [6, 11], "sens": True}),
-]
-ry = 160
-for name, desc, pat, opt in rows:
-    text(X0, ry, name, 21, "bold")
-    if opt.get("sens"):
-        w = len(name) * 11.9
-        rect(X0 + w + 10, ry - 20, 110, 26, 13, "#FFFFFF", PURPLE, 1.8)
-        text(X0 + w + 65, ry - 1, "sensitivity", 20, "normal", PURPLE, "middle")
-    text(X0, ry + 25, desc, 20, "normal", SUB)
-    bar(ry + 38, pat, opt.get("groups"), opt.get("divider"), opt.get("labels"))
-    ry += 118 if opt.get("labels") else 94
+# ---------------------------------------------------------------- d: analyses
+x = XS[3]
+panel(x, PY, PW, PH, "d", "Analyses")
+cx, cw = x + 10, PW - 20
+card(cx, PY + 50, cw, 146, "Gap decomposition")
+# colours of the information settings, as in Figs. 3 and 4 (B, driver-temporal, appears only here)
+lad = [("A", "random", 30, GREEN), ("B", "past only", 44, GREY), ("C", "unseen", 58, SKY), ("D", "cold start", 82, VERM)]
+for i, (k, lab, L, col) in enumerate(lad):
+    yy = PY + 92 + i * 25
+    text(cx + 12, yy + 16, k, MIN, "bold")
+    rect(cx + 34, yy + 1, L, 18, 3, col)
+    text(cx + 42 + L, yy + 16, lab, MIN, "normal", SUB, maxw=cw - 52 - L)
+card(cx, PY + 204, cw, 76, "Reliability bound")
+text(cx + 12, PY + 266, "", MIN, maxw=cw - 24, measure="Pr(U > 0) ≤ 2γ",
+     raw='Pr(<tspan font-style="italic">U</tspan> &gt; 0) ≤ 2<tspan font-style="italic">γ</tspan>')
+card(cx, PY + 288, cw, 76, "Information-state rule")
+text(cx + 12, PY + 350, "", MIN, maxw=cw - 24, measure="Pr(U > 0 | s) ≤ γ",
+     raw='Pr(<tspan font-style="italic">U</tspan> &gt; 0 | <tspan font-style="italic">s</tspan>) ≤ <tspan font-style="italic">γ</tspan>')
+card(cx, PY + 372, cw, 100, "Grid value")
+text(cx + 12, PY + 428, "ACN-Sim capacity,", MIN, "normal", SUB, maxw=cw - 24)
+text(cx + 12, PY + 454, "firm limits, feeders", MIN, "normal", SUB, maxw=cw - 24)
 
-add(f'<line x1="{BX + BW - 16}" y1="150" x2="{BX + BW - 16}" y2="790" stroke="{SUB}" stroke-width="2.2" marker-end="url(#arr)"/>')
-add(f'<text transform="translate({BX + BW - 24},470) rotate(-90)" font-family="{FONT}" font-size="20" '
-    f'fill="{SUB}" text-anchor="middle">closer to deployment</text>')
+# flow arrows between panels
+for i in range(3):
+    x1, x2 = XS[i] + PW, XS[i + 1]
+    ymid = PY + PH / 2
+    add(f'<polygon points="{x1 + 3},{ymid - 7} {x2 - 10},{ymid - 7} {x2 - 10},{ymid - 14} {x2 - 2},{ymid} '
+        f'{x2 - 10},{ymid + 14} {x2 - 10},{ymid + 7} {x1 + 3},{ymid + 7}" fill="{INK}" opacity="0.85"/>')
 
-# ---------------------------------------------------------------- panel c
-CX, CW = 930, 390
-panel(CX, 20, CW, 800, "c", "Learners")
-fam = [("Reference forecasts", GREY, [["Historical mean", "Driver history"], ["Driver request"]]),
-       ("Linear", PURPLE, [["Ridge regression"]]),
-       ("Bagged trees", GREEN, [["Random forest", "Extra trees"]]),
-       ("Gradient boosting", BLUE, [["HistGB", "LightGBM"], ["XGBoost", "CatBoost"]]),
-       ("Deep tabular", VERM, [["Residual MLP", "FT-Transformer"]]),
-       ("Foundation model", ORANGE, [["TabPFN v2"]])]
-y = 92
-for fname, col, chips in fam:
-    rect(CX + 24, y + 2, 6, 20, 2, col)
-    text(CX + 38, y + 19, fname, 19.5, "bold", SUB)
-    y += 30
-    for row in chips:
-        x = CX + 24
-        for c in row:
-            x += chip(x, y, c, col, 20, 33, 13) + 10
-        y += 40
-    y += 4
-rect(CX + 24, 640, CW - 48, 164, 10, "#FFFFFF", PANEL_EDGE, 1.4)
-notes = ["Absolute-error objective", "Early stopping on validation", "Equal tuning budget: 8 trials",
-         "5 seeds; 5 × 5 repeated CV", "Cold-start FT: missing token"]
-for i, n in enumerate(notes):
-    add(f'<circle cx="{CX + 44}" cy="{666 + i * 29}" r="4.5" fill="{INK}"/>')
-    text(CX + 58, 672 + i * 29, n, 19)
-
-# ---------------------------------------------------------------- panel d
-DX, DW = 1360, 420
-panel(DX, 20, DW, 800, "d", "Analyses")
-
-
-def card(y, h, title):
-    rect(DX + 20, y, DW - 40, h, 10, "#FFFFFF", PANEL_EDGE, 1.4)
-    text(DX + 36, y + 30, title, 20.5, "bold")
-
-
-# d1 uncertainty
-card(84, 170, "Uncertainty and occupancy")
-cx0, cy0 = DX + 46, 182
-line(cx0, cy0 - 34, cx0, cy0 + 34, BLUE, 3)
-line(cx0 - 9, cy0 - 34, cx0 + 9, cy0 - 34, BLUE, 3)
-line(cx0 - 9, cy0 + 34, cx0 + 9, cy0 + 34, BLUE, 3)
-add(f'<circle cx="{cx0}" cy="{cy0 + 6}" r="6" fill="{BLUE}"/>')
-add(f'<circle cx="{cx0 + 15}" cy="{cy0 - 16}" r="4.5" fill="{ORANGE}"/>')
-for i, s in enumerate(["Split conformal, CQR, Mondrian", "Coverage, width, interval score",
-                       "Target-site recalibration", "Congested-query decisions"]):
-    text(DX + 92, 146 + i * 27, s, 20, "normal", INK if i < 3 else SUB)
-
-# d2 cold-start decomposition (schematic ladder; lengths are illustrative)
-card(270, 180, "Cold-start decomposition")
-ladder = [("A", "random split", 64, GREY), ("B", "past only", 92, SKY),
-          ("C", "unseen + history", 120, BLUE), ("D", "cold start", 160, VERM)]
-ly = 312
-for i, (k, lab, L, col) in enumerate(ladder):
-    y = ly + i * 24
-    text(DX + 38, y + 16, k, 20, "bold", INK)
-    rect(DX + 60, y + 1, L, 18, 3, col)
-    text(DX + 68 + L, y + 16, lab, 20, "normal", SUB)
-add(f'<text x="{DX + 36}" y="{ly + 128}" font-family="{FONT}" font-size="20" fill="{INK}">'
-    f'MAE D/A<tspan> = </tspan><tspan font-style="italic">r</tspan><tspan font-size="20" dy="5">leak</tspan>'
-    f'<tspan dy="-5"> · </tspan><tspan font-style="italic">r</tspan><tspan font-size="20" dy="5">unseen</tspan>'
-    f'<tspan dy="-5"> · </tspan><tspan font-style="italic">r</tspan><tspan font-size="20" dy="5">history</tspan></text>')
-
-# d3 information availability
-card(466, 160, "Information availability")
-nx, ny = DX + 30, 510
-rect(nx, ny, 360, 100, 12, "#FDF3E7", ORANGE, 1.8)
-rect(nx + 8, ny + 8, 244, 84, 10, "#FBE9DD", VERM, 1.8)
-rect(nx + 16, ny + 16, 112, 68, 8, "#EAF4FB", BLUE, 2)
-text(nx + 72, ny + 45, "plug-in", 20, "bold", BLUE, "middle")
-text(nx + 72, ny + 70, "forecasts", 20, "normal", SUB, "middle")
-text(nx + 190, ny + 45, "+ charging", 20, "normal", VERM, "middle")
-text(nx + 190, ny + 70, "duration", 20, "normal", VERM, "middle")
-text(nx + 306, ny + 45, "+ session", 20, "normal", ORANGE, "middle")
-text(nx + 306, ny + 70, "duration", 20, "normal", ORANGE, "middle")
-
-# d4 smart-charging impact
-card(642, 158, "Smart-charging impact")
-sy = 720
-x_plug, x_s, x_full, x_dep = DX + 46, DX + 180, DX + 310, DX + 338
-rect(x_plug, sy - 16, x_s - x_plug, 32, 3, "url(#hatch)", "#9AA5B1", 1)
-rect(x_s, sy - 16, x_full - x_s, 32, 3, BLUE)
-text((x_plug + x_s) / 2, sy + 7, "deferral Φ", 20, "bold", INK, "middle")
-text((x_s + x_full) / 2, sy + 7, "charge", 20, "bold", "#FFFFFF", "middle")
-line(x_plug, sy - 26, x_plug, sy + 26, INK, 2)
-line(x_dep, sy - 26, x_dep, sy + 26, ORANGE, 2.5)
-text(x_plug, sy + 44, "plug-in", 15.5, "normal", SUB, "middle")
-text(x_dep, sy + 44, "departure", 15.5, "normal", ORANGE, "middle")
-add(f'<text x="{DX + 36}" y="{sy + 70}" font-family="{FONT}" font-size="20" fill="{INK}">'
-    f'Undelivered energy <tspan font-style="italic">U</tspan> vs flexibility Φ</text>')
-
-# ---------------------------------------------------------------- flow arrows between panels
-for x1, x2 in [(AX + AW, BX), (BX + BW, CX), (CX + CW, DX)]:
-    add(f'<polygon points="{x1 + 6},404 {x2 - 14},404 {x2 - 14},392 {x2 - 3},420 {x2 - 14},448 {x2 - 14},436 {x1 + 6},436" '
-        f'fill="{INK}" opacity="0.85"/>')
-
-# ---------------------------------------------------------------- panel e
-EY = 846
-rect(20, EY, W - 40, 194, 14, PANEL_FILL, PANEL_EDGE, 1.6)
-add(f'<circle cx="50" cy="{EY + 34}" r="17" fill="{INK}"/>')
-text(50, EY + 42, "e", 22, "bold", "#FFFFFF", "middle")
-text(78, EY + 43, "Statistical inference", 27, "bold")
-inf = [["Day-block bootstrap, B = 3000", "Driver-cluster bootstrap, B = 2000",
-        "Finite-sample p = 2(ν + 1)/(B + 1)", "Holm correction within families"],
-       ["Nadeau–Bengio corrected t-test", "Friedman test, Nemenyi CD",
-        "Out-of-sample R² and MAE skill", "Pre-specified seeds; no test-set tuning"]]
-cw = (W - 40 - 48 - 3 * 16) / 4
-for r, rowv in enumerate(inf):
+# ---------------------------------------------------------------- e: statistical inference
+EY, EH = PY + PH + 12, 120
+rect(8, EY, W - 16, EH, 12, PANEL_FILL, PANEL_EDGE, 1.6)
+head(22, EY + 32, "e", "Statistical inference", W - 44)
+items = [["Day-block bootstrap, B = 3000", "Driver-cluster bootstrap, B = 2000", "Holm correction within families"],
+         ["Nadeau–Bengio corrected t-test", "Friedman test, Nemenyi CD", "p = 2(ν + 1)/(B + 1)"]]
+cwid = (W - 16 - 24 - 2 * 12) / 3
+for r, rowv in enumerate(items):
     for c, s in enumerate(rowv):
-        x = 44 + c * (cw + 16)
-        y = EY + 70 + r * 58
-        rect(x, y, cw, 44, 22, "#FFFFFF", INK if c != 3 else SUB, 1.6)
-        text(x + cw / 2, y + 29, s, 19.5, "normal", INK, "middle")
-
+        xx = 20 + c * (cwid + 12)
+        yy = EY + 44 + r * 36
+        rect(xx, yy, cwid, 32, 16, "#FFFFFF", INK, 1.4)
+        # math symbols in italics, as in the text
+        it = lambda v: f'<tspan font-style="italic">{v}</tspan>'
+        raw = (esc(s).replace('B =', it('B') + ' =').replace('(B', '(' + it('B')).replace('(ν', '(' + it('ν'))
+               .replace('p =', it('p') + ' ='))
+        # centred by measurement: text-anchor="middle" with tspans is not rendered reliably by cairosvg
+        tw = width(s, MIN)
+        text(xx + (cwid - tw) / 2, yy + 24, "", MIN, "normal", INK, "start", maxw=cwid - 16, measure=s, raw=raw)
 
 # ---------------------------------------------------------------- external validation band
-XV = EY + 194 + 16
-rect(20, XV, W - 40, 62, 14, "#E8F6F1", GREEN, 2)
-text(44, XV + 39, "External validation", 23, "bold", INK)
-text(300, XV + 39, "City of Palo Alto public network, 2011 to 2020: 256,391 sessions after cleaning, four locations", 20.5, "normal", INK)
-text(W - 44, XV + 39, "same protocols, learners, features, seeds and leakage audit", 19, "normal", SUB, "end")
+XV = EY + EH + 10
+rect(8, XV, W - 16, H - XV - 8, 12, "#E8F6F1", GREEN, 1.8)
+t1 = text(22, XV + 31, "External validation:", MIN, "bold", INK)
+text(22 + t1 + 10, XV + 31, "City of Palo Alto public network, 2011 to 2020, 256,391 sessions, same pipeline",
+     MIN, "normal", INK, maxw=W - 16 - 28 - t1 - 10)
 add('</svg>')
+
+assert XV + 40 <= H, 'external band does not fit'
 Path('fig1_framework.svg').write_text('\n'.join(out), encoding='utf-8')
-try:
-    import cairosvg
-    cairosvg.svg2pdf(url='fig1_framework.svg', write_to='fig1_framework.pdf')
-    cairosvg.svg2png(url='fig1_framework.svg', write_to='fig1_framework.png', output_width=7480, dpi=1000)
-    print('fig1_framework.svg, .pdf and .png written')
-except ImportError:
-    print('fig1_framework.svg written (install cairosvg for PDF and PNG)')
+import cairosvg  # noqa: E402
+cairosvg.svg2pdf(url='fig1_framework.svg', write_to='fig1_framework.pdf')
+cairosvg.svg2png(url='fig1_framework.svg', write_to='fig1_framework.png', output_width=6000)
+print('fig1_framework.svg, .pdf and .png written; smallest text', MIN, 'units =',
+      round(MIN * 7.16 * 72 / W, 2), 'pt at the full text width')

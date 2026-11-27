@@ -1,0 +1,1281 @@
+feeder,site,forecast,order,hubs,binding
+ieee33,caltech,no forecast (FCFS),0,15.5703125,voltage
+ieee33,caltech,no forecast (FCFS),1,16.40625,voltage
+ieee33,caltech,no forecast (FCFS),2,11.0703125,voltage
+ieee33,caltech,no forecast (FCFS),3,12.8671875,voltage
+ieee33,caltech,no forecast (FCFS),4,12.671875,voltage
+ieee33,caltech,no forecast (FCFS),5,12.5,voltage
+ieee33,caltech,no forecast (FCFS),6,8.703125,voltage
+ieee33,caltech,no forecast (FCFS),7,8.6953125,voltage
+ieee33,caltech,no forecast (FCFS),8,12.3125,voltage
+ieee33,caltech,no forecast (FCFS),9,16.1796875,voltage
+ieee33,caltech,no forecast (FCFS),10,13.078125,voltage
+ieee33,caltech,no forecast (FCFS),11,12.5859375,voltage
+ieee33,caltech,no forecast (FCFS),12,17.28125,voltage
+ieee33,caltech,no forecast (FCFS),13,10.8515625,voltage
+ieee33,caltech,no forecast (FCFS),14,10.34375,voltage
+ieee33,caltech,no forecast (FCFS),15,8.46875,voltage
+ieee33,caltech,no forecast (FCFS),16,17.1640625,voltage
+ieee33,caltech,no forecast (FCFS),17,11.5,voltage
+ieee33,caltech,no forecast (FCFS),18,9.1953125,voltage
+ieee33,caltech,no forecast (FCFS),19,7.3203125,voltage
+ieee33,caltech,no forecast (FCFS),20,8.03125,voltage
+ieee33,caltech,no forecast (FCFS),21,12.296875,voltage
+ieee33,caltech,no forecast (FCFS),22,9.9765625,voltage
+ieee33,caltech,no forecast (FCFS),23,11.5,voltage
+ieee33,caltech,no forecast (FCFS),24,9.5234375,voltage
+ieee33,caltech,no forecast (FCFS),25,9.6796875,voltage
+ieee33,caltech,no forecast (FCFS),26,17.625,voltage
+ieee33,caltech,no forecast (FCFS),27,18.734375,voltage
+ieee33,caltech,no forecast (FCFS),28,14.296875,voltage
+ieee33,caltech,no forecast (FCFS),29,5.734375,voltage
+ieee33,caltech,no forecast (FCFS),30,9.921875,voltage
+ieee33,caltech,no forecast (FCFS),31,14.96875,voltage
+ieee33,caltech,no forecast (FCFS),32,10.2421875,voltage
+ieee33,caltech,no forecast (FCFS),33,16.109375,voltage
+ieee33,caltech,no forecast (FCFS),34,16.125,voltage
+ieee33,caltech,no forecast (FCFS),35,13.4453125,voltage
+ieee33,caltech,no forecast (FCFS),36,11.1953125,voltage
+ieee33,caltech,no forecast (FCFS),37,18.140625,voltage
+ieee33,caltech,no forecast (FCFS),38,11.546875,voltage
+ieee33,caltech,no forecast (FCFS),39,11.09375,voltage
+ieee33,caltech,perfect information,0,20.2734375,voltage
+ieee33,caltech,perfect information,1,19.390625,voltage
+ieee33,caltech,perfect information,2,15.171875,voltage
+ieee33,caltech,perfect information,3,16.6171875,voltage
+ieee33,caltech,perfect information,4,15.5703125,voltage
+ieee33,caltech,perfect information,5,17.421875,voltage
+ieee33,caltech,perfect information,6,14.40625,voltage
+ieee33,caltech,perfect information,7,10.921875,voltage
+ieee33,caltech,perfect information,8,14.625,voltage
+ieee33,caltech,perfect information,9,18.1015625,voltage
+ieee33,caltech,perfect information,10,14.1875,voltage
+ieee33,caltech,perfect information,11,15.5546875,voltage
+ieee33,caltech,perfect information,12,18.171875,voltage
+ieee33,caltech,perfect information,13,15.5703125,voltage
+ieee33,caltech,perfect information,14,17.671875,voltage
+ieee33,caltech,perfect information,15,10.25,voltage
+ieee33,caltech,perfect information,16,21.7890625,voltage
+ieee33,caltech,perfect information,17,13.421875,voltage
+ieee33,caltech,perfect information,18,10.8984375,voltage
+ieee33,caltech,perfect information,19,8.2265625,voltage
+ieee33,caltech,perfect information,20,12.546875,voltage
+ieee33,caltech,perfect information,21,14.015625,voltage
+ieee33,caltech,perfect information,22,14.625,voltage
+ieee33,caltech,perfect information,23,14.2109375,voltage
+ieee33,caltech,perfect information,24,11.375,voltage
+ieee33,caltech,perfect information,25,11.6875,voltage
+ieee33,caltech,perfect information,26,24.6640625,voltage
+ieee33,caltech,perfect information,27,19.921875,voltage
+ieee33,caltech,perfect information,28,17.0234375,voltage
+ieee33,caltech,perfect information,29,8.6328125,voltage
+ieee33,caltech,perfect information,30,11.671875,voltage
+ieee33,caltech,perfect information,31,16.421875,voltage
+ieee33,caltech,perfect information,32,12.28125,voltage
+ieee33,caltech,perfect information,33,21.1171875,voltage
+ieee33,caltech,perfect information,34,17.2734375,voltage
+ieee33,caltech,perfect information,35,15.7734375,voltage
+ieee33,caltech,perfect information,36,14.6875,voltage
+ieee33,caltech,perfect information,37,21.0546875,voltage
+ieee33,caltech,perfect information,38,13.390625,voltage
+ieee33,caltech,perfect information,39,13.453125,voltage
+ieee33,caltech,driver seen,0,15.875,voltage
+ieee33,caltech,driver seen,1,16.7265625,voltage
+ieee33,caltech,driver seen,2,12.6484375,voltage
+ieee33,caltech,driver seen,3,14.8203125,voltage
+ieee33,caltech,driver seen,4,13.75,voltage
+ieee33,caltech,driver seen,5,12.96875,voltage
+ieee33,caltech,driver seen,6,9.0234375,voltage
+ieee33,caltech,driver seen,7,10.03125,voltage
+ieee33,caltech,driver seen,8,12.5859375,voltage
+ieee33,caltech,driver seen,9,16.40625,voltage
+ieee33,caltech,driver seen,10,13.3203125,voltage
+ieee33,caltech,driver seen,11,12.8125,voltage
+ieee33,caltech,driver seen,12,17.5078125,voltage
+ieee33,caltech,driver seen,13,11.3046875,voltage
+ieee33,caltech,driver seen,14,13.828125,voltage
+ieee33,caltech,driver seen,15,8.7890625,voltage
+ieee33,caltech,driver seen,16,19.328125,voltage
+ieee33,caltech,driver seen,17,12.1875,voltage
+ieee33,caltech,driver seen,18,9.515625,voltage
+ieee33,caltech,driver seen,19,7.546875,voltage
+ieee33,caltech,driver seen,20,8.3828125,voltage
+ieee33,caltech,driver seen,21,13.1171875,voltage
+ieee33,caltech,driver seen,22,10.2890625,voltage
+ieee33,caltech,driver seen,23,11.8515625,voltage
+ieee33,caltech,driver seen,24,9.8203125,voltage
+ieee33,caltech,driver seen,25,9.9609375,voltage
+ieee33,caltech,driver seen,26,18.46875,voltage
+ieee33,caltech,driver seen,27,19.03125,voltage
+ieee33,caltech,driver seen,28,14.5390625,voltage
+ieee33,caltech,driver seen,29,6.84375,voltage
+ieee33,caltech,driver seen,30,10.2265625,voltage
+ieee33,caltech,driver seen,31,15.53125,voltage
+ieee33,caltech,driver seen,32,10.515625,voltage
+ieee33,caltech,driver seen,33,16.7265625,voltage
+ieee33,caltech,driver seen,34,16.3984375,voltage
+ieee33,caltech,driver seen,35,14.5703125,voltage
+ieee33,caltech,driver seen,36,12.9375,voltage
+ieee33,caltech,driver seen,37,19.0625,voltage
+ieee33,caltech,driver seen,38,11.8984375,voltage
+ieee33,caltech,driver seen,39,11.921875,voltage
+ieee33,caltech,"unseen driver, own history",0,15.8046875,voltage
+ieee33,caltech,"unseen driver, own history",1,16.65625,voltage
+ieee33,caltech,"unseen driver, own history",2,12.46875,voltage
+ieee33,caltech,"unseen driver, own history",3,14.5625,voltage
+ieee33,caltech,"unseen driver, own history",4,13.5078125,voltage
+ieee33,caltech,"unseen driver, own history",5,12.8671875,voltage
+ieee33,caltech,"unseen driver, own history",6,8.9375,voltage
+ieee33,caltech,"unseen driver, own history",7,9.578125,voltage
+ieee33,caltech,"unseen driver, own history",8,12.5234375,voltage
+ieee33,caltech,"unseen driver, own history",9,16.3515625,voltage
+ieee33,caltech,"unseen driver, own history",10,13.265625,voltage
+ieee33,caltech,"unseen driver, own history",11,12.765625,voltage
+ieee33,caltech,"unseen driver, own history",12,17.453125,voltage
+ieee33,caltech,"unseen driver, own history",13,11.203125,voltage
+ieee33,caltech,"unseen driver, own history",14,11.5546875,voltage
+ieee33,caltech,"unseen driver, own history",15,8.71875,voltage
+ieee33,caltech,"unseen driver, own history",16,19.015625,voltage
+ieee33,caltech,"unseen driver, own history",17,12.078125,voltage
+ieee33,caltech,"unseen driver, own history",18,9.4453125,voltage
+ieee33,caltech,"unseen driver, own history",19,7.4921875,voltage
+ieee33,caltech,"unseen driver, own history",20,8.3046875,voltage
+ieee33,caltech,"unseen driver, own history",21,13.046875,voltage
+ieee33,caltech,"unseen driver, own history",22,10.21875,voltage
+ieee33,caltech,"unseen driver, own history",23,11.7734375,voltage
+ieee33,caltech,"unseen driver, own history",24,9.7578125,voltage
+ieee33,caltech,"unseen driver, own history",25,9.8984375,voltage
+ieee33,caltech,"unseen driver, own history",26,18.03125,voltage
+ieee33,caltech,"unseen driver, own history",27,18.96875,voltage
+ieee33,caltech,"unseen driver, own history",28,14.484375,voltage
+ieee33,caltech,"unseen driver, own history",29,6.6015625,voltage
+ieee33,caltech,"unseen driver, own history",30,10.15625,voltage
+ieee33,caltech,"unseen driver, own history",31,15.4609375,voltage
+ieee33,caltech,"unseen driver, own history",32,10.453125,voltage
+ieee33,caltech,"unseen driver, own history",33,16.5859375,voltage
+ieee33,caltech,"unseen driver, own history",34,16.3359375,voltage
+ieee33,caltech,"unseen driver, own history",35,14.3125,voltage
+ieee33,caltech,"unseen driver, own history",36,12.6796875,voltage
+ieee33,caltech,"unseen driver, own history",37,18.984375,voltage
+ieee33,caltech,"unseen driver, own history",38,11.8203125,voltage
+ieee33,caltech,"unseen driver, own history",39,11.734375,voltage
+ieee33,caltech,driver request,0,15.8125,voltage
+ieee33,caltech,driver request,1,16.6640625,voltage
+ieee33,caltech,driver request,2,12.4765625,voltage
+ieee33,caltech,driver request,3,14.5859375,voltage
+ieee33,caltech,driver request,4,13.53125,voltage
+ieee33,caltech,driver request,5,12.875,voltage
+ieee33,caltech,driver request,6,8.9453125,voltage
+ieee33,caltech,driver request,7,9.6640625,voltage
+ieee33,caltech,driver request,8,12.53125,voltage
+ieee33,caltech,driver request,9,16.359375,voltage
+ieee33,caltech,driver request,10,13.2734375,voltage
+ieee33,caltech,driver request,11,12.765625,voltage
+ieee33,caltech,driver request,12,17.4609375,voltage
+ieee33,caltech,driver request,13,11.2109375,voltage
+ieee33,caltech,driver request,14,11.609375,voltage
+ieee33,caltech,driver request,15,8.7265625,voltage
+ieee33,caltech,driver request,16,19.0390625,voltage
+ieee33,caltech,driver request,17,12.0859375,voltage
+ieee33,caltech,driver request,18,9.4453125,voltage
+ieee33,caltech,driver request,19,7.5,voltage
+ieee33,caltech,driver request,20,8.3125,voltage
+ieee33,caltech,driver request,21,13.0546875,voltage
+ieee33,caltech,driver request,22,10.21875,voltage
+ieee33,caltech,driver request,23,11.78125,voltage
+ieee33,caltech,driver request,24,9.7578125,voltage
+ieee33,caltech,driver request,25,9.90625,voltage
+ieee33,caltech,driver request,26,18.0703125,voltage
+ieee33,caltech,driver request,27,18.96875,voltage
+ieee33,caltech,driver request,28,14.484375,voltage
+ieee33,caltech,driver request,29,6.6171875,voltage
+ieee33,caltech,driver request,30,10.1640625,voltage
+ieee33,caltech,driver request,31,15.4609375,voltage
+ieee33,caltech,driver request,32,10.4609375,voltage
+ieee33,caltech,driver request,33,16.59375,voltage
+ieee33,caltech,driver request,34,16.34375,voltage
+ieee33,caltech,driver request,35,14.328125,voltage
+ieee33,caltech,driver request,36,12.703125,voltage
+ieee33,caltech,driver request,37,19.0,voltage
+ieee33,caltech,driver request,38,11.828125,voltage
+ieee33,caltech,driver request,39,11.75,voltage
+ieee33,caltech,cold start,0,15.625,voltage
+ieee33,caltech,cold start,1,16.46875,voltage
+ieee33,caltech,cold start,2,11.9140625,voltage
+ieee33,caltech,cold start,3,12.9609375,voltage
+ieee33,caltech,cold start,4,12.875,voltage
+ieee33,caltech,cold start,5,12.5859375,voltage
+ieee33,caltech,cold start,6,8.7578125,voltage
+ieee33,caltech,cold start,7,8.78125,voltage
+ieee33,caltech,cold start,8,12.3671875,voltage
+ieee33,caltech,cold start,9,16.21875,voltage
+ieee33,caltech,cold start,10,13.125,voltage
+ieee33,caltech,cold start,11,12.6328125,voltage
+ieee33,caltech,cold start,12,17.3203125,voltage
+ieee33,caltech,cold start,13,10.9453125,voltage
+ieee33,caltech,cold start,14,10.5625,voltage
+ieee33,caltech,cold start,15,8.53125,voltage
+ieee33,caltech,cold start,16,17.375,voltage
+ieee33,caltech,cold start,17,11.65625,voltage
+ieee33,caltech,cold start,18,9.25,voltage
+ieee33,caltech,cold start,19,7.359375,voltage
+ieee33,caltech,cold start,20,8.1015625,voltage
+ieee33,caltech,cold start,21,12.5234375,voltage
+ieee33,caltech,cold start,22,10.0234375,voltage
+ieee33,caltech,cold start,23,11.5703125,voltage
+ieee33,caltech,cold start,24,9.578125,voltage
+ieee33,caltech,cold start,25,9.734375,voltage
+ieee33,caltech,cold start,26,17.71875,voltage
+ieee33,caltech,cold start,27,18.7890625,voltage
+ieee33,caltech,cold start,28,14.34375,voltage
+ieee33,caltech,cold start,29,5.9453125,voltage
+ieee33,caltech,cold start,30,9.96875,voltage
+ieee33,caltech,cold start,31,15.171875,voltage
+ieee33,caltech,cold start,32,10.296875,voltage
+ieee33,caltech,cold start,33,16.2265625,voltage
+ieee33,caltech,cold start,34,16.171875,voltage
+ieee33,caltech,cold start,35,13.6484375,voltage
+ieee33,caltech,cold start,36,12.0078125,voltage
+ieee33,caltech,cold start,37,18.34375,voltage
+ieee33,caltech,cold start,38,11.6171875,voltage
+ieee33,caltech,cold start,39,11.25,voltage
+ieee33,caltech,cold start (contrast low),0,15.671875,voltage
+ieee33,caltech,cold start (contrast low),1,16.515625,voltage
+ieee33,caltech,cold start (contrast low),2,12.1015625,voltage
+ieee33,caltech,cold start (contrast low),3,14.046875,voltage
+ieee33,caltech,cold start (contrast low),4,13.0390625,voltage
+ieee33,caltech,cold start (contrast low),5,12.65625,voltage
+ieee33,caltech,cold start (contrast low),6,8.8046875,voltage
+ieee33,caltech,cold start (contrast low),7,8.8515625,voltage
+ieee33,caltech,cold start (contrast low),8,12.40625,voltage
+ieee33,caltech,cold start (contrast low),9,16.25,voltage
+ieee33,caltech,cold start (contrast low),10,13.1640625,voltage
+ieee33,caltech,cold start (contrast low),11,12.6640625,voltage
+ieee33,caltech,cold start (contrast low),12,17.3515625,voltage
+ieee33,caltech,cold start (contrast low),13,11.0078125,voltage
+ieee33,caltech,cold start (contrast low),14,10.7265625,voltage
+ieee33,caltech,cold start (contrast low),15,8.578125,voltage
+ieee33,caltech,cold start (contrast low),16,17.546875,voltage
+ieee33,caltech,cold start (contrast low),17,11.78125,voltage
+ieee33,caltech,cold start (contrast low),18,9.296875,voltage
+ieee33,caltech,cold start (contrast low),19,7.3984375,voltage
+ieee33,caltech,cold start (contrast low),20,8.1484375,voltage
+ieee33,caltech,cold start (contrast low),21,12.6875,voltage
+ieee33,caltech,cold start (contrast low),22,10.0703125,voltage
+ieee33,caltech,cold start (contrast low),23,11.6171875,voltage
+ieee33,caltech,cold start (contrast low),24,9.625,voltage
+ieee33,caltech,cold start (contrast low),25,9.7734375,voltage
+ieee33,caltech,cold start (contrast low),26,17.7890625,voltage
+ieee33,caltech,cold start (contrast low),27,18.8359375,voltage
+ieee33,caltech,cold start (contrast low),28,14.375,voltage
+ieee33,caltech,cold start (contrast low),29,6.109375,voltage
+ieee33,caltech,cold start (contrast low),30,10.015625,voltage
+ieee33,caltech,cold start (contrast low),31,15.3125,voltage
+ieee33,caltech,cold start (contrast low),32,10.3359375,voltage
+ieee33,caltech,cold start (contrast low),33,16.3125,voltage
+ieee33,caltech,cold start (contrast low),34,16.21875,voltage
+ieee33,caltech,cold start (contrast low),35,13.8046875,voltage
+ieee33,caltech,cold start (contrast low),36,12.171875,voltage
+ieee33,caltech,cold start (contrast low),37,18.5,voltage
+ieee33,caltech,cold start (contrast low),38,11.6640625,voltage
+ieee33,caltech,cold start (contrast low),39,11.3671875,voltage
+ieee33,caltech,cold start (contrast high),0,15.5703125,voltage
+ieee33,caltech,cold start (contrast high),1,16.40625,voltage
+ieee33,caltech,cold start (contrast high),2,11.0859375,voltage
+ieee33,caltech,cold start (contrast high),3,12.875,voltage
+ieee33,caltech,cold start (contrast high),4,12.671875,voltage
+ieee33,caltech,cold start (contrast high),5,12.5,voltage
+ieee33,caltech,cold start (contrast high),6,8.703125,voltage
+ieee33,caltech,cold start (contrast high),7,8.6953125,voltage
+ieee33,caltech,cold start (contrast high),8,12.3125,voltage
+ieee33,caltech,cold start (contrast high),9,16.1796875,voltage
+ieee33,caltech,cold start (contrast high),10,13.078125,voltage
+ieee33,caltech,cold start (contrast high),11,12.5859375,voltage
+ieee33,caltech,cold start (contrast high),12,17.28125,voltage
+ieee33,caltech,cold start (contrast high),13,10.859375,voltage
+ieee33,caltech,cold start (contrast high),14,10.34375,voltage
+ieee33,caltech,cold start (contrast high),15,8.46875,voltage
+ieee33,caltech,cold start (contrast high),16,17.1640625,voltage
+ieee33,caltech,cold start (contrast high),17,11.5078125,voltage
+ieee33,caltech,cold start (contrast high),18,9.1953125,voltage
+ieee33,caltech,cold start (contrast high),19,7.3203125,voltage
+ieee33,caltech,cold start (contrast high),20,8.03125,voltage
+ieee33,caltech,cold start (contrast high),21,12.3046875,voltage
+ieee33,caltech,cold start (contrast high),22,9.9765625,voltage
+ieee33,caltech,cold start (contrast high),23,11.5078125,voltage
+ieee33,caltech,cold start (contrast high),24,9.5234375,voltage
+ieee33,caltech,cold start (contrast high),25,9.6796875,voltage
+ieee33,caltech,cold start (contrast high),26,17.625,voltage
+ieee33,caltech,cold start (contrast high),27,18.734375,voltage
+ieee33,caltech,cold start (contrast high),28,14.296875,voltage
+ieee33,caltech,cold start (contrast high),29,5.7421875,voltage
+ieee33,caltech,cold start (contrast high),30,9.921875,voltage
+ieee33,caltech,cold start (contrast high),31,14.96875,voltage
+ieee33,caltech,cold start (contrast high),32,10.2421875,voltage
+ieee33,caltech,cold start (contrast high),33,16.109375,voltage
+ieee33,caltech,cold start (contrast high),34,16.125,voltage
+ieee33,caltech,cold start (contrast high),35,13.453125,voltage
+ieee33,caltech,cold start (contrast high),36,11.203125,voltage
+ieee33,caltech,cold start (contrast high),37,18.140625,voltage
+ieee33,caltech,cold start (contrast high),38,11.5546875,voltage
+ieee33,caltech,cold start (contrast high),39,11.09375,voltage
+ieee33,jpl,no forecast (FCFS),0,7.8046875,voltage
+ieee33,jpl,no forecast (FCFS),1,8.5625,voltage
+ieee33,jpl,no forecast (FCFS),2,7.546875,voltage
+ieee33,jpl,no forecast (FCFS),3,9.078125,voltage
+ieee33,jpl,no forecast (FCFS),4,7.7421875,voltage
+ieee33,jpl,no forecast (FCFS),5,7.7578125,voltage
+ieee33,jpl,no forecast (FCFS),6,3.1015625,voltage
+ieee33,jpl,no forecast (FCFS),7,6.109375,voltage
+ieee33,jpl,no forecast (FCFS),8,4.3671875,voltage
+ieee33,jpl,no forecast (FCFS),9,7.7109375,voltage
+ieee33,jpl,no forecast (FCFS),10,5.8125,voltage
+ieee33,jpl,no forecast (FCFS),11,8.875,voltage
+ieee33,jpl,no forecast (FCFS),12,8.109375,voltage
+ieee33,jpl,no forecast (FCFS),13,4.9765625,voltage
+ieee33,jpl,no forecast (FCFS),14,5.6796875,voltage
+ieee33,jpl,no forecast (FCFS),15,5.4140625,voltage
+ieee33,jpl,no forecast (FCFS),16,6.9375,voltage
+ieee33,jpl,no forecast (FCFS),17,3.5703125,voltage
+ieee33,jpl,no forecast (FCFS),18,6.015625,voltage
+ieee33,jpl,no forecast (FCFS),19,3.75,voltage
+ieee33,jpl,no forecast (FCFS),20,4.6484375,voltage
+ieee33,jpl,no forecast (FCFS),21,5.9140625,voltage
+ieee33,jpl,no forecast (FCFS),22,5.96875,voltage
+ieee33,jpl,no forecast (FCFS),23,4.0,voltage
+ieee33,jpl,no forecast (FCFS),24,3.9609375,voltage
+ieee33,jpl,no forecast (FCFS),25,5.171875,voltage
+ieee33,jpl,no forecast (FCFS),26,8.8359375,voltage
+ieee33,jpl,no forecast (FCFS),27,15.3671875,voltage
+ieee33,jpl,no forecast (FCFS),28,10.484375,voltage
+ieee33,jpl,no forecast (FCFS),29,2.3515625,voltage
+ieee33,jpl,no forecast (FCFS),30,3.7578125,voltage
+ieee33,jpl,no forecast (FCFS),31,6.8828125,voltage
+ieee33,jpl,no forecast (FCFS),32,1.84375,voltage
+ieee33,jpl,no forecast (FCFS),33,7.453125,voltage
+ieee33,jpl,no forecast (FCFS),34,8.7578125,voltage
+ieee33,jpl,no forecast (FCFS),35,7.703125,voltage
+ieee33,jpl,no forecast (FCFS),36,4.28125,voltage
+ieee33,jpl,no forecast (FCFS),37,5.765625,voltage
+ieee33,jpl,no forecast (FCFS),38,8.4375,voltage
+ieee33,jpl,no forecast (FCFS),39,7.0390625,voltage
+ieee33,jpl,perfect information,0,12.0703125,voltage
+ieee33,jpl,perfect information,1,10.9453125,voltage
+ieee33,jpl,perfect information,2,9.65625,voltage
+ieee33,jpl,perfect information,3,10.25,voltage
+ieee33,jpl,perfect information,4,8.4765625,voltage
+ieee33,jpl,perfect information,5,9.2421875,voltage
+ieee33,jpl,perfect information,6,5.109375,voltage
+ieee33,jpl,perfect information,7,6.7890625,voltage
+ieee33,jpl,perfect information,8,5.5390625,voltage
+ieee33,jpl,perfect information,9,8.578125,voltage
+ieee33,jpl,perfect information,10,9.328125,voltage
+ieee33,jpl,perfect information,11,10.234375,voltage
+ieee33,jpl,perfect information,12,8.6953125,voltage
+ieee33,jpl,perfect information,13,6.5546875,voltage
+ieee33,jpl,perfect information,14,8.0859375,voltage
+ieee33,jpl,perfect information,15,6.0078125,voltage
+ieee33,jpl,perfect information,16,9.0625,voltage
+ieee33,jpl,perfect information,17,6.2578125,voltage
+ieee33,jpl,perfect information,18,6.9296875,voltage
+ieee33,jpl,perfect information,19,5.0078125,voltage
+ieee33,jpl,perfect information,20,5.125,voltage
+ieee33,jpl,perfect information,21,8.65625,voltage
+ieee33,jpl,perfect information,22,7.8359375,voltage
+ieee33,jpl,perfect information,23,4.921875,voltage
+ieee33,jpl,perfect information,24,4.4609375,voltage
+ieee33,jpl,perfect information,25,7.125,voltage
+ieee33,jpl,perfect information,26,11.8046875,voltage
+ieee33,jpl,perfect information,27,16.34375,voltage
+ieee33,jpl,perfect information,28,11.03125,voltage
+ieee33,jpl,perfect information,29,3.3046875,voltage
+ieee33,jpl,perfect information,30,7.421875,voltage
+ieee33,jpl,perfect information,31,11.03125,voltage
+ieee33,jpl,perfect information,32,3.53125,voltage
+ieee33,jpl,perfect information,33,9.140625,voltage
+ieee33,jpl,perfect information,34,10.4765625,voltage
+ieee33,jpl,perfect information,35,10.140625,voltage
+ieee33,jpl,perfect information,36,4.71875,voltage
+ieee33,jpl,perfect information,37,9.015625,voltage
+ieee33,jpl,perfect information,38,10.125,voltage
+ieee33,jpl,perfect information,39,7.4765625,voltage
+ieee33,jpl,driver seen,0,10.09375,voltage
+ieee33,jpl,driver seen,1,10.2890625,voltage
+ieee33,jpl,driver seen,2,9.1953125,voltage
+ieee33,jpl,driver seen,3,9.8046875,voltage
+ieee33,jpl,driver seen,4,8.1796875,voltage
+ieee33,jpl,driver seen,5,7.9609375,voltage
+ieee33,jpl,driver seen,6,4.125,voltage
+ieee33,jpl,driver seen,7,6.421875,voltage
+ieee33,jpl,driver seen,8,4.7578125,voltage
+ieee33,jpl,driver seen,9,8.234375,voltage
+ieee33,jpl,driver seen,10,6.2421875,voltage
+ieee33,jpl,driver seen,11,9.6953125,voltage
+ieee33,jpl,driver seen,12,8.375,voltage
+ieee33,jpl,driver seen,13,6.2109375,voltage
+ieee33,jpl,driver seen,14,7.4609375,voltage
+ieee33,jpl,driver seen,15,5.6796875,voltage
+ieee33,jpl,driver seen,16,7.8671875,voltage
+ieee33,jpl,driver seen,17,6.0234375,voltage
+ieee33,jpl,driver seen,18,6.4296875,voltage
+ieee33,jpl,driver seen,19,3.9609375,voltage
+ieee33,jpl,driver seen,20,4.8515625,voltage
+ieee33,jpl,driver seen,21,7.4375,voltage
+ieee33,jpl,driver seen,22,7.359375,voltage
+ieee33,jpl,driver seen,23,4.421875,voltage
+ieee33,jpl,driver seen,24,4.203125,voltage
+ieee33,jpl,driver seen,25,6.140625,voltage
+ieee33,jpl,driver seen,26,11.5078125,voltage
+ieee33,jpl,driver seen,27,16.0859375,voltage
+ieee33,jpl,driver seen,28,10.7265625,voltage
+ieee33,jpl,driver seen,29,2.7890625,voltage
+ieee33,jpl,driver seen,30,7.078125,voltage
+ieee33,jpl,driver seen,31,9.7421875,voltage
+ieee33,jpl,driver seen,32,2.2890625,voltage
+ieee33,jpl,driver seen,33,8.453125,voltage
+ieee33,jpl,driver seen,34,9.640625,voltage
+ieee33,jpl,driver seen,35,7.953125,voltage
+ieee33,jpl,driver seen,36,4.484375,voltage
+ieee33,jpl,driver seen,37,6.9140625,voltage
+ieee33,jpl,driver seen,38,9.421875,voltage
+ieee33,jpl,driver seen,39,7.2421875,voltage
+ieee33,jpl,"unseen driver, own history",0,10.078125,voltage
+ieee33,jpl,"unseen driver, own history",1,10.28125,voltage
+ieee33,jpl,"unseen driver, own history",2,9.1875,voltage
+ieee33,jpl,"unseen driver, own history",3,9.796875,voltage
+ieee33,jpl,"unseen driver, own history",4,8.1796875,voltage
+ieee33,jpl,"unseen driver, own history",5,7.9609375,voltage
+ieee33,jpl,"unseen driver, own history",6,4.109375,voltage
+ieee33,jpl,"unseen driver, own history",7,6.4140625,voltage
+ieee33,jpl,"unseen driver, own history",8,4.75,voltage
+ieee33,jpl,"unseen driver, own history",9,8.234375,voltage
+ieee33,jpl,"unseen driver, own history",10,6.21875,voltage
+ieee33,jpl,"unseen driver, own history",11,9.671875,voltage
+ieee33,jpl,"unseen driver, own history",12,8.375,voltage
+ieee33,jpl,"unseen driver, own history",13,6.203125,voltage
+ieee33,jpl,"unseen driver, own history",14,7.4453125,voltage
+ieee33,jpl,"unseen driver, own history",15,5.6796875,voltage
+ieee33,jpl,"unseen driver, own history",16,7.84375,voltage
+ieee33,jpl,"unseen driver, own history",17,6.015625,voltage
+ieee33,jpl,"unseen driver, own history",18,6.421875,voltage
+ieee33,jpl,"unseen driver, own history",19,3.9609375,voltage
+ieee33,jpl,"unseen driver, own history",20,4.8515625,voltage
+ieee33,jpl,"unseen driver, own history",21,7.4140625,voltage
+ieee33,jpl,"unseen driver, own history",22,7.3515625,voltage
+ieee33,jpl,"unseen driver, own history",23,4.4140625,voltage
+ieee33,jpl,"unseen driver, own history",24,4.1953125,voltage
+ieee33,jpl,"unseen driver, own history",25,6.125,voltage
+ieee33,jpl,"unseen driver, own history",26,11.5,voltage
+ieee33,jpl,"unseen driver, own history",27,16.078125,voltage
+ieee33,jpl,"unseen driver, own history",28,10.71875,voltage
+ieee33,jpl,"unseen driver, own history",29,2.7734375,voltage
+ieee33,jpl,"unseen driver, own history",30,7.0703125,voltage
+ieee33,jpl,"unseen driver, own history",31,9.71875,voltage
+ieee33,jpl,"unseen driver, own history",32,2.2734375,voltage
+ieee33,jpl,"unseen driver, own history",33,8.4375,voltage
+ieee33,jpl,"unseen driver, own history",34,9.5625,voltage
+ieee33,jpl,"unseen driver, own history",35,7.9453125,voltage
+ieee33,jpl,"unseen driver, own history",36,4.4765625,voltage
+ieee33,jpl,"unseen driver, own history",37,6.890625,voltage
+ieee33,jpl,"unseen driver, own history",38,9.3984375,voltage
+ieee33,jpl,"unseen driver, own history",39,7.234375,voltage
+ieee33,jpl,driver request,0,10.046875,voltage
+ieee33,jpl,driver request,1,10.265625,voltage
+ieee33,jpl,driver request,2,9.171875,voltage
+ieee33,jpl,driver request,3,9.7734375,voltage
+ieee33,jpl,driver request,4,8.171875,voltage
+ieee33,jpl,driver request,5,7.953125,voltage
+ieee33,jpl,driver request,6,4.078125,voltage
+ieee33,jpl,driver request,7,6.40625,voltage
+ieee33,jpl,driver request,8,4.734375,voltage
+ieee33,jpl,driver request,9,8.2265625,voltage
+ieee33,jpl,driver request,10,6.1953125,voltage
+ieee33,jpl,driver request,11,9.6484375,voltage
+ieee33,jpl,driver request,12,8.3671875,voltage
+ieee33,jpl,driver request,13,6.1953125,voltage
+ieee33,jpl,driver request,14,7.421875,voltage
+ieee33,jpl,driver request,15,5.671875,voltage
+ieee33,jpl,driver request,16,7.8203125,voltage
+ieee33,jpl,driver request,17,6.015625,voltage
+ieee33,jpl,driver request,18,6.4140625,voltage
+ieee33,jpl,driver request,19,3.953125,voltage
+ieee33,jpl,driver request,20,4.84375,voltage
+ieee33,jpl,driver request,21,7.390625,voltage
+ieee33,jpl,driver request,22,7.34375,voltage
+ieee33,jpl,driver request,23,4.40625,voltage
+ieee33,jpl,driver request,24,4.1953125,voltage
+ieee33,jpl,driver request,25,6.1015625,voltage
+ieee33,jpl,driver request,26,11.5,voltage
+ieee33,jpl,driver request,27,16.0703125,voltage
+ieee33,jpl,driver request,28,10.71875,voltage
+ieee33,jpl,driver request,29,2.765625,voltage
+ieee33,jpl,driver request,30,7.0625,voltage
+ieee33,jpl,driver request,31,9.6875,voltage
+ieee33,jpl,driver request,32,2.2421875,voltage
+ieee33,jpl,driver request,33,8.40625,voltage
+ieee33,jpl,driver request,34,9.46875,voltage
+ieee33,jpl,driver request,35,7.9375,voltage
+ieee33,jpl,driver request,36,4.4765625,voltage
+ieee33,jpl,driver request,37,6.8671875,voltage
+ieee33,jpl,driver request,38,9.375,voltage
+ieee33,jpl,driver request,39,7.2265625,voltage
+ieee33,jpl,cold start,0,7.9140625,voltage
+ieee33,jpl,cold start,1,8.921875,voltage
+ieee33,jpl,cold start,2,7.890625,voltage
+ieee33,jpl,cold start,3,9.3359375,voltage
+ieee33,jpl,cold start,4,8.0234375,voltage
+ieee33,jpl,cold start,5,7.8359375,voltage
+ieee33,jpl,cold start,6,3.4609375,voltage
+ieee33,jpl,cold start,7,6.21875,voltage
+ieee33,jpl,cold start,8,4.5,voltage
+ieee33,jpl,cold start,9,8.046875,voltage
+ieee33,jpl,cold start,10,5.8984375,voltage
+ieee33,jpl,cold start,11,9.0625,voltage
+ieee33,jpl,cold start,12,8.203125,voltage
+ieee33,jpl,cold start,13,6.0234375,voltage
+ieee33,jpl,cold start,14,6.4921875,voltage
+ieee33,jpl,cold start,15,5.5078125,voltage
+ieee33,jpl,cold start,16,7.1953125,voltage
+ieee33,jpl,cold start,17,3.828125,voltage
+ieee33,jpl,cold start,18,6.1640625,voltage
+ieee33,jpl,cold start,19,3.8203125,voltage
+ieee33,jpl,cold start,20,4.71875,voltage
+ieee33,jpl,cold start,21,6.125,voltage
+ieee33,jpl,cold start,22,7.1015625,voltage
+ieee33,jpl,cold start,23,4.1484375,voltage
+ieee33,jpl,cold start,24,4.0625,voltage
+ieee33,jpl,cold start,25,5.515625,voltage
+ieee33,jpl,cold start,26,8.9921875,voltage
+ieee33,jpl,cold start,27,15.734375,voltage
+ieee33,jpl,cold start,28,10.5703125,voltage
+ieee33,jpl,cold start,29,2.5078125,voltage
+ieee33,jpl,cold start,30,3.8984375,voltage
+ieee33,jpl,cold start,31,9.0,voltage
+ieee33,jpl,cold start,32,1.9140625,voltage
+ieee33,jpl,cold start,33,7.796875,voltage
+ieee33,jpl,cold start,34,8.859375,voltage
+ieee33,jpl,cold start,35,7.7890625,voltage
+ieee33,jpl,cold start,36,4.3515625,voltage
+ieee33,jpl,cold start,37,6.28125,voltage
+ieee33,jpl,cold start,38,8.78125,voltage
+ieee33,jpl,cold start,39,7.109375,voltage
+ieee33,jpl,cold start (contrast low),0,7.953125,voltage
+ieee33,jpl,cold start (contrast low),1,10.0078125,voltage
+ieee33,jpl,cold start (contrast low),2,8.5703125,voltage
+ieee33,jpl,cold start (contrast low),3,9.4296875,voltage
+ieee33,jpl,cold start (contrast low),4,8.0546875,voltage
+ieee33,jpl,cold start (contrast low),5,7.859375,voltage
+ieee33,jpl,cold start (contrast low),6,3.59375,voltage
+ieee33,jpl,cold start (contrast low),7,6.2578125,voltage
+ieee33,jpl,cold start (contrast low),8,4.5546875,voltage
+ieee33,jpl,cold start (contrast low),9,8.0859375,voltage
+ieee33,jpl,cold start (contrast low),10,5.9296875,voltage
+ieee33,jpl,cold start (contrast low),11,9.1875,voltage
+ieee33,jpl,cold start (contrast low),12,8.2421875,voltage
+ieee33,jpl,cold start (contrast low),13,6.0546875,voltage
+ieee33,jpl,cold start (contrast low),14,7.078125,voltage
+ieee33,jpl,cold start (contrast low),15,5.546875,voltage
+ieee33,jpl,cold start (contrast low),16,7.3359375,voltage
+ieee33,jpl,cold start (contrast low),17,3.921875,voltage
+ieee33,jpl,cold start (contrast low),18,6.21875,voltage
+ieee33,jpl,cold start (contrast low),19,3.8515625,voltage
+ieee33,jpl,cold start (contrast low),20,4.75,voltage
+ieee33,jpl,cold start (contrast low),21,6.6328125,voltage
+ieee33,jpl,cold start (contrast low),22,7.15625,voltage
+ieee33,jpl,cold start (contrast low),23,4.203125,voltage
+ieee33,jpl,cold start (contrast low),24,4.09375,voltage
+ieee33,jpl,cold start (contrast low),25,5.640625,voltage
+ieee33,jpl,cold start (contrast low),26,11.0546875,voltage
+ieee33,jpl,cold start (contrast low),27,15.8671875,voltage
+ieee33,jpl,cold start (contrast low),28,10.6015625,voltage
+ieee33,jpl,cold start (contrast low),29,2.5625,voltage
+ieee33,jpl,cold start (contrast low),30,3.953125,voltage
+ieee33,jpl,cold start (contrast low),31,9.1484375,voltage
+ieee33,jpl,cold start (contrast low),32,1.9453125,voltage
+ieee33,jpl,cold start (contrast low),33,7.921875,voltage
+ieee33,jpl,cold start (contrast low),34,8.8984375,voltage
+ieee33,jpl,cold start (contrast low),35,7.8203125,voltage
+ieee33,jpl,cold start (contrast low),36,4.375,voltage
+ieee33,jpl,cold start (contrast low),37,6.4140625,voltage
+ieee33,jpl,cold start (contrast low),38,8.9140625,voltage
+ieee33,jpl,cold start (contrast low),39,7.1328125,voltage
+ieee33,jpl,cold start (contrast high),0,7.8515625,voltage
+ieee33,jpl,cold start (contrast high),1,8.7109375,voltage
+ieee33,jpl,cold start (contrast high),2,7.6953125,voltage
+ieee33,jpl,cold start (contrast high),3,9.1796875,voltage
+ieee33,jpl,cold start (contrast high),4,7.890625,voltage
+ieee33,jpl,cold start (contrast high),5,7.7890625,voltage
+ieee33,jpl,cold start (contrast high),6,3.25,voltage
+ieee33,jpl,cold start (contrast high),7,6.15625,voltage
+ieee33,jpl,cold start (contrast high),8,4.421875,voltage
+ieee33,jpl,cold start (contrast high),9,7.9609375,voltage
+ieee33,jpl,cold start (contrast high),10,5.8515625,voltage
+ieee33,jpl,cold start (contrast high),11,8.9375,voltage
+ieee33,jpl,cold start (contrast high),12,8.1484375,voltage
+ieee33,jpl,cold start (contrast high),13,5.515625,voltage
+ieee33,jpl,cold start (contrast high),14,5.8203125,voltage
+ieee33,jpl,cold start (contrast high),15,5.453125,voltage
+ieee33,jpl,cold start (contrast high),16,6.9921875,voltage
+ieee33,jpl,cold start (contrast high),17,3.6796875,voltage
+ieee33,jpl,cold start (contrast high),18,6.078125,voltage
+ieee33,jpl,cold start (contrast high),19,3.78125,voltage
+ieee33,jpl,cold start (contrast high),20,4.6796875,voltage
+ieee33,jpl,cold start (contrast high),21,5.953125,voltage
+ieee33,jpl,cold start (contrast high),22,7.0234375,voltage
+ieee33,jpl,cold start (contrast high),23,4.0625,voltage
+ieee33,jpl,cold start (contrast high),24,4.0234375,voltage
+ieee33,jpl,cold start (contrast high),25,5.3125,voltage
+ieee33,jpl,cold start (contrast high),26,8.8984375,voltage
+ieee33,jpl,cold start (contrast high),27,15.5234375,voltage
+ieee33,jpl,cold start (contrast high),28,10.515625,voltage
+ieee33,jpl,cold start (contrast high),29,2.4140625,voltage
+ieee33,jpl,cold start (contrast high),30,3.8203125,voltage
+ieee33,jpl,cold start (contrast high),31,6.9453125,voltage
+ieee33,jpl,cold start (contrast high),32,1.875,voltage
+ieee33,jpl,cold start (contrast high),33,7.59375,voltage
+ieee33,jpl,cold start (contrast high),34,8.796875,voltage
+ieee33,jpl,cold start (contrast high),35,7.7421875,voltage
+ieee33,jpl,cold start (contrast high),36,4.3125,voltage
+ieee33,jpl,cold start (contrast high),37,6.0859375,voltage
+ieee33,jpl,cold start (contrast high),38,8.5859375,voltage
+ieee33,jpl,cold start (contrast high),39,7.0625,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),0,495.15625,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),1,465.625,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),2,452.421875,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),3,411.09375,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),4,404.4921875,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),5,501.6640625,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),6,428.9921875,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),7,569.28125,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),8,470.1640625,thermal
+1-MV-comm--0-sw,caltech,no forecast (FCFS),9,437.140625,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),10,447.796875,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),11,394.4375,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),12,449.2734375,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),13,538.6875,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),14,456.6328125,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),15,398.03125,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),16,489.15625,thermal
+1-MV-comm--0-sw,caltech,no forecast (FCFS),17,495.921875,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),18,501.203125,thermal
+1-MV-comm--0-sw,caltech,no forecast (FCFS),19,396.8984375,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),20,460.015625,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),21,467.5234375,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),22,431.7265625,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),23,460.21875,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),24,396.484375,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),25,503.546875,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),26,404.9921875,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),27,450.484375,thermal
+1-MV-comm--0-sw,caltech,no forecast (FCFS),28,420.1015625,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),29,491.28125,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),30,491.7578125,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),31,411.2109375,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),32,356.734375,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),33,355.4140625,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),34,501.1640625,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),35,429.9375,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),36,397.34375,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),37,490.4921875,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),38,373.140625,voltage
+1-MV-comm--0-sw,caltech,no forecast (FCFS),39,464.046875,voltage
+1-MV-comm--0-sw,caltech,perfect information,0,627.3671875,voltage
+1-MV-comm--0-sw,caltech,perfect information,1,588.1015625,voltage
+1-MV-comm--0-sw,caltech,perfect information,2,556.625,voltage
+1-MV-comm--0-sw,caltech,perfect information,3,514.078125,voltage
+1-MV-comm--0-sw,caltech,perfect information,4,550.78125,voltage
+1-MV-comm--0-sw,caltech,perfect information,5,667.0546875,voltage
+1-MV-comm--0-sw,caltech,perfect information,6,573.1484375,voltage
+1-MV-comm--0-sw,caltech,perfect information,7,687.9296875,voltage
+1-MV-comm--0-sw,caltech,perfect information,8,596.71875,thermal
+1-MV-comm--0-sw,caltech,perfect information,9,572.3125,voltage
+1-MV-comm--0-sw,caltech,perfect information,10,562.75,voltage
+1-MV-comm--0-sw,caltech,perfect information,11,520.7265625,voltage
+1-MV-comm--0-sw,caltech,perfect information,12,565.1015625,voltage
+1-MV-comm--0-sw,caltech,perfect information,13,645.9921875,voltage
+1-MV-comm--0-sw,caltech,perfect information,14,610.4375,voltage
+1-MV-comm--0-sw,caltech,perfect information,15,474.625,voltage
+1-MV-comm--0-sw,caltech,perfect information,16,613.5234375,thermal
+1-MV-comm--0-sw,caltech,perfect information,17,667.09375,voltage
+1-MV-comm--0-sw,caltech,perfect information,18,620.0546875,voltage
+1-MV-comm--0-sw,caltech,perfect information,19,507.578125,voltage
+1-MV-comm--0-sw,caltech,perfect information,20,582.796875,voltage
+1-MV-comm--0-sw,caltech,perfect information,21,604.5,voltage
+1-MV-comm--0-sw,caltech,perfect information,22,546.5703125,voltage
+1-MV-comm--0-sw,caltech,perfect information,23,584.859375,voltage
+1-MV-comm--0-sw,caltech,perfect information,24,609.6484375,voltage
+1-MV-comm--0-sw,caltech,perfect information,25,617.109375,voltage
+1-MV-comm--0-sw,caltech,perfect information,26,502.484375,voltage
+1-MV-comm--0-sw,caltech,perfect information,27,578.0,thermal
+1-MV-comm--0-sw,caltech,perfect information,28,499.375,voltage
+1-MV-comm--0-sw,caltech,perfect information,29,594.578125,voltage
+1-MV-comm--0-sw,caltech,perfect information,30,603.8203125,voltage
+1-MV-comm--0-sw,caltech,perfect information,31,578.4296875,voltage
+1-MV-comm--0-sw,caltech,perfect information,32,490.640625,voltage
+1-MV-comm--0-sw,caltech,perfect information,33,482.4609375,voltage
+1-MV-comm--0-sw,caltech,perfect information,34,634.5859375,voltage
+1-MV-comm--0-sw,caltech,perfect information,35,568.640625,voltage
+1-MV-comm--0-sw,caltech,perfect information,36,511.921875,voltage
+1-MV-comm--0-sw,caltech,perfect information,37,608.1484375,voltage
+1-MV-comm--0-sw,caltech,perfect information,38,482.2265625,voltage
+1-MV-comm--0-sw,caltech,perfect information,39,599.6953125,voltage
+1-MV-comm--0-sw,caltech,driver seen,0,519.53125,voltage
+1-MV-comm--0-sw,caltech,driver seen,1,482.921875,voltage
+1-MV-comm--0-sw,caltech,driver seen,2,488.7890625,voltage
+1-MV-comm--0-sw,caltech,driver seen,3,432.4453125,voltage
+1-MV-comm--0-sw,caltech,driver seen,4,448.8046875,voltage
+1-MV-comm--0-sw,caltech,driver seen,5,534.703125,voltage
+1-MV-comm--0-sw,caltech,driver seen,6,475.9921875,voltage
+1-MV-comm--0-sw,caltech,driver seen,7,596.703125,thermal
+1-MV-comm--0-sw,caltech,driver seen,8,508.7265625,thermal
+1-MV-comm--0-sw,caltech,driver seen,9,477.84375,voltage
+1-MV-comm--0-sw,caltech,driver seen,10,482.78125,voltage
+1-MV-comm--0-sw,caltech,driver seen,11,413.859375,voltage
+1-MV-comm--0-sw,caltech,driver seen,12,475.4375,voltage
+1-MV-comm--0-sw,caltech,driver seen,13,557.59375,voltage
+1-MV-comm--0-sw,caltech,driver seen,14,479.25,voltage
+1-MV-comm--0-sw,caltech,driver seen,15,417.765625,voltage
+1-MV-comm--0-sw,caltech,driver seen,16,517.578125,thermal
+1-MV-comm--0-sw,caltech,driver seen,17,583.328125,thermal
+1-MV-comm--0-sw,caltech,driver seen,18,531.984375,voltage
+1-MV-comm--0-sw,caltech,driver seen,19,428.3828125,voltage
+1-MV-comm--0-sw,caltech,driver seen,20,488.5390625,voltage
+1-MV-comm--0-sw,caltech,driver seen,21,535.2734375,voltage
+1-MV-comm--0-sw,caltech,driver seen,22,456.390625,voltage
+1-MV-comm--0-sw,caltech,driver seen,23,490.46875,voltage
+1-MV-comm--0-sw,caltech,driver seen,24,421.796875,voltage
+1-MV-comm--0-sw,caltech,driver seen,25,520.671875,voltage
+1-MV-comm--0-sw,caltech,driver seen,26,424.9296875,voltage
+1-MV-comm--0-sw,caltech,driver seen,27,479.8203125,thermal
+1-MV-comm--0-sw,caltech,driver seen,28,442.8984375,voltage
+1-MV-comm--0-sw,caltech,driver seen,29,536.28125,voltage
+1-MV-comm--0-sw,caltech,driver seen,30,514.6875,voltage
+1-MV-comm--0-sw,caltech,driver seen,31,454.4296875,voltage
+1-MV-comm--0-sw,caltech,driver seen,32,378.9765625,voltage
+1-MV-comm--0-sw,caltech,driver seen,33,402.515625,voltage
+1-MV-comm--0-sw,caltech,driver seen,34,525.9140625,voltage
+1-MV-comm--0-sw,caltech,driver seen,35,468.59375,voltage
+1-MV-comm--0-sw,caltech,driver seen,36,431.0859375,voltage
+1-MV-comm--0-sw,caltech,driver seen,37,506.34375,voltage
+1-MV-comm--0-sw,caltech,driver seen,38,395.0625,voltage
+1-MV-comm--0-sw,caltech,driver seen,39,494.265625,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",0,517.5390625,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",1,482.3046875,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",2,474.53125,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",3,428.4453125,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",4,428.5625,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",5,530.03125,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",6,475.3828125,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",7,594.046875,thermal
+1-MV-comm--0-sw,caltech,"unseen driver, own history",8,504.0,thermal
+1-MV-comm--0-sw,caltech,"unseen driver, own history",9,477.296875,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",10,482.1640625,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",11,413.25,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",12,468.9453125,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",13,555.3046875,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",14,468.2109375,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",15,417.046875,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",16,510.9296875,thermal
+1-MV-comm--0-sw,caltech,"unseen driver, own history",17,562.78125,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",18,531.421875,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",19,416.890625,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",20,481.4140625,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",21,517.546875,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",22,454.71875,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",23,489.265625,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",24,421.0703125,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",25,517.8828125,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",26,424.3828125,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",27,475.171875,thermal
+1-MV-comm--0-sw,caltech,"unseen driver, own history",28,442.2890625,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",29,519.984375,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",30,505.6484375,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",31,453.640625,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",32,378.4296875,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",33,371.78125,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",34,525.2890625,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",35,461.9375,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",36,419.5859375,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",37,504.4609375,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",38,392.0859375,voltage
+1-MV-comm--0-sw,caltech,"unseen driver, own history",39,491.6953125,voltage
+1-MV-comm--0-sw,caltech,driver request,0,519.015625,voltage
+1-MV-comm--0-sw,caltech,driver request,1,482.359375,voltage
+1-MV-comm--0-sw,caltech,driver request,2,474.59375,voltage
+1-MV-comm--0-sw,caltech,driver request,3,431.0234375,voltage
+1-MV-comm--0-sw,caltech,driver request,4,428.6328125,voltage
+1-MV-comm--0-sw,caltech,driver request,5,531.0625,voltage
+1-MV-comm--0-sw,caltech,driver request,6,475.4296875,voltage
+1-MV-comm--0-sw,caltech,driver request,7,594.1796875,thermal
+1-MV-comm--0-sw,caltech,driver request,8,504.1484375,thermal
+1-MV-comm--0-sw,caltech,driver request,9,477.3359375,voltage
+1-MV-comm--0-sw,caltech,driver request,10,482.21875,voltage
+1-MV-comm--0-sw,caltech,driver request,11,413.3046875,voltage
+1-MV-comm--0-sw,caltech,driver request,12,470.03125,voltage
+1-MV-comm--0-sw,caltech,driver request,13,557.015625,voltage
+1-MV-comm--0-sw,caltech,driver request,14,468.3046875,voltage
+1-MV-comm--0-sw,caltech,driver request,15,417.1015625,voltage
+1-MV-comm--0-sw,caltech,driver request,16,513.0703125,thermal
+1-MV-comm--0-sw,caltech,driver request,17,564.796875,thermal
+1-MV-comm--0-sw,caltech,driver request,18,531.46875,voltage
+1-MV-comm--0-sw,caltech,driver request,19,416.9375,voltage
+1-MV-comm--0-sw,caltech,driver request,20,484.28125,voltage
+1-MV-comm--0-sw,caltech,driver request,21,520.4375,voltage
+1-MV-comm--0-sw,caltech,driver request,22,454.765625,voltage
+1-MV-comm--0-sw,caltech,driver request,23,489.375,voltage
+1-MV-comm--0-sw,caltech,driver request,24,421.1328125,voltage
+1-MV-comm--0-sw,caltech,driver request,25,517.9296875,voltage
+1-MV-comm--0-sw,caltech,driver request,26,424.4296875,voltage
+1-MV-comm--0-sw,caltech,driver request,27,475.3125,thermal
+1-MV-comm--0-sw,caltech,driver request,28,442.3359375,voltage
+1-MV-comm--0-sw,caltech,driver request,29,522.5390625,voltage
+1-MV-comm--0-sw,caltech,driver request,30,508.6484375,voltage
+1-MV-comm--0-sw,caltech,driver request,31,453.7109375,voltage
+1-MV-comm--0-sw,caltech,driver request,32,378.4765625,voltage
+1-MV-comm--0-sw,caltech,driver request,33,371.8515625,voltage
+1-MV-comm--0-sw,caltech,driver request,34,525.3359375,voltage
+1-MV-comm--0-sw,caltech,driver request,35,461.9921875,voltage
+1-MV-comm--0-sw,caltech,driver request,36,419.6484375,voltage
+1-MV-comm--0-sw,caltech,driver request,37,504.5078125,voltage
+1-MV-comm--0-sw,caltech,driver request,38,392.1796875,voltage
+1-MV-comm--0-sw,caltech,driver request,39,491.75,voltage
+1-MV-comm--0-sw,caltech,cold start,0,495.8984375,voltage
+1-MV-comm--0-sw,caltech,cold start,1,475.1328125,voltage
+1-MV-comm--0-sw,caltech,cold start,2,452.9375,voltage
+1-MV-comm--0-sw,caltech,cold start,3,415.4609375,voltage
+1-MV-comm--0-sw,caltech,cold start,4,413.125,voltage
+1-MV-comm--0-sw,caltech,cold start,5,510.0390625,voltage
+1-MV-comm--0-sw,caltech,cold start,6,445.25,voltage
+1-MV-comm--0-sw,caltech,cold start,7,580.6328125,thermal
+1-MV-comm--0-sw,caltech,cold start,8,473.609375,thermal
+1-MV-comm--0-sw,caltech,cold start,9,437.6015625,voltage
+1-MV-comm--0-sw,caltech,cold start,10,454.921875,voltage
+1-MV-comm--0-sw,caltech,cold start,11,397.453125,voltage
+1-MV-comm--0-sw,caltech,cold start,12,454.3046875,voltage
+1-MV-comm--0-sw,caltech,cold start,13,539.265625,voltage
+1-MV-comm--0-sw,caltech,cold start,14,457.3046875,voltage
+1-MV-comm--0-sw,caltech,cold start,15,398.7578125,voltage
+1-MV-comm--0-sw,caltech,cold start,16,496.515625,thermal
+1-MV-comm--0-sw,caltech,cold start,17,521.765625,voltage
+1-MV-comm--0-sw,caltech,cold start,18,504.5859375,thermal
+1-MV-comm--0-sw,caltech,cold start,19,402.4140625,voltage
+1-MV-comm--0-sw,caltech,cold start,20,462.9921875,voltage
+1-MV-comm--0-sw,caltech,cold start,21,469.1484375,voltage
+1-MV-comm--0-sw,caltech,cold start,22,452.1796875,voltage
+1-MV-comm--0-sw,caltech,cold start,23,467.515625,voltage
+1-MV-comm--0-sw,caltech,cold start,24,400.2109375,voltage
+1-MV-comm--0-sw,caltech,cold start,25,505.578125,voltage
+1-MV-comm--0-sw,caltech,cold start,26,407.5625,voltage
+1-MV-comm--0-sw,caltech,cold start,27,453.859375,thermal
+1-MV-comm--0-sw,caltech,cold start,28,421.5078125,voltage
+1-MV-comm--0-sw,caltech,cold start,29,491.8359375,voltage
+1-MV-comm--0-sw,caltech,cold start,30,495.3203125,voltage
+1-MV-comm--0-sw,caltech,cold start,31,430.1484375,voltage
+1-MV-comm--0-sw,caltech,cold start,32,372.296875,voltage
+1-MV-comm--0-sw,caltech,cold start,33,356.859375,voltage
+1-MV-comm--0-sw,caltech,cold start,34,504.609375,voltage
+1-MV-comm--0-sw,caltech,cold start,35,441.265625,voltage
+1-MV-comm--0-sw,caltech,cold start,36,397.796875,voltage
+1-MV-comm--0-sw,caltech,cold start,37,494.046875,voltage
+1-MV-comm--0-sw,caltech,cold start,38,373.6796875,voltage
+1-MV-comm--0-sw,caltech,cold start,39,472.671875,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),0,498.296875,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),1,476.2578125,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),2,464.1953125,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),3,415.96875,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),4,413.4765625,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),5,510.3984375,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),6,445.6484375,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),7,582.734375,thermal
+1-MV-comm--0-sw,caltech,cold start (contrast low),8,476.703125,thermal
+1-MV-comm--0-sw,caltech,cold start (contrast low),9,437.9609375,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),10,475.046875,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),11,410.1796875,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),12,454.7265625,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),13,539.75,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),14,457.8203125,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),15,412.015625,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),16,497.6015625,thermal
+1-MV-comm--0-sw,caltech,cold start (contrast low),17,543.7421875,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),18,506.6796875,thermal
+1-MV-comm--0-sw,caltech,cold start (contrast low),19,402.8828125,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),20,468.2734375,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),21,469.5703125,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),22,452.53125,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),23,469.6640625,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),24,401.953125,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),25,511.5390625,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),26,409.9453125,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),27,456.9609375,thermal
+1-MV-comm--0-sw,caltech,cold start (contrast low),28,434.1953125,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),29,494.2109375,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),30,495.75,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),31,430.5703125,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),32,374.0546875,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),33,359.421875,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),34,511.171875,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),35,441.8359375,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),36,400.2578125,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),37,494.453125,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),38,377.21875,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast low),39,474.4140625,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),0,495.1640625,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),1,465.6328125,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),2,452.4296875,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),3,411.1484375,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),4,404.5078125,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),5,501.671875,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),6,429.0703125,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),7,569.6015625,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),8,470.1875,thermal
+1-MV-comm--0-sw,caltech,cold start (contrast high),9,437.1484375,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),10,447.8046875,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),11,394.4453125,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),12,449.3046875,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),13,538.6953125,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),14,456.640625,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),15,398.0390625,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),16,489.171875,thermal
+1-MV-comm--0-sw,caltech,cold start (contrast high),17,495.9296875,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),18,501.21875,thermal
+1-MV-comm--0-sw,caltech,cold start (contrast high),19,396.90625,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),20,460.4140625,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),21,467.53125,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),22,432.203125,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),23,460.65625,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),24,396.4921875,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),25,503.5546875,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),26,405.40625,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),27,450.5,thermal
+1-MV-comm--0-sw,caltech,cold start (contrast high),28,420.1171875,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),29,491.2890625,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),30,491.7734375,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),31,411.2734375,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),32,356.75,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),33,355.421875,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),34,501.484375,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),35,429.953125,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),36,397.3515625,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),37,490.5078125,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),38,373.1484375,voltage
+1-MV-comm--0-sw,caltech,cold start (contrast high),39,464.390625,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),0,220.6171875,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),1,219.0625,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),2,237.1640625,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),3,228.359375,thermal
+1-MV-comm--0-sw,jpl,no forecast (FCFS),4,195.515625,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),5,262.0390625,thermal
+1-MV-comm--0-sw,jpl,no forecast (FCFS),6,226.2578125,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),7,281.3046875,thermal
+1-MV-comm--0-sw,jpl,no forecast (FCFS),8,220.1640625,thermal
+1-MV-comm--0-sw,jpl,no forecast (FCFS),9,158.875,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),10,232.578125,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),11,231.125,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),12,243.296875,thermal
+1-MV-comm--0-sw,jpl,no forecast (FCFS),13,262.1953125,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),14,229.109375,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),15,165.828125,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),16,246.265625,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),17,215.0390625,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),18,233.078125,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),19,228.3515625,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),20,237.4765625,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),21,265.546875,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),22,187.1484375,thermal
+1-MV-comm--0-sw,jpl,no forecast (FCFS),23,228.2578125,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),24,223.390625,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),25,252.96875,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),26,210.34375,thermal
+1-MV-comm--0-sw,jpl,no forecast (FCFS),27,227.3046875,thermal
+1-MV-comm--0-sw,jpl,no forecast (FCFS),28,162.171875,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),29,233.203125,thermal
+1-MV-comm--0-sw,jpl,no forecast (FCFS),30,240.890625,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),31,240.203125,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),32,191.4609375,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),33,153.9296875,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),34,247.359375,thermal
+1-MV-comm--0-sw,jpl,no forecast (FCFS),35,182.0234375,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),36,224.78125,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),37,235.6015625,thermal
+1-MV-comm--0-sw,jpl,no forecast (FCFS),38,153.6953125,voltage
+1-MV-comm--0-sw,jpl,no forecast (FCFS),39,200.59375,voltage
+1-MV-comm--0-sw,jpl,perfect information,0,299.671875,voltage
+1-MV-comm--0-sw,jpl,perfect information,1,288.6796875,voltage
+1-MV-comm--0-sw,jpl,perfect information,2,295.609375,thermal
+1-MV-comm--0-sw,jpl,perfect information,3,270.90625,thermal
+1-MV-comm--0-sw,jpl,perfect information,4,276.78125,thermal
+1-MV-comm--0-sw,jpl,perfect information,5,350.8828125,voltage
+1-MV-comm--0-sw,jpl,perfect information,6,287.3359375,voltage
+1-MV-comm--0-sw,jpl,perfect information,7,339.1484375,voltage
+1-MV-comm--0-sw,jpl,perfect information,8,266.59375,thermal
+1-MV-comm--0-sw,jpl,perfect information,9,217.359375,voltage
+1-MV-comm--0-sw,jpl,perfect information,10,297.2734375,voltage
+1-MV-comm--0-sw,jpl,perfect information,11,280.9921875,voltage
+1-MV-comm--0-sw,jpl,perfect information,12,312.8125,voltage
+1-MV-comm--0-sw,jpl,perfect information,13,331.9765625,thermal
+1-MV-comm--0-sw,jpl,perfect information,14,301.5546875,voltage
+1-MV-comm--0-sw,jpl,perfect information,15,216.3203125,voltage
+1-MV-comm--0-sw,jpl,perfect information,16,295.5703125,voltage
+1-MV-comm--0-sw,jpl,perfect information,17,296.1953125,voltage
+1-MV-comm--0-sw,jpl,perfect information,18,296.4921875,voltage
+1-MV-comm--0-sw,jpl,perfect information,19,294.421875,voltage
+1-MV-comm--0-sw,jpl,perfect information,20,296.1015625,voltage
+1-MV-comm--0-sw,jpl,perfect information,21,320.4296875,voltage
+1-MV-comm--0-sw,jpl,perfect information,22,283.5390625,thermal
+1-MV-comm--0-sw,jpl,perfect information,23,253.8203125,voltage
+1-MV-comm--0-sw,jpl,perfect information,24,284.1171875,voltage
+1-MV-comm--0-sw,jpl,perfect information,25,311.3125,voltage
+1-MV-comm--0-sw,jpl,perfect information,26,273.2890625,voltage
+1-MV-comm--0-sw,jpl,perfect information,27,296.7421875,thermal
+1-MV-comm--0-sw,jpl,perfect information,28,247.796875,voltage
+1-MV-comm--0-sw,jpl,perfect information,29,300.734375,thermal
+1-MV-comm--0-sw,jpl,perfect information,30,289.5078125,voltage
+1-MV-comm--0-sw,jpl,perfect information,31,284.140625,voltage
+1-MV-comm--0-sw,jpl,perfect information,32,237.7421875,voltage
+1-MV-comm--0-sw,jpl,perfect information,33,213.71875,voltage
+1-MV-comm--0-sw,jpl,perfect information,34,319.5078125,thermal
+1-MV-comm--0-sw,jpl,perfect information,35,243.5703125,voltage
+1-MV-comm--0-sw,jpl,perfect information,36,282.40625,voltage
+1-MV-comm--0-sw,jpl,perfect information,37,298.9609375,voltage
+1-MV-comm--0-sw,jpl,perfect information,38,192.9453125,voltage
+1-MV-comm--0-sw,jpl,perfect information,39,295.03125,voltage
+1-MV-comm--0-sw,jpl,driver seen,0,253.4375,voltage
+1-MV-comm--0-sw,jpl,driver seen,1,251.0703125,voltage
+1-MV-comm--0-sw,jpl,driver seen,2,266.6640625,thermal
+1-MV-comm--0-sw,jpl,driver seen,3,250.015625,thermal
+1-MV-comm--0-sw,jpl,driver seen,4,214.1484375,voltage
+1-MV-comm--0-sw,jpl,driver seen,5,289.7890625,voltage
+1-MV-comm--0-sw,jpl,driver seen,6,266.0,voltage
+1-MV-comm--0-sw,jpl,driver seen,7,304.9296875,voltage
+1-MV-comm--0-sw,jpl,driver seen,8,236.703125,thermal
+1-MV-comm--0-sw,jpl,driver seen,9,202.6171875,voltage
+1-MV-comm--0-sw,jpl,driver seen,10,275.046875,voltage
+1-MV-comm--0-sw,jpl,driver seen,11,262.6875,voltage
+1-MV-comm--0-sw,jpl,driver seen,12,269.53125,voltage
+1-MV-comm--0-sw,jpl,driver seen,13,270.8515625,voltage
+1-MV-comm--0-sw,jpl,driver seen,14,265.5703125,voltage
+1-MV-comm--0-sw,jpl,driver seen,15,190.5546875,voltage
+1-MV-comm--0-sw,jpl,driver seen,16,277.796875,thermal
+1-MV-comm--0-sw,jpl,driver seen,17,251.96875,voltage
+1-MV-comm--0-sw,jpl,driver seen,18,257.25,voltage
+1-MV-comm--0-sw,jpl,driver seen,19,262.25,voltage
+1-MV-comm--0-sw,jpl,driver seen,20,277.078125,voltage
+1-MV-comm--0-sw,jpl,driver seen,21,281.2421875,voltage
+1-MV-comm--0-sw,jpl,driver seen,22,229.78125,voltage
+1-MV-comm--0-sw,jpl,driver seen,23,245.5390625,voltage
+1-MV-comm--0-sw,jpl,driver seen,24,250.2265625,voltage
+1-MV-comm--0-sw,jpl,driver seen,25,281.3671875,voltage
+1-MV-comm--0-sw,jpl,driver seen,26,239.5234375,voltage
+1-MV-comm--0-sw,jpl,driver seen,27,259.8828125,thermal
+1-MV-comm--0-sw,jpl,driver seen,28,211.6875,voltage
+1-MV-comm--0-sw,jpl,driver seen,29,258.84375,thermal
+1-MV-comm--0-sw,jpl,driver seen,30,266.3046875,voltage
+1-MV-comm--0-sw,jpl,driver seen,31,259.546875,voltage
+1-MV-comm--0-sw,jpl,driver seen,32,210.484375,voltage
+1-MV-comm--0-sw,jpl,driver seen,33,190.7421875,voltage
+1-MV-comm--0-sw,jpl,driver seen,34,282.609375,thermal
+1-MV-comm--0-sw,jpl,driver seen,35,211.796875,voltage
+1-MV-comm--0-sw,jpl,driver seen,36,247.46875,voltage
+1-MV-comm--0-sw,jpl,driver seen,37,272.3203125,voltage
+1-MV-comm--0-sw,jpl,driver seen,38,176.0546875,voltage
+1-MV-comm--0-sw,jpl,driver seen,39,246.15625,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",0,253.3671875,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",1,251.0234375,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",2,266.53125,thermal
+1-MV-comm--0-sw,jpl,"unseen driver, own history",3,244.8984375,thermal
+1-MV-comm--0-sw,jpl,"unseen driver, own history",4,214.1015625,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",5,287.9765625,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",6,263.1171875,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",7,304.8671875,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",8,236.5703125,thermal
+1-MV-comm--0-sw,jpl,"unseen driver, own history",9,202.3984375,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",10,275.0,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",11,259.859375,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",12,266.6953125,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",13,270.796875,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",14,265.515625,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",15,190.4921875,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",16,277.6640625,thermal
+1-MV-comm--0-sw,jpl,"unseen driver, own history",17,251.9140625,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",18,257.203125,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",19,262.203125,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",20,277.015625,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",21,278.671875,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",22,229.7265625,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",23,245.5,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",24,250.171875,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",25,281.3203125,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",26,239.4609375,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",27,259.75,thermal
+1-MV-comm--0-sw,jpl,"unseen driver, own history",28,211.59375,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",29,258.703125,thermal
+1-MV-comm--0-sw,jpl,"unseen driver, own history",30,266.25,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",31,259.484375,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",32,210.4375,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",33,190.703125,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",34,282.46875,thermal
+1-MV-comm--0-sw,jpl,"unseen driver, own history",35,211.7578125,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",36,247.40625,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",37,272.1015625,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",38,176.0078125,voltage
+1-MV-comm--0-sw,jpl,"unseen driver, own history",39,246.1015625,voltage
+1-MV-comm--0-sw,jpl,driver request,0,253.28125,voltage
+1-MV-comm--0-sw,jpl,driver request,1,248.8203125,voltage
+1-MV-comm--0-sw,jpl,driver request,2,266.3671875,thermal
+1-MV-comm--0-sw,jpl,driver request,3,244.7265625,thermal
+1-MV-comm--0-sw,jpl,driver request,4,214.0390625,voltage
+1-MV-comm--0-sw,jpl,driver request,5,287.890625,voltage
+1-MV-comm--0-sw,jpl,driver request,6,259.5234375,voltage
+1-MV-comm--0-sw,jpl,driver request,7,304.796875,voltage
+1-MV-comm--0-sw,jpl,driver request,8,236.40625,thermal
+1-MV-comm--0-sw,jpl,driver request,9,202.125,voltage
+1-MV-comm--0-sw,jpl,driver request,10,271.578125,voltage
+1-MV-comm--0-sw,jpl,driver request,11,256.2890625,voltage
+1-MV-comm--0-sw,jpl,driver request,12,263.1953125,voltage
+1-MV-comm--0-sw,jpl,driver request,13,270.734375,voltage
+1-MV-comm--0-sw,jpl,driver request,14,265.4375,voltage
+1-MV-comm--0-sw,jpl,driver request,15,190.4140625,voltage
+1-MV-comm--0-sw,jpl,driver request,16,277.5,thermal
+1-MV-comm--0-sw,jpl,driver request,17,251.8515625,voltage
+1-MV-comm--0-sw,jpl,driver request,18,257.140625,voltage
+1-MV-comm--0-sw,jpl,driver request,19,262.140625,voltage
+1-MV-comm--0-sw,jpl,driver request,20,274.25,voltage
+1-MV-comm--0-sw,jpl,driver request,21,275.984375,voltage
+1-MV-comm--0-sw,jpl,driver request,22,229.671875,voltage
+1-MV-comm--0-sw,jpl,driver request,23,245.4453125,voltage
+1-MV-comm--0-sw,jpl,driver request,24,250.1015625,voltage
+1-MV-comm--0-sw,jpl,driver request,25,281.265625,voltage
+1-MV-comm--0-sw,jpl,driver request,26,239.3828125,voltage
+1-MV-comm--0-sw,jpl,driver request,27,259.578125,thermal
+1-MV-comm--0-sw,jpl,driver request,28,211.46875,voltage
+1-MV-comm--0-sw,jpl,driver request,29,258.53125,thermal
+1-MV-comm--0-sw,jpl,driver request,30,266.1875,voltage
+1-MV-comm--0-sw,jpl,driver request,31,259.40625,voltage
+1-MV-comm--0-sw,jpl,driver request,32,210.390625,voltage
+1-MV-comm--0-sw,jpl,driver request,33,190.6484375,voltage
+1-MV-comm--0-sw,jpl,driver request,34,282.3046875,thermal
+1-MV-comm--0-sw,jpl,driver request,35,211.703125,voltage
+1-MV-comm--0-sw,jpl,driver request,36,247.3359375,voltage
+1-MV-comm--0-sw,jpl,driver request,37,270.953125,voltage
+1-MV-comm--0-sw,jpl,driver request,38,174.828125,voltage
+1-MV-comm--0-sw,jpl,driver request,39,246.046875,voltage
+1-MV-comm--0-sw,jpl,cold start,0,223.8671875,voltage
+1-MV-comm--0-sw,jpl,cold start,1,232.6796875,voltage
+1-MV-comm--0-sw,jpl,cold start,2,254.4140625,thermal
+1-MV-comm--0-sw,jpl,cold start,3,237.6875,thermal
+1-MV-comm--0-sw,jpl,cold start,4,198.6328125,voltage
+1-MV-comm--0-sw,jpl,cold start,5,268.4609375,thermal
+1-MV-comm--0-sw,jpl,cold start,6,234.0390625,voltage
+1-MV-comm--0-sw,jpl,cold start,7,288.4375,voltage
+1-MV-comm--0-sw,jpl,cold start,8,227.46875,thermal
+1-MV-comm--0-sw,jpl,cold start,9,162.90625,voltage
+1-MV-comm--0-sw,jpl,cold start,10,240.4140625,voltage
+1-MV-comm--0-sw,jpl,cold start,11,242.5,voltage
+1-MV-comm--0-sw,jpl,cold start,12,254.484375,voltage
+1-MV-comm--0-sw,jpl,cold start,13,265.1953125,voltage
+1-MV-comm--0-sw,jpl,cold start,14,241.0703125,voltage
+1-MV-comm--0-sw,jpl,cold start,15,181.0078125,voltage
+1-MV-comm--0-sw,jpl,cold start,16,254.46875,thermal
+1-MV-comm--0-sw,jpl,cold start,17,226.8046875,voltage
+1-MV-comm--0-sw,jpl,cold start,18,234.40625,voltage
+1-MV-comm--0-sw,jpl,cold start,19,235.3203125,voltage
+1-MV-comm--0-sw,jpl,cold start,20,248.78125,voltage
+1-MV-comm--0-sw,jpl,cold start,21,267.6171875,voltage
+1-MV-comm--0-sw,jpl,cold start,22,197.4296875,thermal
+1-MV-comm--0-sw,jpl,cold start,23,236.0078125,voltage
+1-MV-comm--0-sw,jpl,cold start,24,227.6640625,voltage
+1-MV-comm--0-sw,jpl,cold start,25,258.75,voltage
+1-MV-comm--0-sw,jpl,cold start,26,215.734375,thermal
+1-MV-comm--0-sw,jpl,cold start,27,246.6015625,thermal
+1-MV-comm--0-sw,jpl,cold start,28,181.8984375,voltage
+1-MV-comm--0-sw,jpl,cold start,29,236.5703125,thermal
+1-MV-comm--0-sw,jpl,cold start,30,251.5625,voltage
+1-MV-comm--0-sw,jpl,cold start,31,247.015625,voltage
+1-MV-comm--0-sw,jpl,cold start,32,208.140625,voltage
+1-MV-comm--0-sw,jpl,cold start,33,162.84375,voltage
+1-MV-comm--0-sw,jpl,cold start,34,261.2890625,thermal
+1-MV-comm--0-sw,jpl,cold start,35,193.8671875,voltage
+1-MV-comm--0-sw,jpl,cold start,36,235.6875,voltage
+1-MV-comm--0-sw,jpl,cold start,37,249.96875,thermal
+1-MV-comm--0-sw,jpl,cold start,38,163.6171875,voltage
+1-MV-comm--0-sw,jpl,cold start,39,210.3671875,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),0,236.3046875,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),1,235.15625,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),2,255.2890625,thermal
+1-MV-comm--0-sw,jpl,cold start (contrast low),3,240.5625,thermal
+1-MV-comm--0-sw,jpl,cold start (contrast low),4,202.921875,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),5,275.3359375,thermal
+1-MV-comm--0-sw,jpl,cold start (contrast low),6,234.359375,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),7,288.765625,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),8,230.3359375,thermal
+1-MV-comm--0-sw,jpl,cold start (contrast low),9,165.3671875,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),10,243.015625,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),11,242.8203125,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),12,258.015625,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),13,265.5859375,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),14,241.484375,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),15,186.2421875,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),16,256.34375,thermal
+1-MV-comm--0-sw,jpl,cold start (contrast low),17,236.2421875,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),18,245.8203125,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),19,235.984375,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),20,257.125,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),21,271.2578125,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),22,198.3046875,thermal
+1-MV-comm--0-sw,jpl,cold start (contrast low),23,236.3828125,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),24,233.4140625,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),25,263.140625,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),26,227.578125,thermal
+1-MV-comm--0-sw,jpl,cold start (contrast low),27,248.4609375,thermal
+1-MV-comm--0-sw,jpl,cold start (contrast low),28,193.21875,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),29,239.4453125,thermal
+1-MV-comm--0-sw,jpl,cold start (contrast low),30,251.9453125,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),31,247.3359375,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),32,209.296875,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),33,174.1875,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),34,262.75,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),35,197.296875,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),36,239.03125,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),37,253.78125,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),38,164.0234375,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast low),39,210.6796875,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),0,223.3359375,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),1,219.578125,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),2,249.0703125,thermal
+1-MV-comm--0-sw,jpl,cold start (contrast high),3,231.34375,thermal
+1-MV-comm--0-sw,jpl,cold start (contrast high),4,195.96875,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),5,266.046875,thermal
+1-MV-comm--0-sw,jpl,cold start (contrast high),6,226.640625,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),7,284.3359375,thermal
+1-MV-comm--0-sw,jpl,cold start (contrast high),8,224.1171875,thermal
+1-MV-comm--0-sw,jpl,cold start (contrast high),9,160.3359375,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),10,234.890625,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),11,241.765625,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),12,246.2578125,thermal
+1-MV-comm--0-sw,jpl,cold start (contrast high),13,262.6328125,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),14,229.6171875,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),15,178.046875,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),16,252.1328125,thermal
+1-MV-comm--0-sw,jpl,cold start (contrast high),17,226.203125,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),18,233.5078125,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),19,228.734375,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),20,237.8359375,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),21,265.9375,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),22,192.1015625,thermal
+1-MV-comm--0-sw,jpl,cold start (contrast high),23,228.6171875,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),24,225.125,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),25,258.2421875,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),26,214.3203125,thermal
+1-MV-comm--0-sw,jpl,cold start (contrast high),27,245.2578125,thermal
+1-MV-comm--0-sw,jpl,cold start (contrast high),28,162.671875,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),29,235.203125,thermal
+1-MV-comm--0-sw,jpl,cold start (contrast high),30,249.3828125,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),31,240.5859375,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),32,191.78125,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),33,162.203125,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),34,249.9765625,thermal
+1-MV-comm--0-sw,jpl,cold start (contrast high),35,182.53125,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),36,235.03125,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),37,246.578125,thermal
+1-MV-comm--0-sw,jpl,cold start (contrast high),38,162.3671875,voltage
+1-MV-comm--0-sw,jpl,cold start (contrast high),39,202.1640625,voltage

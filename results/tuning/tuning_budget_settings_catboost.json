@@ -1,0 +1,21 @@
+{
+ "trials": 40,
+ "check": 8,
+ "learners": [
+  "catboost"
+ ],
+ "targets": [
+  "energy",
+  "duration"
+ ],
+ "seeds": [
+  11,
+  23,
+  37,
+  51,
+  79
+ ],
+ "tune_seed": 11,
+ "config": "configs/acn.yaml",
+ "sessions": "data/processed/sessions.parquet (ACN sessions after cleaning)"
+}

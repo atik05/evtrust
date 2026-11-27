@@ -1,0 +1,29 @@
+feeder,site,contrast,median,p5,p95,mean,relative_pct_of_b
+1-MV-comm--0-sw,caltech,"unseen driver, own history minus cold start (hubs)",17.890625,5.546875,33.55117187499998,18.5138671875,4.042315289590306
+1-MV-comm--0-sw,caltech,perfect information minus no forecast (FCFS) (hubs),123.57421875,96.58125,167.41640625,126.0201171875,28.064204365541933
+1-MV-comm--0-sw,caltech,"unseen driver, own history minus no forecast (FCFS) (hubs)",24.26953125,16.36640625,47.24570312499996,27.4732421875,6.118187322321469
+1-MV-comm--0-sw,caltech,cold start minus no forecast (FCFS) (hubs),6.98828125,1.0640625,20.92968749999999,8.959375,1.9952189904205826
+1-MV-comm--0-sw,caltech,"unseen driver, own history minus cold start (hubs), low bound of capacity contrast",,,,14.403515625,3.1168890449883415
+1-MV-comm--0-sw,caltech,"unseen driver, own history minus cold start (hubs), high bound of capacity contrast",,,,23.090625,5.092492682643165
+1-MV-comm--0-sw,caltech,share of the forecast hosting gain forfeited by a cold start (%),,,,67.38872340274273,
+1-MV-comm--0-sw,jpl,"unseen driver, own history minus cold start (hubs)",20.2734375,7.032421875000001,32.46718749999999,19.425,8.44794781190541
+1-MV-comm--0-sw,jpl,perfect information minus no forecast (FCFS) (hubs),61.3125,42.38203125,89.12343749999998,62.6853515625,28.38182001475028
+1-MV-comm--0-sw,jpl,"unseen driver, own history minus no forecast (FCFS) (hubs)",28.6796875,15.98203125,43.412499999999994,28.498046875,12.902957661037153
+1-MV-comm--0-sw,jpl,cold start minus no forecast (FCFS) (hubs),9.08984375,2.8410156250000003,17.269531249999996,9.073046875,4.107970633855252
+1-MV-comm--0-sw,jpl,"unseen driver, own history minus cold start (hubs), low bound of capacity contrast",,,,15.5958984375,6.671568279325081
+1-MV-comm--0-sw,jpl,"unseen driver, own history minus cold start (hubs), high bound of capacity contrast",,,,23.801171875,10.551973635219081
+1-MV-comm--0-sw,jpl,share of the forecast hosting gain forfeited by a cold start (%),,,,68.1625659653211,
+ieee33,caltech,"unseen driver, own history minus cold start (hubs)",0.18359375,0.125,1.0167968749999998,0.341796875,2.713346564128008
+ieee33,caltech,perfect information minus no forecast (FCFS) (hubs),2.53515625,1.0992187500000001,5.769921874999996,2.9779296875,24.066357293935663
+ieee33,caltech,"unseen driver, own history minus no forecast (FCFS) (hubs)",0.296875,0.1875,1.5652343749999993,0.56484375,4.564826214603656
+ieee33,caltech,cold start minus no forecast (FCFS) (hubs),0.109375,0.069921875,0.9406249999999998,0.223046875,1.802569687786091
+ieee33,caltech,"unseen driver, own history minus cold start (hubs), low bound of capacity contrast",,,,0.2666015625,2.103851666897859
+ieee33,caltech,"unseen driver, own history minus cold start (hubs), high bound of capacity contrast",,,,0.4802734375,3.8550174800507944
+ieee33,caltech,share of the forecast hosting gain forfeited by a cold start (%),,,,60.51175656984786,
+ieee33,jpl,"unseen driver, own history minus cold start (hubs)",0.3203125,0.125,2.211328124999999,0.6380859375,9.480282057978584
+ieee33,jpl,perfect information minus no forecast (FCFS) (hubs),1.6328125,0.474609375,3.6882812499999984,1.7240234375,26.7760723169326
+ieee33,jpl,"unseen driver, own history minus no forecast (FCFS) (hubs)",0.703125,0.1953125,2.6714843749999995,0.930078125,14.445185949159741
+ieee33,jpl,cold start minus no forecast (FCFS) (hubs),0.1484375,0.0703125,1.0437499999999997,0.2919921875,4.534975429230116
+ieee33,jpl,"unseen driver, own history minus cold start (hubs), low bound of capacity contrast",,,,0.4517578125,6.531130876747141
+ieee33,jpl,"unseen driver, own history minus cold start (hubs), high bound of capacity contrast",,,,0.7970703125,12.128867358159718
+ieee33,jpl,share of the forecast hosting gain forfeited by a cold start (%),,,,68.60562788744225,

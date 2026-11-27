@@ -17,7 +17,9 @@ def tune_ridge(train, ytr, val, yva, numeric, categorical, n_trials: int, seed: 
     return {'alpha':float(st.best_params['alpha'])}
 
 
-def tune_catboost(train,ytr,val,yva,numeric,categorical,base:dict,n_trials:int,seed:int)->dict:
+def catboost_objective(train,ytr,val,yva,numeric,categorical,base:dict,seed:int):
+    """Validation MAE of CatBoost for one trial of the search space below (shared by tune_catboost and
+    scripts/tuning_budget.py, so that both search exactly the same space)."""
     def objective(trial):
         p=copy.deepcopy(base)
         p.update({
@@ -30,13 +32,19 @@ def tune_catboost(train,ytr,val,yva,numeric,categorical,base:dict,n_trials:int,s
         })
         m=fit_catboost(train,ytr,val,yva,numeric,categorical,p,seed)
         return mean_absolute_error(yva,m.predict(val))
+    return objective
+
+
+def tune_catboost(train,ytr,val,yva,numeric,categorical,base:dict,n_trials:int,seed:int)->dict:
     st=optuna.create_study(direction='minimize',sampler=optuna.samplers.TPESampler(seed=seed))
-    st.optimize(objective,n_trials=n_trials)
+    st.optimize(catboost_objective(train,ytr,val,yva,numeric,categorical,base,seed),n_trials=n_trials)
     p=copy.deepcopy(base); p.update(st.best_params)
     return p
 
 
-def tune_torch(train,ytr,val,yva,numeric,categorical,base:dict,n_trials:int,seed:int,tuning_epochs:int)->dict:
+def torch_objective(train,ytr,val,yva,numeric,categorical,base:dict,seed:int,tuning_epochs:int):
+    """Validation MAE of the FT-Transformer for one trial of the search space below (shared by tune_torch and
+    scripts/tuning_budget.py)."""
     from .torch_tabular import fit_torch_ft  # lazy import, see experiments.py
 
     def objective(trial):
@@ -56,7 +64,11 @@ def tune_torch(train,ytr,val,yva,numeric,categorical,base:dict,n_trials:int,seed
             return 1e9
         m=fit_torch_ft(train,ytr,val,yva,numeric,categorical,p,seed)
         return mean_absolute_error(yva,m.predict(val))
+    return objective
+
+
+def tune_torch(train,ytr,val,yva,numeric,categorical,base:dict,n_trials:int,seed:int,tuning_epochs:int)->dict:
     st=optuna.create_study(direction='minimize',sampler=optuna.samplers.TPESampler(seed=seed))
-    st.optimize(objective,n_trials=n_trials)
+    st.optimize(torch_objective(train,ytr,val,yva,numeric,categorical,base,seed,tuning_epochs),n_trials=n_trials)
     p=copy.deepcopy(base); p.update(st.best_params)
     return p
